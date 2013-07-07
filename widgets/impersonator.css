@@ -1,0 +1,15 @@
+#appimersonator-widget {
+    padding: 0 20px;
+    margin-bottom: 5px;
+}
+
+#appimersonator-widget input {
+    padding: 2px 6px;
+    margin-top: 0;
+    margin-right: 3px;
+}
+
+#appimersonator-widget div {
+    font-size: 9pt;
+    color: #666;
+}

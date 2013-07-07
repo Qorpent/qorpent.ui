@@ -1,0 +1,22 @@
+#appuser-widget {
+    margin-right: 3px;
+}
+
+#appuser-widget li>div {
+    font-size: 9pt;
+    color: #666;
+    padding-left: 20px;
+    line-height: 12px;
+    margin-bottom: 3px;
+}
+
+.app-user-roles {
+    padding: 0 20px;
+    white-space: normal;
+    width: 200px;
+}
+
+.app-user-roles .label {
+    margin-right: 3px;
+    margin-top: 3px;
+}
