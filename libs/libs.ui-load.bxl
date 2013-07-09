@@ -1,0 +1,11 @@
+pkg libs dependency=jquery
+    load bootstrab.min.js
+    load bootstrap.min.css
+    load bootstrap-responsive.min.css
+    load mia.bootstrap.css
+    load jquery-ui.min.js
+    load mustache.min.js            # Библиотека для работы с шаблонами
+    load jquery.md5.min.js          # для создания md5 хэшей
+    load jquery.jsformatter.js      # Библиотека для конвертирования json --> html
+    load jquery.jsformatter.css
+    load dateformat.js              # Форматирование даты

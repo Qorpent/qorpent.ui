@@ -1,0 +1,5 @@
+pkg plugins dependency=jquery,libs
+	load mia.modals.js
+	load mia.modals.css
+	load mia.print.js
+	load mia.wiki.js

@@ -1,0 +1,11 @@
+pkg wiki dependency=jquery,libs
+    load qorpent.wiki.js
+    load qorpent.wiki.css
+    load qorpent.wiki.customrefs.js
+    load qorpent.wiki.menu.js
+    load qorpent.wiki.search.js
+    load qorpent.wiki.search.css
+
+    load qorpent.wiki.admin.tpl.html
+    load qorpent.wiki.attachform.tpl.html
+    load qorpent.wiki.user.tpl.html
