@@ -2,36 +2,42 @@
     var loadScripts = function() {
         var scriptsLoaded = 0;
         var scripts = [
-            'js/libs/dateformat.js',
-            'js/libs/qorpent.wiki.js',
-            'js/libs/jquery.jsformatter.js',
-            'js/plugins/mia.modals.js',
-            'js/plugins/mia.print.js',
-            'js/plugins/mia.userinfo.js',                   // Плагин для вывода информации о пользователе
-            'js/plugins/qorpent.wiki.customrefs.js',
-            'js/plugins/qorpent.wiki.menu.js',
+            // библиотеки
+            'bootstrap.min.js',
+            'jquery-ui.min.js',
+            'mustache.min.js',                                  // Библиотека для работы с шаблонами
+            'jquery.md5.min.js',                            // для создания md5 хэшей
+            'jquery.jsformatter.js',                        // Библиотека для конвертирования json --> html
+            'dateformat.js',                        // Форматирование даты
+            'qorpent.wiki.js',                      // библиотека для работы с документацией wiki, конвертер wiki markup --> html
 
-            'js/layout.js',
-            'js/wrapper.js',
-            'js/qweb.js',
-            'js/api.js',
-            'js/router.js',
-            'js/widget.js',
-            'js/source.js',
-            'js/app.js',
+            // расширения
+            'qorpent.wiki.customrefs.js',      // Расширение для qorpent.wiki добавляет обработку кастомных ссылок
+            'qorpent.wiki.menu.js',            // добавляет возможность преобразовывать wiki в html меню
+            'mia.modals.js',                   // bootstrap окна
+            'mia.print.js',
 
-            'js/widgets/wiki.js',
-            'js/widgets/auth.js',
-            'js/widgets/admin.js',
-            'js/widgets/user.js',
-            'js/widgets/impersonator.js',
-            'js/widgets/minerva-addsource.js',
-            'js/widgets/minerva-sourcelist.js',
-            'js/widgets/wikisearch.js'
+            // ядро
+            'qorpent.layout.js',
+            'qorpent.wrapper.js',
+            'qorpent.qweb.js',
+            'qorpent.api.js',
+            'qorpent.router.js',
+            'qorpent.widget.js',
+            'qorpent.start.js',
+
+            // виджеты
+            'wiki.js',
+            'auth.js',
+            'admin.js',
+            'user.js',
+            'impersonator.js',
+            'wikisearch.js',
+            'usersearch.js'
         ];
         scripts.forEach(function(src) {
             var script = document.createElement('script');
-            script.src = src;
+            script.src = "js/" + src;
             script.async = false;
             document.body.appendChild(script);
             scriptsLoaded++;
@@ -41,21 +47,21 @@
     var loadStyles = function() {
         var stylesLoaded = 0;
         var styles = [
-            'css/qorpent.wiki.css',
-            'css/mia.bootstrap.css',
-            'css/jquery.jsformatter.css',
-            'css/jquery-modals.css',
+            'bootstrap.min.css',
+            'bootstrap-responsive.min.css',
+            'mia.bootstrap.css',
+            'qorpent.wiki.css',
+            'qorpent.wiki.search.css',
+            'jquery.jsformatter.css',
+            'jquery-modals.css',
 
-            'css/impersonator.css',
-            'css/minerva-addsource.css',
-            'css/auth.css',
-            'css/user.css',
-            'css/wiki.css',
-            'css/wikisearch.css'
+            'impersonator.css',
+            'auth.css',
+            'user.css'
         ];
         styles.forEach(function(href) {
             var link = document.createElement('link');
-            link.href = href;
+            link.href = "css/" + href;
             link.rel = "stylesheet";
             link.async = false;
             document.body.appendChild(link);
@@ -67,11 +73,9 @@
         window.templates = window.templates || {};
         var templatesLoaded = 0;
         var tplts = [
-            'minerva-source-form',
-            'minerva-source-group',
-            'wiki-admin',
-            'wiki-user',
-            'wiki-attach-form'
+            'qorpent.wiki.admin.tpl',
+            'qorpent.wiki.attachform.tpl',
+            'qorpent.wiki.user.tpl'
         ];
         tplts.forEach(function(href) {
             $.ajax({ url: "tpl/" + href + ".html", async: false })
