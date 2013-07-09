@@ -1,0 +1,2 @@
+pkg qorpent  dependency=jquery
+	load qorpent.qweb.js

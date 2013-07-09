@@ -12,5 +12,6 @@ tmp
 *.suo
 *.check-import
 *.import-check
+.idea
 # mstest test results
 TestResults
