@@ -1,2 +1,2 @@
 pkg jquery
-	load jquery.min.js pkg=jquery
+	load jquery.min.js

@@ -1,4 +1,5 @@
-pkg qorpent dependency=jquery,libs
+pkg qorpent.core
+	uses libs
 	load qorpent.layout.js
 	load qorpent.wrapper.js
 	load qorpent.qweb.js

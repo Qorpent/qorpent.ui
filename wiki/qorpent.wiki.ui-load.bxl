@@ -1,4 +1,7 @@
-pkg wiki dependency=jquery,libs
+pkg qorpent.wiki level=auth
+	uses libs
+	uses qorpent.core
+	
     load qorpent.wiki.js
     load qorpent.wiki.css
     load qorpent.wiki.customrefs.js

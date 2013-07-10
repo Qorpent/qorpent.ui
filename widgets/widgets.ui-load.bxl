@@ -1,12 +1,13 @@
-pkg plugins dependency=jquery,libs,wiki
-	wiki.js
-    auth.js
-    auth.css
-    admin.js
-    user.js
-    user.css
-    impersonator.js
-    impersonator.css
-    wikisearch.js
-    usersearch.js
-    usersearch.css
+pkg qorpent.widgets 
+	uses qorpent.core
+	load wiki.js level=auth
+    load auth.js 
+    load auth.css
+    load admin.js level=admin
+    load user.js  level=auth
+    load user.css  level=auth
+    load impersonator.js level=admin
+    load impersonator.css level=admin
+	load wikisearch.js level=auth
+    load usersearch.js level=auth
+    load usersearch.css level=auth

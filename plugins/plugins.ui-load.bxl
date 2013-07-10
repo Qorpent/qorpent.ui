@@ -1,5 +1,9 @@
-pkg plugins dependency=jquery,libs
+pkg sys.plugins 
+	uses libs
 	load mia.modals.js
 	load mia.modals.css
-	load mia.print.js
-	load mia.wiki.js
+	load mia.print.js level=auth
+	
+pkg wiki.plugins
+	uses qorpent.wiki
+	load mia.wiki.js level=auth
