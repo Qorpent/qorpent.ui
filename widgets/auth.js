@@ -27,7 +27,7 @@
         append : "toheader",
         float : "right",
         ready : function() {
-            if (app.user.isAuthorized()) {
+            if (qorpent.user.isAuthorized()) {
                 f.hide();
             }
         }

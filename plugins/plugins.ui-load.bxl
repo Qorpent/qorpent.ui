@@ -3,7 +3,3 @@ pkg sys.plugins
 	load mia.modals.js
 	load mia.modals.css
 	load mia.print.js level=auth
-	
-pkg wiki.plugins
-	uses qorpent.wiki
-	load mia.wiki.js level=auth

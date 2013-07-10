@@ -34,19 +34,11 @@
         q.val("");
     };
 
-    $.extend(layout, {
-        todebugmenu : function(e) { $('#appAdminMenu').append(e) }
-    });
     var usersearch = new widget.W({
-        authonly : false,
+        authonly : true,
         name : "appusersearch",
         append : "todebugmenu"
     });
     usersearch.el = $('<li/>').append($('<div/>').text("Поиск пользователя:"), f, users);
-    widgets.push({ append : "todebugmenu", el: $('<li class="divider"/>') });
     widgets.push(usersearch);
-    widgets.push({ append : "todebugmenu", el: $('<li class="divider"/>') });
-    $(document).on('click.dropdown.data-api', '#appusersearch-widget', function (e) {
-        e.stopPropagation();
-    });
 })(window.widgets = window.widgets || []);

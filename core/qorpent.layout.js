@@ -14,16 +14,41 @@
         topageheader : function(e) { $('#appPageHeader').append(e); },
         tobody : function(e) { $('#appBody').append(e); },
         tofooter : function(e) { $('#appFooter').append(e); },
-		tomenu2 : function(menucode, e){
-			if(!$('#qlMenu_'+menucode)){
-				this.createMenu(menucode);
+		appendToMenu : function(code, e){
+			e = $(e);
+            var m = $('#'+code);
+            if(m.length == 0){
+				this.createMenu(code);
 			}
-			this.appendMenuDivider(menucode);
-			this.appendMenuItem(e);
-			this.appendMenuDivider(menucode);
+            m.append($('<li class="divider"/>'));
+            m.append($('<li/>').append(e));
+            m.append($('<li class="divider"/>'));
+            $(document).on('click.dropdown.data-api', '#' + e.attr("id"), function (e) {
+                e.stopPropagation();
+            });
+            m = null;
 		},
+        createMenu : function(code, inner) {
+            inner = inner || null;
+            if (typeof inner == "string") {
+                inner = $(inner);
+            }
+            var g = $('<div class="btn-group"/>');
+            var b = $('<button class="btn btn-small"/>').append(inner || code); 
+            var m = $('<ul class="dropdown-menu"/>');
+            m.attr("id", code);
+            this.toheader(g.append(b, m));
+            g = b = m = null;
+        },
 		todebugmenu : function(e) { 
-			if( $('#appAdminMenu')) $('#appAdminMenu').append(e) 
+			this.appendToMenu("appAdminMenu", e);
+            /*var m = $('#appAdminMenu');
+            if (m.length == 0) {
+                this.createMenu("appAdminMenu", '<i class="icon icon-eye">');
+            } else {
+                m.append(e); 
+            }
+            m = null;*/
 		},
         add : function(pos, e) {
             if (pos.toUpperCase() == "HEADER") this.toheader(e);
@@ -34,10 +59,12 @@
             else this.tobody(e);
         }
     });
-    var body = $('body');
-    body.append(layout.header);
-    body.append(layout.tools);
-    body.append(layout.pageheader);
-    body.append(layout.body);
-    body.append(layout.footer);
+    layout.init = function() {
+        var body = $('body');
+        body.append(layout.header);
+        body.append(layout.tools);
+        body.append(layout.pageheader);
+        body.append(layout.body);
+        body.append(layout.footer);
+    };
 })(window.layout = window.layout || {});

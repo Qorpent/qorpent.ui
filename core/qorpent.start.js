@@ -1,9 +1,9 @@
-(function(app) {
-    $.extend(app, {
+(function(qorpent) {
+    $.extend(qorpent, {
         init : function() {
             api.security.whoami.execute(null, { triggerOnSuccess: function(result) {
-                app.user = app.user || {};
-                app.user = result;
+                qorpent.user = qorpent.user || {};
+                qorpent.user = result;
                 if (!result.isAuthorized()) {
                     router.to("login");
                 } else {
@@ -17,63 +17,58 @@
         },
 
         startLogin : function() {
-            app.start();
+            qorpent.start();
             api.security.login.onSuccess(function(result) {
                 if (!result.authenticated) router.to("login");
                 api.security.whoami.execute(null, { triggerOnSuccess: function(result) {
-                    app.user = app.user || {};
-                    app.user = result;
+                    qorpent.user = qorpent.user || {};
+                    qorpent.user = result;
                     router.toDefault();
                 }});
-            })
+            });
         },
 
         startRobotCreation : function() {
-            app.start();
+            qorpent.start();
             var form = source.createForm();
             source.addGroup(form, "Группа1");
-            $('#appBody').empty().append(form);
+            $('#qorpentBody').empty().qorpentend(form);
         },
 
 
         startRobots : function() {
-            app.start();
-            $('#appBody').empty();
+            qorpent.start();
+            $('#qorpentBody').empty();
             var getsourcelist = api.source.list.safeClone();
             getsourcelist.onSuccess(function(e, result) {
                 var ul = $('<ul/>');
                 $.each(result, function(i, s) {
                     var b = $('<button class="btn btn-link"/>').text(s.Name).attr("code", s.SourceId);
-                    ul.append($('<li/>').append(b));
+                    ul.qorpentend($('<li/>').qorpentend(b));
                     b.click(function() {
                         source.runTask(s.SourceId);
                     });
                 });
-                $('#appBody').append(ul);
+                $('#qorpentBody').qorpentend(ul);
             });
             getsourcelist.execute();
         },
 
-        startApp : function() {
-            app.start();
+        startqorpent : function() {
+            qorpent.start();
         }
     });
-})(window.app = window.app || {});
+})(window.qorpent = window.qorpent || {});
 
 $(document).ready(function() {
     router.addRoute("login", function() {
-        app.startLogin();
+        qorpent.startLogin();
     });
     router.addRoute("start", function() {
-        app.startApp();
-    });
-    router.addRoute("newrobot", function() {
-        app.startRobotCreation();
-    });
-    router.addRoute("robots", function() {
-        app.startRobots();
+        qorpent.startqorpent();
     });
     router.asDefault("start");
+    layout.init();
     router.init();
-    app.init();
+    qorpent.init();
 });

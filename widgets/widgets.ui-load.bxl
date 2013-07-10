@@ -8,6 +8,7 @@ pkg qorpent.widgets
     load user.css  level=auth
     load impersonator.js level=admin
     load impersonator.css level=admin
-	load wikisearch.js level=auth
+    load wikisearch.js level=auth
+	load wikisearch.css level=auth
     load usersearch.js level=auth
     load usersearch.css level=auth

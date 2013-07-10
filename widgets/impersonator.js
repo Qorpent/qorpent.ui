@@ -29,26 +29,17 @@
 
     api.security.impersonate.onSuccess(function() { location.reload() });
 
-    $.extend(layout, {
-        todebugmenu : function(e) { $('#appAdminMenu').append(e) }
-    });
-    var imersonator = new widget.W({
+    var imersonator = new widget.register({
         authonly : false,
         name : "appimersonator",
         append : "todebugmenu",
         ready : function() {
-            if (!!app.user.getImpersonation()) {
+            if (!!qorpent.user.getImpersonation()) {
                 d.show(); f.hide();
             } else {
                 d.hide(); f.show();
             }
         }
     });
-    imersonator.el = $('<li/>').append($('<div/>').text("Вход от имени:"), f, d);
-    widgets.push({ append : "todebugmenu", el: $('<li class="divider"/>') });
-    widgets.push(imersonator);
-    widgets.push({ append : "todebugmenu", el: $('<li class="divider"/>') });
-    $(document).on('click.dropdown.data-api', '#appimersonator-widget', function (e) {
-        e.stopPropagation();
-    });
+    imersonator.el = $('<div/>').append($('<div/>').text("Вход от имени"), f, d);
 })(window.widgets = window.widgets || []);

@@ -8,7 +8,8 @@
                 o.routes = new Array(o.routes);
             }
             return $.extend({
-                append : "tobody",
+                append : null,
+                position : null,
                 float : "",
                 authonly: true,
                 adminonly: false,
@@ -18,22 +19,35 @@
                 el : null,
                 installed : false,
                 routes: []
+
             }, o);
         },
 
         installAll : function() {
             if ($.isEmptyObject(widgets)) return;
             $.each(widgets, function(i, w) {
-                if (w.authonly && !app.user.isAuthorized()) return;
-                if (w.adminonly && !app.user.logonadmin) return;
+                if (w.authonly && !qorpent.user.isAuthorized()) return;
+                if (w.adminonly && !qorpent.user.logonadmin) return;
                 if (!$.isEmptyObject(w.routes)) {
                     if ($.inArray(router.current, w.routes) == -1) return;
                 }
+                if (!!w.el) {
+                    w.el.addClass("qorpent-widget");
+                }
+                if (!!w.name) w.el.attr("id", w.name + "-widget");
                 if (!!w.append) {
                     layout[w.append](w.el);
-                    if (!!w.name) w.el.attr("id", w.name + "-widget");
-                    if (!!w.float) w.el.addClass("pull-" + w.float);
                 }
+                // для позиционирования по-новому
+                if (!!w.position) {
+                    var p = w.position.split(':');
+                    if (p[0] == "menu") {
+                        layout.appendToMenu(p[1], w.el);
+                    } else {
+                        layout.add(p[0], w.el);
+                    }
+                }
+                if (!!w.float) w.el.addClass("pull-" + w.float);
                 if (!!w.ready) w.ready();
             });
         },
@@ -42,4 +56,10 @@
 
         }
     });
+    widget.register = function(options) {
+        var w = new widget.W(options);
+        window.widgets = window.widgets || [];
+        window.widgets.push(w);
+        return w;
+    };
 })(window.widget = window.widget || {});
