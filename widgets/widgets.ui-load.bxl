@@ -1,0 +1,12 @@
+pkg plugins dependency=jquery,libs,wiki
+	wiki.js
+    auth.js
+    auth.css
+    admin.js
+    user.js
+    user.css
+    impersonator.js
+    impersonator.css
+    wikisearch.js
+    usersearch.js
+    usersearch.css

@@ -1,0 +1,8 @@
+#authorizer-widget>input,
+#authorizer-widget>button {
+   margin-top: 0;
+}
+
+#authorizer-widget>input {
+    padding: 2px 6px;
+}
