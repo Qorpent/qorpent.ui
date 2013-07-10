@@ -1,0 +1,7 @@
+pkg qorpent.core
+	uses jquery
+	load qorpent.qweb.js
+	load qorpent.api.js
+	load qorpent.layout.js
+	load qorpent.widget.js
+	

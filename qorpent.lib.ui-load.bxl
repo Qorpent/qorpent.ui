@@ -1,0 +1,5 @@
+pkg jquery
+	load jquery.min.js
+	load jquery-1.9.1.min.js
+	load bootstrap.min.js
+	
