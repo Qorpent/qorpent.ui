@@ -43,8 +43,8 @@
 						w.el.on("submit", "form", $.proxy(function(e) {
 							e.preventDefault();
 							var params = $(e.target).serializeArray();
-							if (!!this.getData()) {
-								this.getData(params, e);
+							if(!!this.getData){
+								this.getData(params,e);
 							}
 							this.command.execute(params);
 						}, w));
@@ -53,8 +53,8 @@
 						w.el.on("click", "button, .widget-button", $.proxy(function(e) {
 							e.preventDefault();
 							var params = {};
-							if(!!this.getData()) {
-								this.getData(params, e);
+							if(!!this.getData){
+								this.getData(params,e);
 							}
 							this.command.execute(params);
 						}, w));

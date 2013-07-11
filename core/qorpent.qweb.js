@@ -46,8 +46,8 @@
         var handlers = ["Start", "Error", "Success", "Complete"];
         if (o.withProgress) handlers.push("Progress");
         $.each(handlers, function(i, e) {
-            self["triggerOn" + e] = self["triggerOn" + e] || function(r) { $(this).trigger(this.eventName + ":" + e, r) };
-            self["on" + e] = self["on" + e] || function(f) { $(this).on(this.eventName + ":" + e, f) };
+            self["triggerOn" + e] = self["triggerOn" + e] || function(r) { $(this).trigger(this.eventName + ":" + e, r)  };
+            self["on" + e] = self["on" + e] || function(f) { $(this).on(this.eventName + ":" + e, f);return this; };
         });
         this.ready();
     };
@@ -105,7 +105,7 @@
                 url : this.url,
                 type : this.method,
                 dataType: this.datatype,
-                crossDomain : true,
+                crossDomain : this.async,
                 ifModified : this.method == "GET",
                 async : this.async,
                 data : params,
