@@ -43,15 +43,27 @@
 					});
 				}
 				
-				if (!!w.formqweb){
-					w.el.on("submit","form",$.proxy(function(e){
-						e.preventDefault();
-						var params = $(e.target).serializeArray();
-						if(!!this.setupFormData){
-							this.setupFormData(params);
-						}
-						this.formqweb.execute(params);
-					},w));
+				
+				if (!!w.command && !!w.type){
+					if (w.type == "form") {
+						w.el.on("submit","form",$.proxy(function(e){
+							e.preventDefault();
+							var params = $(e.target).serializeArray();
+							if(!!this.getData()){
+								this.getData(params,e);
+							}
+							this.command.execute(params);
+						},w));
+					}else if (w.type == "button" ) {
+						w.el.on("click","button,.widget-button",$.proxy(function(e){
+							e.preventDefault();
+							var params = {};
+							if(!!this.getData()){
+								this.getData(params,e);
+							}
+							this.command.execute(params);
+						},w));
+					}
 				}
 			
                 if (w.authonly && !qorpent.user.isAuthorized()) return;

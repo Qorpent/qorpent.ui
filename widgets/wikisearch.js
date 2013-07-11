@@ -4,6 +4,7 @@
 widget.register({
 	name : "wikisearch",
 	position : "menu:appAdminMenu",
+	type : "form",
 	
 	// form setup
 	title :"Работа с wiki:",
@@ -12,7 +13,7 @@ widget.register({
 	
 	//интеграция с API
 	codeparam : "code",
-	formqweb : api.wiki.get,
+	command : api.wiki.get,
 	
 	
 	
