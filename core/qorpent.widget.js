@@ -35,12 +35,23 @@
 					w.el =  $(widgets.compiledTemplates[templatename](w));
 				}
 				
-				
+				w.el = $("<widget name='"+w.name+"'>").append(w.el);
 				
 				if (!!w.events) {
 					$.each ( w.events , function(i,e){
-						w.el.on(i,e.selector, e.handler);
+						w.el.on(i,e.selector, $.proxy(e.handler,w));
 					});
+				}
+				
+				if (!!w.formqweb){
+					w.el.on("submit","form",$.proxy(function(e){
+						e.preventDefault();
+						var params = $(e.target).serializeArray();
+						if(!!this.setupFormData){
+							this.setupFormData(params);
+						}
+						this.formqweb.execute(params);
+					},w));
 				}
 			
                 if (w.authonly && !qorpent.user.isAuthorized()) return;

@@ -1,9 +1,11 @@
-﻿<widget>
-	<div>{{title}}</div>
-	<form class="navbar-form login-form ">
-		<input class="input-small" type="text" placeholder="Код статьи" style="width:139px;" autocomplete />
-		<button class="btn btn-small btn-success" type="submit" >
-			<i class="icon-search icon-white"></i>
-		</button>
-	</form>
-</widget>
+﻿<form>
+	<div>{{title}}</div>	
+	<input 
+		name="{{codeparam}}" 
+		class="input-small" type="text" placeholder="Код статьи" style="width:139px;" autocomplete required pattern="{{pattern}}" 
+		title="Укажите код страницы, формат: {{userformat}}"
+	/>
+	<button class="btn btn-small btn-success" type="submit" >
+		<i class="icon-search icon-white"></i>
+	</button>
+</form>

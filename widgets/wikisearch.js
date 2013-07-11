@@ -2,13 +2,29 @@
  * Виджет формы запроса документации wiki
  */
 widget.register({
-	title :"Работа с wiki:",
 	name : "wikisearch",
 	position : "menu:appAdminMenu",
-	events : {
-		submit : { selector : "form" ,  handler : function(e){
-			e.preventDefault();
-			api.wiki.get.execute({ Code: $(e.target).find('input').val() });
-		}},
-	},
+	
+	// form setup
+	title :"Работа с wiki:",
+	pattern : "^(/\\w[\\w\\d_\\-]*)+$",
+	userformat : "разделенные прямыми слэшами коды из букв, цифр и черточек, например /aaa/b1/c_d",
+	
+	//интеграция с API
+	codeparam : "code",
+	formqweb : api.wiki.get,
+	
+	
+	
+	
+	// прямое управление поведением
+	/*events : {  - оставил комментарий как пример того как явно привязывать события
+		submit : { 
+			selector : "form" ,  
+			handler : function(e){
+				e.preventDefault();
+				api.wiki.get.execute($(e.target).serializeArray());
+			}
+		},
+	},*/
 });

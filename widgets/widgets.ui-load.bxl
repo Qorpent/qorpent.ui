@@ -9,6 +9,7 @@ pkg qorpent.widgets
 	widget impersonator level=auth
 	
 	widget wikisearch level=auth
+	
 	widget usersearch level=auth
 	
 	
