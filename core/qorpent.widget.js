@@ -25,6 +25,9 @@
         installAll : function() {
             if ($.isEmptyObject(widgets)) return;
             $.each(widgets, function(i, w) {
+				if(!!w.init) {
+					w.init();
+				}
 				if( !!w.render ) {
 					w.render();
 				}
