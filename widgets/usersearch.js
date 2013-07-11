@@ -2,17 +2,8 @@
  * Виджет формы поиска пользователей
  */
 (function(widgets) {
-    var q = $('<input class="input-small" type="text" placeholder="Имя или логин" autocomplete/>').width(139);
-    var f = $('<form class="navbar-form"/>');
-    var b = $('<button class="btn btn-small btn-primary" type="submit"/>').html('<i class="icon-search icon-white"></i>');
-    var users = $('<div/>');
-    f.append(q, b);
-    f.submit(function(e) {
-        e.preventDefault();
-        getuser();
-    });
-    var getuser = function() {
-        if (/^[а-я\s]+$/.test(q.val().toLowerCase())) {
+    var getuser = function(username) {
+        if (/^[а-я\s]+$/.test(username.toLowerCase())) {
             var getuserinfo = api.metadata.userinfo.safeClone();
             getuserinfo.onSuccess(function(e, result) {
                 getinfo(result["0"].Login);
@@ -22,9 +13,9 @@
                     users.append(label.clone().text(u.ShortName));
                 });*/
             });
-            getuserinfo.execute({name: q.val()});
+            getuserinfo.execute({name: username});
         } else {
-            getinfo(q.val());
+            getinfo(username);
         }
     };
 
@@ -34,11 +25,20 @@
         q.val("");
     };
 
-    var usersearch = new widget.W({
-        authonly : true,
-        name : "appusersearch",
-        append : "todebugmenu"
+    var usersearch = widget.register({
+        name : "usersearch",
+        position : "menu:appAdminMenu",
+        title :"Поиск пользователей:",
+        pattern : "^[\\sA-Za-zА-Яа-я]+$",
+        events: [ 
+            {   
+                event: "submit",
+                selector: "form",
+                handler: function(e) {
+                    e.preventDefault();
+                    getuser(usersearch.el.find('.usersearch-query').val());
+                }
+            }
+        ]
     });
-    usersearch.el = $('<li/>').append($('<div/>').text("Поиск пользователя:"), f, users);
-    widgets.push(usersearch);
-})(window.widgets = window.widgets || []);
+})();

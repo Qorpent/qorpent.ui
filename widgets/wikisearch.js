@@ -15,9 +15,6 @@ widget.register({
 	codeparam : "code",
 	command : api.wiki.get,
 	
-	
-	
-	
 	// прямое управление поведением
 	/*events : {  - оставил комментарий как пример того как явно привязывать события
 		submit : { 

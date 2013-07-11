@@ -9,7 +9,7 @@
 
     m.append(b, l);
 
-    var configureUserInfo = function() {
+    var configure = function() {
         if (!!qorpent.user) {
             var u = $('<a/>').text(qorpent.user.logonname);
             l.append($('<li/>').append(u));
@@ -18,7 +18,7 @@
                 var imp = $('<a/>').text(qorpent.user.getImpersonation());
                 l.append($('<li class="divider"/>'));
                 l.append($('<li/>').append($('<div/>').text("Вход от имени"), imp));
-                imp.miauser();
+                // imp.miauser();
             }
         }
     };
@@ -29,7 +29,7 @@
         name : "appuser",
         append : "toheader",
         float : "right",
-        ready: function() { configureUserInfo() }
+        ready: function() { configure() }
     });
     appuser.el = m;
     widgets.push(appuser);

@@ -19,7 +19,6 @@
                 el : null,
                 installed : false,
                 routes: []
-
             }, o);
         },
 
@@ -29,43 +28,38 @@
 				if( !!w.render ) {
 					w.render();
 				}
-			
 				if (!w.el) {
 					templatename = w.template || w.name;
 					w.el =  $(widgets.compiledTemplates[templatename](w));
 				}
-				
 				w.el = $("<widget name='"+w.name+"'>").append(w.el);
-				
 				if (!!w.events) {
-					$.each ( w.events , function(i,e){
-						w.el.on(i,e.selector, $.proxy(e.handler,w));
+					$.each(w.events, function(i, e) {
+						w.el.on(e.event, e.selector, $.proxy(e.handler, w));
 					});
 				}
-				
-				
-				if (!!w.command && !!w.type){
+				if (!!w.command && !!w.type) {
 					if (w.type == "form") {
-						w.el.on("submit","form",$.proxy(function(e){
+						w.el.on("submit", "form", $.proxy(function(e) {
 							e.preventDefault();
 							var params = $(e.target).serializeArray();
-							if(!!this.getData()){
-								this.getData(params,e);
+							if (!!this.getData()) {
+								this.getData(params, e);
 							}
 							this.command.execute(params);
-						},w));
-					}else if (w.type == "button" ) {
-						w.el.on("click","button,.widget-button",$.proxy(function(e){
+						}, w));
+					}
+					else if (w.type == "button") {
+						w.el.on("click", "button, .widget-button", $.proxy(function(e) {
 							e.preventDefault();
 							var params = {};
-							if(!!this.getData()){
-								this.getData(params,e);
+							if(!!this.getData()) {
+								this.getData(params, e);
 							}
 							this.command.execute(params);
-						},w));
+						}, w));
 					}
 				}
-			
                 if (w.authonly && !qorpent.user.isAuthorized()) return;
                 if (w.adminonly && !qorpent.user.logonadmin) return;
                 if (!$.isEmptyObject(w.routes)) {
@@ -93,8 +87,6 @@
         },
 		
 		templatesSupported : false,
-		
-		
 		
 		prepareTemplates : function ( templates ) {
 			window.widgets.compiledTemplates = window.widgets.compiledTemplates || {};

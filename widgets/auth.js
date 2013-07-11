@@ -16,7 +16,7 @@
 
     api.security.login.onSuccess(function(e, result) {
         if (result.authenticated) {
-            f.hide();
+            authorizer.el.hide();
             router.toDefault();
         }
     });
@@ -28,7 +28,7 @@
         float : "right",
         ready : function() {
             if (qorpent.user.isAuthorized()) {
-                f.hide();
+                this.el.hide();
             }
         }
     });

@@ -2,6 +2,11 @@ a>i {
     margin-right: 3px;
 }
 
+.navbar .btn-group {
+    margin: 0;
+    padding: 0;   
+}
+
 .label {
     cursor: pointer;
 }

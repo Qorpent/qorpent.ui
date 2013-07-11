@@ -1,8 +1,13 @@
-#authorizer-widget>input,
-#authorizer-widget>button {
+#authorizer-widget input,
+#authorizer-widget button {
    margin-top: 0;
+   margin-left: 3px;
 }
 
-#authorizer-widget>input {
-    padding: 2px 6px;
+#authorizer-widget input {
+    padding: 4px 6px;
+}
+
+#authorizer-widget {
+    padding-top: 4px;   
 }

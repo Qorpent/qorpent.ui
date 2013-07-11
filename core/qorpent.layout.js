@@ -14,7 +14,7 @@
         topageheader : function(e) { $('#appPageHeader').append(e); },
         tobody : function(e) { $('#appBody').append(e); },
         tofooter : function(e) { $('#appFooter').append(e); },
-		appendToMenu : function(code, e){
+		appendToMenu : function(code, e) {
 			e = $(e);
             var m = $('#'+code);
             if(m.length == 0){
