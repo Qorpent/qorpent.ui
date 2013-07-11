@@ -2,6 +2,7 @@
  * Виджет формы запроса документации wiki
  */
 widget.register({
+	title :"Работа с wiki:",
 	name : "wikisearch",
 	position : "menu:appAdminMenu",
 	events : {

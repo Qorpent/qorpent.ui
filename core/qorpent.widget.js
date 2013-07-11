@@ -32,7 +32,7 @@
 			
 				if (!w.el) {
 					templatename = w.template || w.name;
-					w.el =  $(widgets.compiledTemplates[templatename]());
+					w.el =  $(widgets.compiledTemplates[templatename](w));
 				}
 				
 				
