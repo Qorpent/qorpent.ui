@@ -26,6 +26,23 @@
         installAll : function() {
             if ($.isEmptyObject(widgets)) return;
             $.each(widgets, function(i, w) {
+				if( !!w.render ) {
+					w.render();
+				}
+			
+				if (!w.el) {
+					templatename = w.template || w.name;
+					w.el =  $(widgets.compiledTemplates[templatename]());
+				}
+				
+				
+				
+				if (!!w.events) {
+					$.each ( w.events , function(i,e){
+						w.el.on(i,e.selector, e.handler);
+					});
+				}
+			
                 if (w.authonly && !qorpent.user.isAuthorized()) return;
                 if (w.adminonly && !qorpent.user.logonadmin) return;
                 if (!$.isEmptyObject(w.routes)) {
@@ -51,6 +68,30 @@
                 if (!!w.ready) w.ready();
             });
         },
+		
+		templatesSupported : false,
+		
+		
+		
+		prepareTemplates : function ( templates ) {
+			window.widgets.compiledTemplates = window.widgets.compiledTemplates || {};
+			if(window.Mustache){
+				this.templatesSupported = true;
+				var ctemplates = window.widgets.compiledTemplates;
+				$.each(templates, function(i,t){
+					name = i.replace(/\./g,'_');
+					try {
+						ctemplates[name] = window.Mustache.compile ( t );
+						window.Mustache.compilePartial(name, t);
+					} catch (e){
+						console.log("view error: "+name+"  " + e);
+						ctemplates[name] = function(data) {
+							return $("<div class='error'>Cannot render "+name+" due to template issue: ").html(e);
+						};
+					}
+				});
+			}
+		},
 
         uninstallAll : function() {
 

@@ -1,14 +1,17 @@
 pkg qorpent.widgets 
 	uses qorpent.core
-	load wiki.js level=auth
-    load auth.js 
-    load auth.css
-    load admin.js level=admin
-    load user.js  level=auth
-    load user.css  level=auth
-    load impersonator.js level=admin
-    load impersonator.css level=admin
-    load wikisearch.js level=auth
-	load wikisearch.css level=auth
-    load usersearch.js level=auth
-    load usersearch.css level=auth
+	
+	widget wiki level=auth
+	widget admin level=admin
+    
+	widget auth 
+	widget user level=auth
+	widget impersonator level=auth
+	
+	widget wikisearch level=auth
+	widget usersearch level=auth
+	
+	
+	load qorpent.wiki.admin.tpl.html level=auth
+	load qorpent.wiki.attachform.tpl.html level=auth
+	load qorpent.wiki.user.tpl.html 

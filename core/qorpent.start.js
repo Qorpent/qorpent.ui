@@ -10,9 +10,12 @@
                     router.toDefault();
                 }
             }});
+			
+			
         },
-
+	
         start : function() {
+			widget.prepareTemplates(window.templates);
             widget.installAll();
         },
 
