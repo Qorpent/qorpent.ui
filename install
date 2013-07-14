@@ -62,6 +62,32 @@
 			9. 'UsrView' - VBXL and it's resource to be placed in Usr (top level) View directory with RELATIVE PATH
 			
 		-->
+		<RootFile Include="..\qorpent.ui\*.html"/>		
+		<Config Include="..\qorpent.ui\libs\libs.ui-load.bxl" />
+		<Config Include="..\qorpent.ui\core\*.ui-load.bxl" />
+		<Config Include="..\qorpent.ui\plugins\*.ui-load.bxl" />
+		<Config Include="..\qorpent.ui\wiki\*.ui-load.bxl" />
+		<Config Include="..\qorpent.ui\widgets\*.ui-load.bxl" />
+		
+		<Script Include="..\qorpent.ui\libs\*.js" />
+		<Script Include="..\qorpent.ui\core\*.js" />
+		
+		<Script Include="..\qorpent.ui\wiki\*.js" />
+		<Style Include="..\qorpent.ui\wiki\*.css" />
+		<Template Include="..\qorpent.ui\wiki\*.html" />
+		
+		<Script Include="..\qorpent.ui\widgets\*.js" />
+		<Style Include="..\qorpent.ui\widgets\*.css" />
+		<Template Include="..\qorpent.ui\widgets\*.html" />
+		
+		<Script Include="..\qorpent.ui\plugins\*.js" />
+		<Style Include="..\qorpent.ui\plugins\*.css" />
+		<Template Include="..\qorpent.ui\plugins\*.html" />
+		
+		<Style Include="..\qorpent.ui\css\*.css" />
+		
+		<Image Include="..\qorpent.ui\img\*.*" />
+		
 	</ItemGroup>
 	
 	
