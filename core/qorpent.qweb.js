@@ -90,6 +90,13 @@
         },
 
         execute : function(params, options) {
+            if (this.disable) {
+                this["triggerOnError"]({ 
+                    type: "Ошибка при выполнении команды", 
+                    message: "Команда " + this.domain + "/" + this.name + " недоступна" 
+                });
+                return;
+            }
             params = params || {};
             $.extend(this, options);
 //          $.extend(params, this.getParameters());

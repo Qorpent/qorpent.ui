@@ -10,12 +10,12 @@
     m.append(b, l);
 
     var configure = function() {
-        if (!!qorpent.user) {
-            var u = $('<a/>').text(qorpent.user.logonname);
+        if (!!_.qorpent.user) {
+            var u = $('<a/>').text(_.qorpent.user.logonname);
             l.append($('<li/>').append(u));
             // u.miauser();
-            if (!!qorpent.user.getImpersonation()) {
-                var imp = $('<a/>').text(qorpent.user.getImpersonation());
+            if (!!_.qorpent.user.getImpersonation()) {
+                var imp = $('<a/>').text(_.qorpent.user.getImpersonation());
                 l.append($('<li class="divider"/>'));
                 l.append($('<li/>').append($('<div/>').text("Вход от имени"), imp));
                 // imp.miauser();

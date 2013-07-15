@@ -38,8 +38,16 @@ window._ = window._ || {};
         });
     });
     $.each(api, function(dk, dv) {
-        $.each(dv, function(nk, nv) { 
-            if (!serverapi[dk][nk]) $.extend(api[dk][nk], { disable: true });
-        });
+        if (!serverapi[dk]) {
+            $.each(dv, function(nk, nv) { 
+                $.extend(api[dk][nk], { disable: true });
+            });
+        } else {
+            $.each(dv, function(nk, nv) { 
+                if (!serverapi[dk][nk]) {
+                    $.extend(api[dk][nk], { disable: true });
+                }
+            });
+        }
     });
 })(_.api = _.api || {});

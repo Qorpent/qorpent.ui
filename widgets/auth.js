@@ -17,7 +17,7 @@
     _.api._sys.login.onSuccess(function(e, result) {
         if (result.authenticated) {
             authorizer.el.hide();
-            router.toDefault();
+            _.router.toDefault();
         }
     });
 
