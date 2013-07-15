@@ -68,4 +68,15 @@ window._ = window._ || {};
         body.append(layout.body);
         body.append(layout.footer);
     };
+	
+	_.render = _.render || {};
+	$.extend(_.render, {
+		tohtml : function( templatecode,obj,tags) { 
+			return _.widgets.compiledTemplates[templatecode](obj,tags);
+		},
+		toelement : function (templatecode,obj,tags) { 
+			return $(this.tohtml(templatecode,obj,tags));
+		},
+	});
+	
 })(_.layout = _.layout || {});

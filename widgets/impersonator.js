@@ -21,7 +21,7 @@
         position : "menu:appAdminMenu",
         title :"Вход от имени:",
         ready: function() {
-            if (!!qorpent.user.impersonation) {
+            if (!!_.qorpent.user.impersonation) {
                 impersonator.el.find('.impersonator-query').hide();
                 impersonator.el.find('.impersonator-submit').hide();
                 impersonator.el.find('.impersonator-deimp').show();

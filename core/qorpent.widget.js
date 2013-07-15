@@ -22,10 +22,9 @@ window._ = window._ || {};
                 routes: []
             }, o);
         },
-
-        installAll : function() {
-            if ($.isEmptyObject(_.widgets)) return;
-            $.each(_.widgets, function(i, w) {
+		
+		install : function(i,w) {
+		
 				if(!!w.init) {
 					w.init();
 				}
@@ -64,6 +63,11 @@ window._ = window._ || {};
 						}, w));
 					}
 				}
+				
+				if(w.type == "button" && !!w.onclick ) {
+					w.el.on("click", "button",$.proxy(w.onclick,w));
+				}
+				
                 if (w.authonly && !_.qorpent.user.isAuthorized()) return;
                 if (w.adminonly && !_.qorpent.user.logonadmin) return;
                 if (!$.isEmptyObject(w.routes)) {
@@ -87,7 +91,26 @@ window._ = window._ || {};
                 }
                 if (!!w.float) w.el.addClass("pull-" + w.float);
                 if (!!w.ready) w.ready();
-            });
+		
+		},
+
+        installAll : function() {
+            if ($.isEmptyObject(_.widgets)) return;
+            $.each(_.widgets, $.proxy( function(i, w) {
+				try {
+					this.install(i,w);
+				}catch(e){
+					if(w.el){
+						$(w.el).hide();
+					}
+					var errorw = new widget.W({ name : "error_"+w.name , position: w.position, 
+					el : $("<div class='widget-error'/>")
+					.attr('title',e.stack)
+					.html('error in widget :'+w.name+"<br/>"+e)})
+					;
+					this.install(0,errorw);
+				}
+            },this));
         },
 		
 		templatesSupported : false,
@@ -118,8 +141,8 @@ window._ = window._ || {};
     });
     widget.register = function(options) {
         var w = new widget.W(options);
-        window.widgets = window.widgets || [];
-        window.widgets.push(w);
+        _.widgets = _.widgets || [];
+        _.widgets.push(w);
         return w;
     };
 })(_.widget = _.widget || {});

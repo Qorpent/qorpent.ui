@@ -17,3 +17,10 @@ pkg qorpent.widgets
 	load qorpent.wiki.admin.tpl.html level=auth
 	load qorpent.wiki.attachform.tpl.html level=auth
 	load qorpent.wiki.user.tpl.html 
+	
+pkg qorpent.dev.widgets arm=dev level=auth
+	uses qorpent.core
+	load bxlparser.js
+	load bxlparser.css
+	load bxlparser_btn.tpl.html
+	load bxlparser_main.tpl.html
