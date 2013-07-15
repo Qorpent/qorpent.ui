@@ -1,10 +1,10 @@
 /**
  * Виджет формы поиска пользователей
  */
-(function(widgets) {
+(function() {
     var getuser = function(username) {
         if (/^[а-я\s]+$/.test(username.toLowerCase())) {
-            var getuserinfo = api.metadata.userinfo.safeClone();
+            var getuserinfo = _.api._sys.userinfo.safeClone();
             getuserinfo.onSuccess(function(e, result) {
                 getinfo(result["0"].Login);
                 /*users.empty();
@@ -25,7 +25,7 @@
         q.val("");
     };
 
-    var usersearch = widget.register({
+    var usersearch = _.widget.register({
         name : "usersearch",
         position : "menu:appAdminMenu",
         title :"Поиск пользователей:",

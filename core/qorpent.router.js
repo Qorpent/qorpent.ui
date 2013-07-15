@@ -1,3 +1,4 @@
+window._ = window._ || {};
 (function(router) {
     $.extend(router, {
         routes : [],
@@ -29,4 +30,4 @@
             this.to(this.default);
         }
     });
-})(window.router = window.router || {});
+})(_.router = _.router || {});

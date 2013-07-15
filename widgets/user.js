@@ -23,7 +23,7 @@
         }
     };
 
-    var appuser = new widget.W({
+    var appuser = new _.widget.W({
         authonly : true,
         adminonly : true,
         name : "appuser",
@@ -33,4 +33,4 @@
     });
     appuser.el = m;
     widgets.push(appuser);
-})(window.widgets = window.widgets || []);
+})(_.widgets = _.widgets || []);

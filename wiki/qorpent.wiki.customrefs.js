@@ -25,6 +25,6 @@
     };
     $(document).delegate(".wiki-link", "click", function(e) {
         e.stopPropagation();
-        zefs.api.wiki.getsync.execute({code: $(this).attr("code")});
+        _.api.wiki.getsync.execute({code: $(this).attr("code")});
     });
 })(jQuery);

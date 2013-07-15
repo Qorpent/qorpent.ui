@@ -4,19 +4,19 @@
 (function() {
     var impersonate = function(username) {
         if (/^[а-я\s]+$/.test(username.toLowerCase())) {
-            var getuserinfo = api.metadata.userinfo.safeClone();
+            var getuserinfo = _.api._sys.userinfo.safeClone();
             getuserinfo.onSuccess(function(e, result) {
-                api.security.impersonate.execute({ Target: result["0"].Login });
+                _.api._sys.impersonate.execute({ Target: result["0"].Login });
             });
             getuserinfo.execute({name: username});
         } else {
-            api.security.impersonate.execute({ Target: username });
+            _.api._sys.impersonate.execute({ Target: username });
         }
     };
 
-    api.security.impersonate.onSuccess(function() { location.reload() });
+    _.api._sys.impersonate.onSuccess(function() { location.reload() });
 
-    var impersonator = widget.register({
+    var impersonator = _.widget.register({
         name : "impersonator",
         position : "menu:appAdminMenu",
         title :"Вход от имени:",

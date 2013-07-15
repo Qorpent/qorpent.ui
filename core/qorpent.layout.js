@@ -1,3 +1,4 @@
+window._ = window._ || {};
 (function(layout) {
     $.extend(layout, {
         header : $('<div id="appHeader" class="app-layout-header"/>').append(
@@ -67,4 +68,4 @@
         body.append(layout.body);
         body.append(layout.footer);
     };
-})(window.layout = window.layout || {});
+})(_.layout = _.layout || {});

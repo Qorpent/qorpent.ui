@@ -4,7 +4,7 @@
         getMENU : function(code, orient) {
             orient = orient || "right";
             var wiki = {};
-            var getwiki = api.wiki.getsync.safeClone();
+            var getwiki = _.api.wiki.getsync.safeClone();
             getwiki.onSuccess(function(e, result) { wiki = result });
             getwiki.execute({code: code});
 
@@ -36,7 +36,7 @@
                         var action = function() {};
                         if (item.addr[0] == "/") {
                             action = function() {
-                                api.wiki.get.execute({code: item.addr});
+                                _.api.wiki.get.execute({code: item.addr});
                             }
                         }
                         if (/javascript:.+/.test(item.addr)) {

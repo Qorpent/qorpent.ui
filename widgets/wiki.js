@@ -27,7 +27,7 @@
             form.find('.wiki-file').trigger("click");
         });
 
-        var wikisave = api.wiki.savefile.safeClone();
+        var wikisave = _.api.wiki.savefile.safeClone();
         attachbtn.click(function(e) {
             e.preventDefault();
             var fd = new FormData();
@@ -61,7 +61,7 @@
         content.miamodal({title: "База знаний", id: ""});
     };
 
-    api.wiki.get.onSuccess(function(e, result) {
+    _.api.wiki.get.onSuccess(function(e, result) {
         showWiki(result);
     });
 })();

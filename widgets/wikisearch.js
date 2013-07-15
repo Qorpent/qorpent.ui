@@ -1,7 +1,7 @@
 /**
  * Виджет формы запроса документации wiki
  */
-widget.register({
+_.widget.register({
 	name : "wikisearch",
 	position : "menu:appAdminMenu",
 	type : "form",
@@ -11,9 +11,9 @@ widget.register({
 	pattern : "^(/\\w[\\w\\d_\\-]*)+$",
 	userformat : "разделенные прямыми слэшами коды из букв, цифр и черточек, например /aaa/b1/c_d",
 	
-	//интеграция с API
+	//интеграция с _.api
 	codeparam : "code",
-	command : api.wiki.get,
+	command : _.api.wiki.get,
 	
 	// прямое управление поведением
 	/*events : {  - оставил комментарий как пример того как явно привязывать события
@@ -21,7 +21,7 @@ widget.register({
 			selector : "form" ,  
 			handler : function(e){
 				e.preventDefault();
-				api.wiki.get.execute($(e.target).serializeArray());
+				_.api.wiki.get.execute($(e.target).serializeArray());
 			}
 		},
 	},*/

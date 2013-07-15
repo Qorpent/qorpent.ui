@@ -11,7 +11,7 @@
         getwiki();
     });
     var getwiki = function() {
-        api.wiki.get.execute({ Code: q.val() });
+        _.api.wiki.get.execute({ Code: q.val() });
     };
 
     $.extend(layout, {

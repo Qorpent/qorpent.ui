@@ -7,22 +7,15 @@
     var b = $('<button class="btn btn-small dropdown-toggle" data-toggle="dropdown" data-original-title="Админам"/>')
         .html('<i class="icon-eye-close"></i><span class="caret"></span>');
     var serverinfo = $('<a/>').html('<i class="icon-tasks"></i>Статус сервера');
-    serverinfo.click(function() { api.server.state.execute(null, {
+    serverinfo.click(function() { _.api._sys.state.execute(null, {
         triggerOnSuccess: function(result) {
             $('<p/>').append(JSON.formatter.jsonObjToHTML(result)).miamodal({ title: "Статус сервера" });
         }
     })});
-    var debuginfo = $('<a/>').html('<i class="icon-warning-sign"></i> Отладочная информация');
-    debuginfo.click(function() { api.session.info.execute(null, {
-        triggerOnSuccess: function(result) {
-            $('<p/>').append(JSON.formatter.jsonObjToHTML(result)).miamodal({ title: "Отладочная информация" });
-        }
-    })});
     l.append($('<li/>').append(serverinfo));
-    l.append($('<li/>').append(debuginfo));
     m.append(b, l);
 
-    var appadmin = new widget.W({
+    var appadmin = new _.widget.W({
         authonly : true,
         adminonly : true,
         name : "appadmin",
@@ -31,4 +24,4 @@
     });
     appadmin.el = m;
     widgets.push(appadmin);
-})(window.widgets = window.widgets || []);
+})(_.widgets = _.widgets || []);

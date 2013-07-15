@@ -1,3 +1,4 @@
+window._ = window._ || {};
 (function(widget) {
     $.extend(widget, {
         W : function(o) {
@@ -23,8 +24,8 @@
         },
 
         installAll : function() {
-            if ($.isEmptyObject(widgets)) return;
-            $.each(widgets, function(i, w) {
+            if ($.isEmptyObject(_.widgets)) return;
+            $.each(_.widgets, function(i, w) {
 				if(!!w.init) {
 					w.init();
 				}
@@ -33,7 +34,7 @@
 				}
 				if (!w.el) {
 					templatename = w.template || w.name;
-					w.el =  $(widgets.compiledTemplates[templatename](w));
+					w.el =  $(_.widgets.compiledTemplates[templatename](w));
 				}
 				w.el = $("<widget name='"+w.name+"'>").append(w.el);
 				if (!!w.events) {
@@ -63,8 +64,8 @@
 						}, w));
 					}
 				}
-                if (w.authonly && !qorpent.user.isAuthorized()) return;
-                if (w.adminonly && !qorpent.user.logonadmin) return;
+                if (w.authonly && !_.qorpent.user.isAuthorized()) return;
+                if (w.adminonly && !_.qorpent.user.logonadmin) return;
                 if (!$.isEmptyObject(w.routes)) {
                     if ($.inArray(router.current, w.routes) == -1) return;
                 }
@@ -73,15 +74,15 @@
                 }
                 if (!!w.name) w.el.attr("id", w.name + "-widget");
                 if (!!w.append) {
-                    layout[w.append](w.el);
+                    _.layout[w.append](w.el);
                 }
                 // для позиционирования по-новому
                 if (!!w.position) {
                     var p = w.position.split(':');
                     if (p[0] == "menu") {
-                        layout.appendToMenu(p[1], w.el);
+                        _.layout.appendToMenu(p[1], w.el);
                     } else {
-                        layout.add(p[0], w.el);
+                        _.layout.add(p[0], w.el);
                     }
                 }
                 if (!!w.float) w.el.addClass("pull-" + w.float);
@@ -92,10 +93,10 @@
 		templatesSupported : false,
 		
 		prepareTemplates : function ( templates ) {
-			window.widgets.compiledTemplates = window.widgets.compiledTemplates || {};
+			_.widgets.compiledTemplates = _.widgets.compiledTemplates || {};
 			if(window.Mustache){
 				this.templatesSupported = true;
-				var ctemplates = window.widgets.compiledTemplates;
+				var ctemplates = _.widgets.compiledTemplates;
 				$.each(templates, function(i,t){
 					name = i.replace(/\./g,'_');
 					try {
@@ -121,4 +122,4 @@
         window.widgets.push(w);
         return w;
     };
-})(window.widget = window.widget || {});
+})(_.widget = _.widget || {});

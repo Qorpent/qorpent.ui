@@ -1,3 +1,4 @@
+window._ = window._ || {};
 (function(settings) {
     $.extend(settings, {
         init : function() {
@@ -21,8 +22,8 @@
             form_in_new_window : false
         }
     });
-})(window.settings = window.settings || {});
+})(_.settings = _.settings || {});
 
 $(document).ready(function() {
-    settings.init();
+    _.settings.init();
 });

@@ -1,3 +1,4 @@
+window._ = window._ || {};
 (function(wrapper) {
     $.extend(wrapper, {
         _sys_whoamiWrap: function(obj) {
@@ -53,4 +54,4 @@
             return obj;
         }
     });
-})(window.wrapper = window.wrapper || {});
+})(_.wrapper = _.wrapper || {});

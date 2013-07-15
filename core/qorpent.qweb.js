@@ -167,8 +167,8 @@
         returnResult: function(r) {
             var result = JSON.parse(r);
             var wrapperName = this.domain + "_" + this.name + "Wrap";
-            if (wrapper[wrapperName] != null) {
-                result = wrapper[wrapperName](result);
+            if (_.wrapper[wrapperName] != null) {
+                result = _.wrapper[wrapperName](result);
             } else {
                 result = this.wrap(result);                         // Это устар, надо все переносить во wrapper.js
             }

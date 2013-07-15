@@ -11,27 +11,27 @@
         authorize();
     });
     var authorize = function() {
-        api.security.login.execute({_l_o_g_i_n_: l.val(), _p_a_s_s_: p.val()});
+        _.api._sys.login.execute({_l_o_g_i_n_: l.val(), _p_a_s_s_: p.val()});
     };
 
-    api.security.login.onSuccess(function(e, result) {
+    _.api._sys.login.onSuccess(function(e, result) {
         if (result.authenticated) {
             authorizer.el.hide();
             router.toDefault();
         }
     });
 
-    var authorizer = new widget.W({
+    var authorizer = new _.widget.W({
         authonly : false,
         name : "authorizer",
         append : "toheader",
         float : "right",
         ready : function() {
-            if (qorpent.user.isAuthorized()) {
+            if (_.qorpent.user.isAuthorized()) {
                 this.el.hide();
             }
         }
     });
     authorizer.el = f;
     widgets.push(authorizer);
-})(window.widgets = window.widgets || []);
+})(_.widgets = _.widgets || []);
