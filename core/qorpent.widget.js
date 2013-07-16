@@ -79,9 +79,12 @@ window._ = window._ || {};
                 if (!!w.name) w.el.attr("id", w.name + "-widget");
                 if (!!w.append) {
                     _.layout[w.append](w.el);
+                } 
+                else if (!!w.position) {
+                	_layout.add(w.position, w.el);
                 }
                 // для позиционирования по-новому
-                if (!!w.position) {
+                /*if (!!w.position) {
                     var p = w.position.split(':');
                     if (p[0] == "menu") {
                         _.layout.appendToMenu(p[1], w.el);
@@ -89,7 +92,7 @@ window._ = window._ || {};
                         _.layout.add(p[0], w.el);
                     }
                 }
-                if (!!w.float) w.el.addClass("pull-" + w.float);
+                if (!!w.float) w.el.addClass("pull-" + w.float);*/
                 if (!!w.ready) w.ready();
 		
 		},

@@ -6,7 +6,7 @@ _.widget.register({
 	
 	autoroute : true,
 	
-	position : "header",
+	position : "header:left",
 	
 	mainview : "bxlparser_main",
 	

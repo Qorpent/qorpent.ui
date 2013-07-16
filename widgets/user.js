@@ -27,8 +27,7 @@
         authonly : true,
         adminonly : true,
         name : "appuser",
-        append : "toheader",
-        float : "right",
+        position: "header:right",
         ready: function() { configure() }
     });
     appuser.el = m;

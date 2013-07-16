@@ -19,8 +19,7 @@
         authonly : true,
         adminonly : true,
         name : "appadmin",
-        append : "toheader",
-        float : "right"
+        position: "header:right"
     });
     appadmin.el = m;
     widgets.push(appadmin);

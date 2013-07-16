@@ -24,8 +24,7 @@
     var authorizer = new _.widget.W({
         authonly : false,
         name : "authorizer",
-        append : "toheader",
-        float : "right",
+        position: "header:right",
         ready : function() {
             if (_.qorpent.user.isAuthorized()) {
                 this.el.hide();
