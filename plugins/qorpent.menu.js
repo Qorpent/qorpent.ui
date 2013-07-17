@@ -2,12 +2,13 @@ window._ = window._ || {};
 (function($) {
     var Menu = function(element, options) {
         this.element = $(element);
+        this.init(options);
     };
 
     $.extend(Menu.prototype, {
         structure: {},
         root: null,
-
+        itemcount : 0,
         init: function(options) {
             options = options || {};
             this.root = this.element.find(".dropdown-menu").first();
@@ -51,6 +52,35 @@ window._ = window._ || {};
 
         addItem: function(item, root) {
             var itemMenu = null;
+            var mynumber = this.itemcount++;
+            root = root || this.root;
+            // если рут - это код меню
+            if (typeof root != 'object' || !(!!root.jquery)) {
+               var code = root;
+               if(typeof root == 'object'){
+                  code = root.code;   
+               }
+
+                var rootitem = this.element.find(".menu-item-" + code);
+                if(0==rootitem.length){
+                    var newroot = {code:code,title:code};
+                    if(typeof root == 'object'){
+                        newroot = root;
+                    } 
+                    newroot.items = newroot.items || [];
+                    newroot.items.push(item);
+                    this.addItem(newroot);
+                    return;
+                }
+
+                var ul = rootitem.find("ul").first();
+                if(ul.length==0){
+                    ul = $('<ul class="dropdown-menu"/>');
+                    rootitem.append(ul);
+                }
+                rootitem.addClass("dropdown-submenu");
+                root = ul;
+            }
             // если это объект jquery
             if (!!item.jquery) {
                 itemMenu = item;
@@ -73,6 +103,11 @@ window._ = window._ || {};
                     }, this));
                     itemMenu.append(submenu);
                 }
+            }
+            itemMenu.addClass("menu-item-"+mynumber);
+            
+            if (item.code) {
+                 itemMenu.addClass("menu-item-"+item.code);
             }
             root.append(itemMenu);
         },
@@ -98,18 +133,12 @@ window._ = window._ || {};
         }
     });
 
-    $.fn.qorpentmenu = function (options, method) {
-        options = options || {};
-        method = method || "init";
-        return this.each(function () {
-            var menu = $.data(this, "qorpentmenu");
-            if (!menu) {
-                menu = new Menu(this, options);
-                $.data(this, "qorpentmenu", menu);
-            }
-            if (!!menu[method]) {
-                menu[method](options);
-            }
-        });
+    $.fn.qorpentmenu = function(config) {
+        var plugin = $.data(this[0], "qorpentmenu");
+        if (!plugin) {
+            plugin = new Menu(this, config);
+            $.data(this[0], "qorpentmenu", plugin);
+        }
+        return plugin;
     };
 })(jQuery);
