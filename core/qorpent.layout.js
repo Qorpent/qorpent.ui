@@ -92,7 +92,7 @@ window._ = window._ || {};
 						});	
 					}
 					if (align != "") el.addClass("pull-" + align);
-					if (parent != "" && ) {
+					if (parent != "" && !!this["to" + parent.toLowerCase()] ) {
 						this["to" + parent.toLowerCase()](el)
 					}
 				}

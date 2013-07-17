@@ -81,7 +81,7 @@ window._ = window._ || {};
                     _.layout[w.append](w.el);
                 } 
                 else if (!!w.position) {
-                	_layout.add(w.position, w.el);
+                	_.layout.add(w.position, w.el);
                 }
                 // для позиционирования по-новому
                 /*if (!!w.position) {
