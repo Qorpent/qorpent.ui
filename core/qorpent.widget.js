@@ -24,87 +24,80 @@ window._ = window._ || {};
         },
 		
 		install : function(i,w) {
-				w.layout = _.layout;
+			w.layout = _.layout;
+			
+			if(!!w.init) {
+				w.init();
+			}
+			
+			if(w.type == "menu"){
+				var menu = _.layout.menu(w.name, w.position);
+				menu.qorpentmenu(w.menu);
+				menu.qorpentmenu(w.title, "setTitle");
+				menu.qorpentmenu(w.icon, "setIcon");
+				w.el = menu;
+			}
+			
+			if (!w.completed && !w.initonly && w.type!='menu' ){
 				
-				if(!!w.init) {
-					w.init();
+			
+				if( !!w.render ) {
+					w.render();
+				}
+				if (!w.el) {
+					templatename = w.template || w.name;
+					w.el =  $(_.render.compiledTemplates[templatename](w));
+				}
+				w.el = $("<widget name='"+w.name+"'>").append(w.el);
+				if (!!w.events) {
+					$.each(w.events, function(i, e) {
+						w.el.on(e.event, e.selector, $.proxy(e.handler, w));
+					});
+				}
+				if (!!w.command && !!w.type) {
+					if (w.type == "form") {
+						w.el.on("submit", "form", $.proxy(function(e) {
+							e.preventDefault();
+							var params = $(e.target).serializeArray();
+							if(!!this.getData){
+								this.getData(params,e);
+							}
+							this.command.execute(params);
+						}, w));
+					}
+					else if (w.type == "button") {
+						w.el.on("click", "button, .widget-button", $.proxy(function(e) {
+							e.preventDefault();
+							var params = {};
+							if(!!this.getData){
+								this.getData(params,e);
+							}
+							this.command.execute(params);
+						}, w));
+					}
 				}
 				
-				if(w.type == 'menu'){
-					var menu = _.layout.menu(w.name,w.position);
-					menu.settitle(w.title);
-					if(w.icon){
-						menu.setinner(w.icon);
-					}
-					if (w.menu && w.menu.items) {
-						for  (var i=0;i<w.menu.items.length;i++){
-							menu.additem(w.menu.items[i]);
-						}
-					}
-					w.el = menu;
-					
+				if(w.type == "button" && !!w.onclick ) {
+					w.el.on("click", "button",$.proxy(w.onclick,w));
 				}
 				
-				if (!w.completed && !w.initonly && w.type!='menu' ){
-					
+				if (w.authonly && !_.qorpent.user.isAuthorized()) return;
+				if (w.adminonly && !_.qorpent.user.logonadmin) return;
+				if (!$.isEmptyObject(w.routes)) {
+					if ($.inArray(router.current, w.routes) == -1) return;
+				}
+				if (!!w.el) {
+					w.el.addClass("qorpent-widget");
+				}
+				if (!!w.name) w.el.attr("id", w.name + "-widget");
+				if (!!w.append) {
+					_.layout[w.append](w.el);
+				} 
+				else if (!!w.position) {
+					_.layout.add(w.position, w.el);
+				}
 				
-					if( !!w.render ) {
-						w.render();
-					}
-					if (!w.el) {
-						templatename = w.template || w.name;
-						w.el =  $(_.render.compiledTemplates[templatename](w));
-					}
-					w.el = $("<widget name='"+w.name+"'>").append(w.el);
-					if (!!w.events) {
-						$.each(w.events, function(i, e) {
-							w.el.on(e.event, e.selector, $.proxy(e.handler, w));
-						});
-					}
-					if (!!w.command && !!w.type) {
-						if (w.type == "form") {
-							w.el.on("submit", "form", $.proxy(function(e) {
-								e.preventDefault();
-								var params = $(e.target).serializeArray();
-								if(!!this.getData){
-									this.getData(params,e);
-								}
-								this.command.execute(params);
-							}, w));
-						}
-						else if (w.type == "button") {
-							w.el.on("click", "button, .widget-button", $.proxy(function(e) {
-								e.preventDefault();
-								var params = {};
-								if(!!this.getData){
-									this.getData(params,e);
-								}
-								this.command.execute(params);
-							}, w));
-						}
-					}
-					
-					if(w.type == "button" && !!w.onclick ) {
-						w.el.on("click", "button",$.proxy(w.onclick,w));
-					}
-					
-					if (w.authonly && !_.qorpent.user.isAuthorized()) return;
-					if (w.adminonly && !_.qorpent.user.logonadmin) return;
-					if (!$.isEmptyObject(w.routes)) {
-						if ($.inArray(router.current, w.routes) == -1) return;
-					}
-					if (!!w.el) {
-						w.el.addClass("qorpent-widget");
-					}
-					if (!!w.name) w.el.attr("id", w.name + "-widget");
-					if (!!w.append) {
-						_.layout[w.append](w.el);
-					} 
-					else if (!!w.position) {
-						_.layout.add(w.position, w.el);
-					}
-					
-					
+				
 			}
 			if (!!w.ready) w.ready();
 		},

@@ -1,5 +1,6 @@
 pkg sys.plugins 
 	uses libs
 	load mia.modals.js
+	load qorpent.menu.js
 	load mia.modals.css
 	load mia.print.js level=auth

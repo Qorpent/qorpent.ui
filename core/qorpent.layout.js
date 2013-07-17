@@ -58,20 +58,17 @@ window._ = window._ || {};
             menu : function(code,position) {
                 var m = $('#'+code).first() || $('#menu_'+code).first();
                 if(m.length == 0){
-                   m = this.createMenu(code,null,position);
+                   m = this.createMenu(code, null, position);
                 }
-                /*m.append($('<li class="divider"/>'));
-                m.append($('<li/>').append(e));
-                m.append($('<li class="divider"/>'));
-                $(document).on('click.dropdown.data-api', '#' + e.attr("id"), function (e) {
+                /*$(document).on('click.dropdown.data-api', '#' + e.attr("id"), function (e) {
                     e.stopPropagation();
                 });*/
-                return this.__extendMenu(m);
+                return m;
             },
 			
-			__extendMenu :function  (e ){
+			__extendMenu :function(e) {
 				if(!!e.__extendMenu_completed)return e;
-				return $.extend(e,{
+				return $.extend(e, {
 					__extendMenu_completed : true,
 					__select :  function(selector){
 						selector = selector || 'button';
