@@ -4,8 +4,7 @@ window._ = window._ || {};
     api._sys = api._sys || {};
     api.wiki = api.wiki || {};
     var serverapi = {};
-    $.ajax({url : '_sys/myactions.embedjson.qweb?usage=ui', async: false}).success(function(result) { eval(result) });
-    $.extend(serverapi, window.qweb.embedStorage._sys__myactions);
+	$.extend(serverapi, window.qweb.embedStorage._sys__myactions);
     $.extend(api._sys, {
         login : $.extend(new Command({ domain:"_sys", name:"login", method: "POST", group: "security", title: "Вход в систему", withProgress: false }), {
             triggerOnSuccess : function(r) {
