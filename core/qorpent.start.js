@@ -16,7 +16,6 @@ window._ = window._ || {};
         },
 	
         start : function() {
-			_.widget.prepareTemplates(window.templates);
             _.widget.installAll();
         },
 
@@ -46,6 +45,7 @@ $(document).ready(function() {
         _.qorpent.startqorpent();
     });
     _.router.asDefault("start");
+    _.render.init();
     _.layout.init();
     _.router.init();
     _.qorpent.init();

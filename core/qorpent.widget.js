@@ -33,7 +33,7 @@ window._ = window._ || {};
 				}
 				if (!w.el) {
 					templatename = w.template || w.name;
-					w.el =  $(_.widgets.compiledTemplates[templatename](w));
+					w.el =  $(_.render.compiledTemplates[templatename](w));
 				}
 				w.el = $("<widget name='"+w.name+"'>").append(w.el);
 				if (!!w.events) {
@@ -117,26 +117,6 @@ window._ = window._ || {};
         },
 		
 		templatesSupported : false,
-		
-		prepareTemplates : function ( templates ) {
-			_.widgets.compiledTemplates = _.widgets.compiledTemplates || {};
-			if(window.Mustache){
-				this.templatesSupported = true;
-				var ctemplates = _.widgets.compiledTemplates;
-				$.each(templates, function(i,t){
-					name = i.replace(/\./g,'_');
-					try {
-						ctemplates[name] = window.Mustache.compile ( t );
-						window.Mustache.compilePartial(name, t);
-					} catch (e){
-						console.log("view error: "+name+"  " + e);
-						ctemplates[name] = function(data) {
-							return $("<div class='error'>Cannot render "+name+" due to template issue: ").html(e);
-						};
-					}
-				});
-			}
-		},
 
         uninstallAll : function() {
 

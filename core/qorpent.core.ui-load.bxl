@@ -1,5 +1,6 @@
 pkg qorpent.core
 	uses libs
+	load qorpent.render.js
 	load qorpent.layout.js
 	load qorpent.wrapper.js
 	load qorpent.qweb.js
@@ -7,3 +8,5 @@ pkg qorpent.core
 	load qorpent.router.js
 	load qorpent.widget.js
 	load qorpent.start.js
+
+	load qorpent.layout.tpl.html
