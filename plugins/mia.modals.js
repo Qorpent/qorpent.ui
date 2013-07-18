@@ -10,7 +10,7 @@
             backdrop : false, // нужен ли полупрозрачный фон
             id : "", // id окна который пойдет в аттрибут id
             onClose : null,
-            resizable: true
+            resizable: true,
         }, p);
         $.extend({
             class : "btn-primary",

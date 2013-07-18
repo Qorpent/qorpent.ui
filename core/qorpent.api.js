@@ -4,6 +4,18 @@ window._ = window._ || {};
     api._sys = api._sys || {};
     api.wiki = api.wiki || {};
     var serverapi = {};
+	$.extend(api, {
+		//Находит команду по коду
+		resolve : function(code){
+			if(typeof(code) == 'string'){
+				var codeparts = code.split('.');
+				return this[codeparts[0]][codeparts[1]];
+			}else{
+				//прозрачный возврат
+				return code;
+			}
+		}
+	});
 	$.extend(serverapi, window.qweb.embedStorage._sys__myactions);
     $.extend(api._sys, {
         login : $.extend(new Command({ domain:"_sys", name:"login", method: "POST", group: "security", title: "Вход в систему", withProgress: false }), {

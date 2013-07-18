@@ -60,11 +60,61 @@ window._ = window._ || {};
             }
             else {
                 itemMenu = $('<li/>')    
-                itemMenu.append(
-                    $("<a/>")
-                        .attr({"href": item.href || "", "target": item.target || "_blank"})
-                        .append($('<i/>').addClass(item.icon), item.title || "Нет заголовка")
-                );
+				var inner = $("<a/>")
+							.attr({"href": item.href || "", "target": item.target || "_blank"})
+							.append($('<i/>').addClass(item.icon || ""), item.title || "Нет заголовка");
+				itemMenu.append(inner);
+				
+				if(item.onclick){
+					if( typeof item.onclick  == 'function' ){
+						inner.on('click', function(e){
+							e.preventDefault();
+							$.proxy( item.onclick, item )(e);
+						});
+					}else if (item.onclick.command) {
+						var command = _.api.resolve(item.onclick.command);
+						if (item.onclick.onsuccess){
+							command = command.safeClone();
+							if (typeof item.onclick.onsuccess == 'function'){
+								command.onSuccess($.proxy(item.onsuccess,item));
+							}else{
+								if (item.onclick.onsuccess.modal){
+									
+									command.onSuccess($.proxy(
+										
+										function (e, r ) {
+											var modal = this.onclick.onsuccess.modal;
+											var el = null;
+											if (modal.text ) {
+												if(modal.text.indexOf('<')==-1){
+													el = $('<p>').text(modal.text);
+												}else{
+													el = $(modal.text);
+												}
+											}
+											else if(modal.template){
+												var context = {item : this, result : r };
+												el = $(_.render.compiledTemplates[modal.template](context));
+											}
+											else if( modal.render ) {
+												el = $.proxy(modal.render,item)(r);
+											}
+											el.miamodal(modal);
+										}
+										
+									,item));
+								}
+							}
+							
+						}
+						inner.on('click',function(e){
+								e.preventDefault();
+								command.execute();
+							});
+					}
+				}
+				
+				
                 if (!!item.items) {
                     itemMenu.addClass("dropdown-submenu");
                     var submenu = $('<ul class="dropdown-menu"/>');
