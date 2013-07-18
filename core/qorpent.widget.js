@@ -31,10 +31,9 @@ window._ = window._ || {};
 			}
 			
 			if(w.type == "menu"){
-				var menu = _.layout.menu(w.name, w.position);
-				menu.qorpentmenu(w.menu);
-				menu.qorpentmenu(w.title, "setTitle");
-				menu.qorpentmenu(w.icon, "setIcon");
+				var menu = _.layout.menu(w.name, w.position).qorpentmenu(w.menu);
+				menu.setTitle(w.title);
+				menu.setIcon(w.icon);
 				w.el = menu;
 			}
 			

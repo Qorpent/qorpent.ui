@@ -56,7 +56,7 @@ window._ = window._ || {};
             body : function() { return $('#appBody') },
             footer : function() { return $('#appFooter') },
             menu : function(code,position) {
-                var m = $('#'+code+', #menu_'+code).first(); 
+                var m = $('#'+code + ', #menu_'+code).first();
                 if(m.length == 0){
                    m = this.createMenu(code, null, position);
                 }
@@ -74,7 +74,7 @@ window._ = window._ || {};
                 var g = $('<div class="btn-group"/>');
                 var b = $('<button class="btn btn-small dropdown-toggle" data-toggle="dropdown"/>').append(inner || code); 
                 var m = $('<ul class="dropdown-menu"/>');
-                m.attr("id", "menu_"+code);
+                g.attr("id", "menu_"+code);
 				g.menucode = code;
 				g.append(b,m);
 				_.layout[position]().append(g);
