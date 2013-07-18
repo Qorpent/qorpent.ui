@@ -14,15 +14,4 @@ _.widget.register({
 	//интеграция с _.api
 	codeparam : "code",
 	command : _.api.wiki.get,
-	
-	// прямое управление поведением
-	/*events : {  - оставил комментарий как пример того как явно привязывать события
-		submit : { 
-			selector : "form" ,  
-			handler : function(e){
-				e.preventDefault();
-				_.api.wiki.get.execute($(e.target).serializeArray());
-			}
-		},
-	},*/
 });

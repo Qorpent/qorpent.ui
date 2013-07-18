@@ -56,7 +56,7 @@ window._ = window._ || {};
             body : function() { return $('#appBody') },
             footer : function() { return $('#appFooter') },
             menu : function(code,position) {
-                var m = $('#'+code).first() || $('#menu_'+code).first();
+                var m = $('#'+code+', #menu_'+code).first(); 
                 if(m.length == 0){
                    m = this.createMenu(code, null, position);
                 }
