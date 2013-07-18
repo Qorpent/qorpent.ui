@@ -71,6 +71,7 @@
 		
 		<Script Include="..\qorpent.ui\libs\*.js" />
 		<Script Include="..\qorpent.ui\core\*.js" />
+		<Style Include="..\qorpent.ui\core\*.css" />
 		<Template Include="..\qorpent.ui\core\*.html" />
 		
 		<Script Include="..\qorpent.ui\wiki\*.js" />

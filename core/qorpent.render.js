@@ -22,7 +22,7 @@ window._ = window._ || {};
                     }
                 });
             }
-        },     
+        },   
         tohtml : function( templatecode,obj,tags) { 
             return _.widgets.compiledTemplates[templatecode](obj,tags);
         },

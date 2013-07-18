@@ -55,6 +55,7 @@ window._ = window._ || {};
             pageheader : function() { $('#appPageHeader') },
             body : function() { return $('#appBody') },
             footer : function() { return $('#appFooter') },
+            left : function() { return $('#appLeft') },
             menu : function(code,position) {
                 var m = $('#'+code + ', #menu_'+code).first();
                 if(m.length == 0){

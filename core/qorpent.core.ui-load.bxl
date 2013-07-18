@@ -10,3 +10,4 @@ pkg qorpent.core
 	load qorpent.start.js
 
 	load qorpent.layout.tpl.html
+	load qorpent.layout.css
