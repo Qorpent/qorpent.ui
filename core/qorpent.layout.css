@@ -1,0 +1,9 @@
+#appHeader {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+body>.row-fluid {
+	margin-top: 50px;
+}
