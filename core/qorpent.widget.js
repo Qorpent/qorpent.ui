@@ -23,7 +23,8 @@ window._ = window._ || {};
             }, o);
         },
 		
-		install : function(i,w) {
+		install : function(w) {
+			if (w.installed) return;
 			w.layout = _.layout;
 			
 			if(!!w.init) {
@@ -45,7 +46,9 @@ window._ = window._ || {};
 				}
 				if (!w.el) {
 					templatename = w.template || w.name;
-					w.el =  $(_.render.compiledTemplates[templatename](w));
+					if (!!_.render.compiledTemplates[templatename]) {
+						w.el =  $(_.render.compiledTemplates[templatename](w));
+					}
 				}
 				w.el = $("<widget name='"+w.name+"'>").append(w.el);
 				if (!!w.events) {
@@ -98,6 +101,7 @@ window._ = window._ || {};
 				
 				
 			}
+			if (!w.installed) w.installed = true;
 			if (!!w.ready) w.ready();
 		},
 
@@ -105,16 +109,15 @@ window._ = window._ || {};
             if ($.isEmptyObject(_.widgets)) return;
             $.each(_.widgets, $.proxy( function(i, w) {
 				try {
-					this.install(i,w);
-				}catch(e){
-					if(w.el){
+					this.install(w);
+				} catch(e) {
+					if(w.el) {
 						$(w.el).hide();
 					}
 					var errorw = new widget.W({ name : "error_"+w.name , position: w.position, 
 					el : $("<div class='widget-error'/>")
-					.attr('title',e.stack)
-					.html('error in widget :'+w.name+"<br/>"+e)})
-					;
+						.attr('title',e.stack)
+						.html('error in widget :'+w.name+"<br/>"+e)});
 					this.install(0,errorw);
 				}
             },this));
