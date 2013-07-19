@@ -164,7 +164,7 @@
             }
             else {
                 if (!r.responseText.match(/^\s*<!DOCTYPE/)) {
-                    this["triggerOnError"](JSON.parse(r.responseText));
+                    this["triggerOnError"](r.responseText);
                 } else {
                     this["triggerOnError"]({});
                 }
@@ -172,12 +172,18 @@
         },
 
         returnResult: function(r) {
-            var result = JSON.parse(r);
-            var wrapperName = this.domain + "_" + this.name + "Wrap";
-            if (_.wrapper[wrapperName] != null) {
-                result = _.wrapper[wrapperName](result);
-            } else {
-                result = this.wrap(result);                         // Это устар, надо все переносить во wrapper.js
+            var result;
+            if (this.datatype == "json") {
+                result = JSON.parse(r);
+                var wrapperName = this.domain + "_" + this.name + "Wrap";
+                if (_.wrapper[wrapperName] != null) {
+                    result = _.wrapper[wrapperName](result);
+                } else {
+                    result = this.wrap(result);                         // Это устар, надо все переносить во wrapper.js
+                }
+            }
+            else {
+                result = r;
             }
             // Если у команды есть timeout и она выполнилась
             // с ошибкой (или результат false) - выполняем ее повторно

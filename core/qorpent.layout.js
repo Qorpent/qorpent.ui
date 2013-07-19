@@ -48,6 +48,7 @@ window._ = window._ || {};
         var body = $('body');
         var html = $(_.render.compiledTemplates[this.template]());
         body.append(html);
+
         $.extend(layout, {
             // zones
             header : function() { return $('#appHeader > .navbar > .navbar-inner') },

@@ -7,3 +7,14 @@
 body>.row-fluid {
 	margin-top: 50px;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background: #f3f3ee;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: #cecece;
+}
