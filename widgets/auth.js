@@ -18,6 +18,7 @@
         if (result.authenticated) {
             authorizer.el.hide();
             _.router.toDefault();
+			location.reload();
         }
     });
 
