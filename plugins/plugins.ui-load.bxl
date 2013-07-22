@@ -3,4 +3,6 @@ pkg sys.plugins
 	load mia.modals.js
 	load qorpent.menu.js
 	load mia.modals.css
+	load mia.fluidlayout.js
+	load mia.fluidlayout.css
 	load mia.print.js level=auth
