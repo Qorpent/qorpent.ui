@@ -33,25 +33,6 @@ window._ = window._ || {};
                 o.Editor = o.Editor || "";
             });
             return obj;
-        },
-
-        minerva_getuserinfoWrap: function(obj) {
-            var wrapit = function(o) {
-                var n = o.Name.trim().replace(/\s+/g, " ").split(" ");
-                if (o.Name != "NOT REGISTERED IN DB" && n.length == 3) {
-                    o.ShortName = n[0] + " " + n[1].substring(0,1) + ". " + n[2].substring(0,1) + ".";
-                } else {
-                    o.ShortName = o.Name;
-                }
-            };
-            if (!!obj["0"]) {
-                $.each(obj, function(i, o) {
-                    wrapit(o);
-                });
-            } else {
-                wrapit(obj);
-            }
-            return obj;
         }
     });
 })(_.wrapper = _.wrapper || {});
