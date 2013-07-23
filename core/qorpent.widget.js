@@ -105,6 +105,13 @@ window._ = window._ || {};
 			if (!!w.ready) w.ready();
 		},
 
+		remove : function(w) {
+			if (!!w.el) {
+				w.el.remove();
+			}
+			_.widgets = $.grep(_.widgets, function(widget) {return widget !== w });
+		},
+
         installAll : function() {
             if ($.isEmptyObject(_.widgets)) return;
             $.each(_.widgets, $.proxy( function(i, w) {
@@ -135,4 +142,7 @@ window._ = window._ || {};
         _.widgets.push(w);
         return w;
     };
+    $(document).on('click.dropdown.data-api', '.dropdown-menu widget', function (e) {
+        e.stopPropagation();
+    });
 })(_.widget = _.widget || {});

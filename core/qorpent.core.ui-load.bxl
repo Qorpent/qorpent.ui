@@ -1,5 +1,5 @@
 pkg qorpent.core
-	uses libs
+	uses libs, plugins
 	load qorpent.render.js
 	load qorpent.layout.js
 	load qorpent.wrapper.js
