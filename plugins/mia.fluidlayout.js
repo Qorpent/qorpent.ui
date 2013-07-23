@@ -19,6 +19,7 @@
         $.each(ch, function(i, el) {
             el = $(el);
             el.addClass("fluid-part");
+            if (el.hasClass("non-splited")) return;
             var s = splitter.clone();
             el.prepend(s);
             el.prepend($('<div class="fluid-legend"/>').text(el.attr("legend") || "Скрытая панель"));
@@ -30,9 +31,10 @@
                 parent.toggleClass("fluid-part-hidden");
                 
             });
-            el.on('click', 'legend', function(e) {
-                $(e.target).nextAll().toggle();
-            });
+        });
+        layout.on('click', 'legend', function(e) {
+            e.stopPropagation();
+            $(e.target).nextAll().toggle();
         });
     };
     $.extend($.fn, { fluidlayout : fluidlayout });

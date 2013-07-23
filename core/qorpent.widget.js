@@ -105,6 +105,13 @@ window._ = window._ || {};
 			if (!!w.ready) w.ready();
 		},
 
+		remove : function(w) {
+			if (!!w.el) {
+				w.el.remove();
+			}
+			_.widgets = $.grep(_.widgets, function(widget) {return widget !== w });
+		},
+
         installAll : function() {
             if ($.isEmptyObject(_.widgets)) return;
             $.each(_.widgets, $.proxy( function(i, w) {
