@@ -142,4 +142,7 @@ window._ = window._ || {};
         _.widgets.push(w);
         return w;
     };
+    $(document).on('click.dropdown.data-api', '.dropdown-menu widget', function (e) {
+        e.stopPropagation();
+    });
 })(_.widget = _.widget || {});

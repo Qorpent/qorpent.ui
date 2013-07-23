@@ -13,6 +13,13 @@ i.icon,
     cursor: pointer;
 }
 
+legend>i.icon {
+    vertical-align: top;
+    margin-top: 12px;
+    margin-left: 3px;
+}
+
+
 .nav-header {
     color: #035388;
 }
