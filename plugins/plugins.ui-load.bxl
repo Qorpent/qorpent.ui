@@ -1,4 +1,4 @@
-pkg sys.plugins 
+pkg plugins 
 	uses libs
 	load mia.modals.js
 	load qorpent.menu.js

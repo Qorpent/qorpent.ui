@@ -48,7 +48,6 @@ window._ = window._ || {};
         var body = $('body');
         var html = $(_.render.compiledTemplates[this.template]());
         body.append(html);
-
         $.extend(layout, {
             // zones
             header : function() { return $('#appHeader > .navbar > .navbar-inner') },
@@ -93,5 +92,6 @@ window._ = window._ || {};
                 m = null;*/
             }  
         });
+        body.find('.fluid-layout').first().fluidlayout();
     };
 })(_.layout = _.layout || {});

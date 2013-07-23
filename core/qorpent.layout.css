@@ -4,9 +4,20 @@
     top: 0;
 }
 
-body>.row-fluid {
-	margin-top: 50px;
+#appLeft {
+    min-width: 250px;
+    margin-right: 20px;
+    -webkit-flex-basis: 250px;
+    flex-basis: 250px;
 }
+
+#appBody {
+    -webkit-flex-basis: 100%;
+}
+
+/*body>.row-fluid {
+	margin-top: 50px;
+}*/
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -17,4 +28,36 @@ body>.row-fluid {
 ::-webkit-scrollbar-thumb {
     border-radius: 3px;
     background: #cecece;
+}
+
+.fluid-layout {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row;
+    flex-flow: row;
+}
+
+.fluid-part {
+     -webkit-flex-basis: 100%;
+    flex-basis: 100%;
+}
+
+.fluid-layout>.fluid-part1 {
+   	-webkit-order: 1;
+    order: 1;
+}
+
+.fluid-layout>.fluid-part2 {
+   	-webkit-order: 2;
+    order: 2;
+}
+
+.fluid-layout>.fluid-part3 {
+    -webkit-order: 3;
+    order: 3;
+}
+
+.fluid-layout>.fluid-part4 {
+   	-webkit-order: 4;
+    order: 4;
 }
