@@ -37,10 +37,34 @@ window._ = window._ || {};
 				menu.setIcon(w.icon);
 				w.el = menu;
 			}
+
+			if(!!w.type && w.type.indexOf("button") != -1) {
+				var button = $('<button class="btn btn-small"/>');
+				var icon = null;
+				if (!!w.icon) {
+					icon = $('<i/>').addClass(w.icon);
+					button.append(icon);
+				}
+				if (!!w.text) {
+					button.append(w.text);
+				}
+				if (w.type.indexOf(":") != -1) {
+					var btnclass = w.type.split(":")[1];
+					button.addClass(btnclass);
+					if (!!icon) {
+						if (btnclass != "" && btnclass != "default") {
+							icon.addClass("icon-white");
+						}
+					}
+				}
+				if (!!w.title) {
+					button.attr("data-original-title", w.title);
+					button.tooltip({placement: "bottom"});
+				}
+				w.el = button;
+			}
 			
-			if (!w.completed && !w.initonly && w.type!='menu' ){
-				
-			
+			if (!w.completed && !w.initonly && w.type!='menu') {
 				if( !!w.render ) {
 					w.render();
 				}

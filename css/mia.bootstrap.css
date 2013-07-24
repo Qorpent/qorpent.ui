@@ -2,6 +2,10 @@ a>i {
     margin-right: 3px;
 }
 
+.navbar widget>.btn {
+    margin-top: 0;
+}
+
 .navbar .btn-group {
     margin: 0;
     padding: 0;   
@@ -13,12 +17,29 @@ i.icon,
     cursor: pointer;
 }
 
+.nav-list>li>a {
+    padding: 3px 3px 3px 15px;
+}
+
+.nav-list>li>a>i {
+    display: none;
+    margin-left: 3px;
+    margin-top: 3px;
+}
+
+.nav-list>li>a:hover>i {
+    display: inline-block;
+}
+
 legend>i.icon {
     vertical-align: top;
     margin-top: 12px;
     margin-left: 3px;
 }
 
+legend>button {
+    margin-left: 5px;
+}
 
 .nav-header {
     color: #035388;

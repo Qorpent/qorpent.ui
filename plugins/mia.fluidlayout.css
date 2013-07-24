@@ -47,10 +47,14 @@
 	background-position: -454px -72px;
 }
 
+.fluid-splitter:hover {
+	border: 1px solid #CCC;
+}
+
 .fluid-splitter {
 	display: block;
 	position: absolute;
-	top: 10px;
+	top: 12px;
 	right: 0;
 	width: 16px;
 	height: 16px;
@@ -58,8 +62,9 @@
 	border-radius: 8px;
 	background-color: #d4d4d4;
 	background: url("../images/glyphicons-halflings.png");
-	background-position:-432px -72px;
+	background-position: -431px -72px;
 	z-index: 100;
+	border: 1px solid transparent;
 }
 
 .fluid-layout>.fluid-part:nth-child(1) {
