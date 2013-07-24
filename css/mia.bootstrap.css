@@ -17,6 +17,26 @@ i.icon,
     cursor: pointer;
 }
 
+legend {
+    position: relative;
+}
+
+legend.collapsed:after {
+    content: "...";
+    display: block;
+    position: absolute;
+    font-size: 14px;
+    background-color: #b3b3b3;
+    height: 8px;
+    font-style: bold;
+    line-height: 0;
+    color: white;
+    padding: 0 4px;
+    border-radius: 3px;
+    margin-top: -4px;
+    right: 0;
+}
+
 .nav-list>li>a {
     padding: 3px 3px 3px 15px;
 }
