@@ -72,6 +72,7 @@
         safeClone : function() {
             var clone = $.extend({}, this);
             $.extend(clone, {eventName: this.domain + "-" + this.name + "-" + new Date().getTime()});
+            clone.__isclone = true;
             return new qweb.C(clone);
         },
 
@@ -253,17 +254,19 @@
     });
     $.extend(qweb.C.prototype, {
         ready : function() {
+            if(this.__isclone)return;
             if (this.withProgress) {
                 var self = this;
                 this["onStart"](function() {
+                    self.__inprogress = true;
 //                  console.log("Started at " + new Date().format("dd.mm.yyyy HH:MM:ss lll"));
-                    window[this.eventName + "_progress"] =
-                        setTimeout(qweb.showProgressMessage(self), 1500);
+                    window[this.eventName + "_progress"] = setTimeout(function() {if(self.__inprogress)qweb.showProgressMessage(self)}, 2000);
                 });
                 this["onComplete"](function() {
 //                  console.log("Completed at " + new Date().format("dd.mm.yyyy HH:MM:ss lll"));
                     clearTimeout(window[this.eventName + "_progress"]);
                     qweb.hideProgressMessage(self);
+                    self.__inprogress = false;
                 });
             }
         }

@@ -5,13 +5,16 @@
 
 .fluid-layout {
     display: -webkit-flex;
+    display: -moz-flex;
     display: flex;
     -webkit-flex-flow: row;
+    -moz-flex-flow: row;
     flex-flow: row;
 }
 
 .fluid-part {
      -webkit-flex-basis: 100%;
+     -moz-flex-basis: 100%;
     flex-basis: 100%;
     position: relative;
 }
@@ -21,6 +24,7 @@
 	width: 20px !important;
     min-width: 20px !important;
     -webkit-flex-basis: 20px !important;
+    -moz-flex-basis: 20px !important;
     flex-basis: 20px !important;
     position: relative;
     background-color: #DFEDF5;
@@ -69,21 +73,25 @@
 
 .fluid-layout>.fluid-part:nth-child(1) {
    	-webkit-order: 1;
+   	-moz-order: 1;
     order: 1;
 }
 
 .fluid-layout>.fluid-part:nth-child(2) {
    	-webkit-order: 2;
+   	-moz-order: 2;
     order: 2;
 }
 
 .fluid-layout>.fluid-part:nth-child(3) {
     -webkit-order: 3;
+    -moz-order: 3;
     order: 3;
 }
 
 .fluid-layout>.fluid-part:nth-child(4) {
    	-webkit-order: 4;
+   	-moz-order: 4;
     order: 4;
 }
 
