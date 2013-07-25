@@ -1,0 +1,17 @@
+.app-preloader {
+	padding: 0 50px;
+    text-align: center;
+    margin: 0;
+}
+
+
+.app-preloadder img {
+    margin: 5px auto;
+    display: block;
+}
+
+.app-preloadder p {
+    padding: 0 50px;
+    text-align: center;
+    margin: 0;
+}

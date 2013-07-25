@@ -72,7 +72,7 @@
         safeClone : function() {
             var clone = $.extend({}, this);
             $.extend(clone, {eventName: this.domain + "-" + this.name + "-" + new Date().getTime()});
-            return clone;
+            return new qweb.C(clone);
         },
 
         getParameters : function() {
@@ -240,7 +240,7 @@
     $.extend(qweb, {
         showProgressMessage : function(c) {
             if (!!$.fn.miamodal) {
-                var preloader = $('<img src="img/app-preloader.gif">');
+                var preloader = $('<img src="images/app-preloader.gif">');
                 var name = $('<p/>').text(c.title);
                 $('<div class="app-preloadder"/>').append(preloader, name).miamodal({ width: 300, id: c.eventName + "_progress", closebutton: false, resizable: false });
             }

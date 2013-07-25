@@ -26,7 +26,7 @@ window._ = window._ || {};
         }),
         logout : new Command({ domain: "_sys", name: "logout"}),
         impersonate : new Command({ domain: "_sys", name: "impersonate"}),
-        whoami : new Command({ domain: "_sys", name: "whoami", title: "Идентификация пользователя" }),
+        whoami : new Command({ domain: "_sys", name: "whoami", title: "Идентификация пользователя", withProgress: true }),
         userinfo : new Command({ domain: "_sys", name: "getuserinfo", group: "metadata", cache: true })
     });
     $.extend(api.wiki, {
