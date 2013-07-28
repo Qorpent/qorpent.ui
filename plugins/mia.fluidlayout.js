@@ -32,8 +32,14 @@
         });
         layout.on('click', 'legend', function(e) {
             e.stopPropagation();
-            $(e.target).nextAll().toggle();
-            $(e.target).toggleClass("collapsed");
+            var target = $(e.currentTarget);
+            if (e.target.tagName != "LEGEND") return;
+            target.toggleClass("collapsed");
+            if (target.hasClass("collapsed")) {
+                target.nextAll().hide();
+            } else {
+                target.nextAll().show();
+            }
         });
     };
     $.extend($.fn, { fluidlayout : fluidlayout });

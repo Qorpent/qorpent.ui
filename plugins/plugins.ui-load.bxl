@@ -6,3 +6,4 @@ pkg plugins
 	load mia.fluidlayout.js
 	load mia.fluidlayout.css
 	load mia.print.js level=auth
+	load mia.textarea.js

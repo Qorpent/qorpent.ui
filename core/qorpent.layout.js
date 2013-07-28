@@ -92,6 +92,7 @@ window._ = window._ || {};
                 m = null;*/
             }  
         });
+
         body.find('.fluid-layout').first().fluidlayout();
     };
 })(_.layout = _.layout || {});
