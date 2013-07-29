@@ -1,0 +1,60 @@
+﻿body {
+    font-family:Consolas;
+    font-size:10pt;
+}
+
+table.data {
+     border-collapse:collapse;
+}
+
+table.data td , table.data th {
+     padding:2px;
+     border:solid 1px gray;
+}
+
+table.data  td {
+    vertical-align: top;
+}
+
+
+table.data th {
+     background-color : lightgray;
+}
+
+.mark {
+    padding: 2px;
+    border: solid 1px gray;
+}
+.mark.biztran {
+    background-color: #AAFFAA;
+}
+
+.mark.system {
+    background-color: #AAAAFF;
+}
+
+
+.obsolete-true {
+    background-color: pink;
+
+}
+.error-true {
+    background-color: red;
+
+}
+.question-true {
+    border: solid 2px blue;
+}
+
+.refs .ref-div, .tagnames.tagnames-div {
+    display: block;
+}
+.refs .ref-subst,  .tagnames .tagnames-subst {
+    display: none;
+}
+.refs.hidden .ref-div , .tagnames.hidden .tagnames-div  {
+    display: none;
+}
+.refs.hidden .ref-subst , .tagnames.hidden .tagnames-subst   {
+    display: block;
+}

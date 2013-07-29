@@ -1,0 +1,459 @@
+﻿<root>
+  <item key="_db">
+    <item key="addconnection">
+      <value Help="" Arm="admin">
+        <parameters>
+          <item Help="" Name="temporal" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.Boolean" ErrorMessage="Parameter 'temporal' :" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+          <item Help="" Name="name" Required="true" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="true" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'name' : is required;" __idx="1">
+            <Default/>
+            <Constraint/>
+          </item>
+          <item Help="" Name="connection" Required="true" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="true" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'connection' : is required;" __idx="2">
+            <Default/>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="connections">
+      <value Help="" Arm="admin">
+        <parameters>
+          <item Help="" Name="testConnection" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.Boolean" ErrorMessage="Parameter 'testConnection' :" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="removeconnection">
+      <value Help="" Arm="admin">
+        <parameters>
+          <item Help="" Name="temporal" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.Boolean" ErrorMessage="Parameter 'temporal' :" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+          <item Help="" Name="name" Required="true" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="true" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'name' : is required;" __idx="1">
+            <Default/>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+  </item>
+  <item key="_sys">
+    <item key="donothing">
+      <value Help="Do absolutely nothing" Arm="default">
+        <parameters/>
+      </value>
+    </item>
+    <item key="nodeload">
+      <value Help="" Arm="default">
+        <parameters/>
+      </value>
+    </item>
+    <item key="getcss">
+      <value Help="" Arm="default">
+        <parameters>
+          <item Help="" Name="StyleName" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'StyleName' :" __idx="0">
+            <Default>true</Default>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="getjs">
+      <value Help="" Arm="default">
+        <parameters>
+          <item Help="" Name="ScriptName" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'ScriptName' :" __idx="0">
+            <Default>true</Default>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="getresource">
+      <value Help="Позволяет получить зашитый в сборку ресурс, считается безопасной операцией;если ресурс в составе имени имеет qvexr (QView Export Resource), то он рассматривается как общедоступный иначе требуется доступ уровня DEVELOPER" Arm="default">
+        <parameters>
+          <item Help="Имя сборки" Name="a" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'a' :" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+          <item Help="Имя ресурса (можно суффикс)" Name="r" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'r' :" __idx="1">
+            <Default/>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="impersonate">
+      <value Help="Позволяет имитировать вход от имени другого пользователя" Arm="default">
+        <parameters>
+          <item Help="" Name="Target" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'Target' :" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="isinrole">
+      <value Help="Проверка роли у пользователя" Arm="admin">
+        <parameters>
+          <item Help="" Name="usr" Required="true" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="true" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'usr' : is required;" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+          <item Help="" Name="role" Required="true" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="true" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'role' : is required;" __idx="1">
+            <Default/>
+            <Constraint/>
+          </item>
+          <item Help="" Name="exact" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.Boolean" ErrorMessage="Parameter 'exact' :" __idx="2">
+            <Default/>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="info">
+      <value Help="" Arm="admin">
+        <parameters/>
+      </value>
+    </item>
+    <item key="compileloadscript">
+      <value Help="" Arm="admin">
+        <parameters/>
+      </value>
+    </item>
+    <item key="loadscript">
+      <value Help="" Arm="default">
+        <parameters/>
+      </value>
+    </item>
+    <item key="myactions">
+      <value Help="Позволяет получить список доступных операций" Arm="default">
+        <parameters>
+          <item Help="" Name="Usage" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'Usage' :" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="myrenders">
+      <value Help="Позволяет получить список доступных рендеров" Arm="admin">
+        <parameters/>
+      </value>
+    </item>
+    <item key="manifest">
+      <value Help="Считывает и возвращает сведенный файл манифеста" Arm="admin">
+        <parameters/>
+      </value>
+    </item>
+    <item key="whoami">
+      <value Help="Позволяет получить первичные данные по своей учетной записи" Arm="default">
+        <parameters/>
+      </value>
+    </item>
+    <item key="bxlparse">
+      <value Help="Converts BXL to XML" Arm="dev">
+        <parameters>
+          <item Help="" Name="NoLexData" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.Boolean" ErrorMessage="Parameter 'NoLexData' :" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+          <item Help="" Name="SafeAttributes" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.Boolean" ErrorMessage="Parameter 'SafeAttributes' :" __idx="1">
+            <Default/>
+            <Constraint/>
+          </item>
+          <item Help="" Name="Text" Required="false" ValidatePattern="" IsLargeText="true" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'Text' :" __idx="2">
+            <Default/>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="login">
+      <value Help="EN: used to authenticate with form based method" Arm="default">
+        <parameters>
+          <item Help="" Name="_l_o_g_i_n_" Required="false" ValidatePattern="^[\w\.\d\-\\]+$" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter '_l_o_g_i_n_' :" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+          <item Help="" Name="_p_a_s_s_" Required="false" ValidatePattern="^[\w\S]{2,}$" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter '_p_a_s_s_' :" __idx="1">
+            <Default/>
+            <Constraint/>
+          </item>
+          <item Help="" Name="ReturnUrl" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'ReturnUrl' :" __idx="2">
+            <Default/>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="logout">
+      <value Help="EN: used to logout if forms used" Arm="default">
+        <parameters/>
+      </value>
+    </item>
+    <item key="echo">
+      <value Help="" Arm="admin">
+        <parameters/>
+      </value>
+    </item>
+    <item key="fileresolve">
+      <value Help="" Arm="admin">
+        <parameters>
+          <item Help="" Name="Existed" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.Boolean" ErrorMessage="Parameter 'Existed' :" __idx="0">
+            <Default>true</Default>
+            <Constraint/>
+          </item>
+          <item Help="" Name="name" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'name' :" __idx="1">
+            <Default/>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="getresourceurl">
+      <value Help="" Arm="default">
+        <parameters>
+          <item Help="" Name="name" Required="true" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="true" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'name' : is required;" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+          <item Help="" Name="type" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="true" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'type' : is constrainted to js, css, img;" __idx="1">
+            <Default>js</Default>
+            <Constraint>
+              <item __idx="0">js</item>
+              <item __idx="1">css</item>
+              <item __idx="2">img</item>
+            </Constraint>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="reset">
+      <value Help="" Arm="admin">
+        <parameters/>
+      </value>
+    </item>
+    <item key="resethandlers">
+      <value Help="Список возможных объектов для сброса состояния" Arm="admin">
+        <parameters/>
+      </value>
+    </item>
+  </item>
+  <item key="wiki">
+    <item key="getlock">
+      <value Help="установить блокировку на страницу, если это возможно" Arm="sys">
+        <parameters>
+          <item Help="" Name="Code" Required="true" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="true" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'Code' : is required;" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="getversionslist">
+      <value Help="Получить список версий страницы Wiki" Arm="default">
+        <parameters>
+          <item Help="" Name="Code" Required="true" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="true" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'Code' : is required;" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="releaselock">
+      <value Help="Снять блокировку, если это возможно" Arm="sys">
+        <parameters>
+          <item Help="" Name="Code" Required="true" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="true" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'Code' : is required;" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="restoreversion">
+      <value Help="" Arm="sys">
+        <parameters>
+          <item Help="" Name="Code" Required="true" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="true" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'Code' : is required;" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+          <item Help="" Name="Version" Required="true" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="true" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'Version' : is required;" __idx="1">
+            <Default/>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="find">
+      <value Help="Осуществляет поиск объектов" Arm="default">
+        <parameters>
+          <item Help="" Name="Search" Required="true" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="true" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'Search' : is required;" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+          <item Help="" Name="Start" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.Int32" ErrorMessage="Parameter 'Start' :" __idx="1">
+            <Default>-1</Default>
+            <Constraint/>
+          </item>
+          <item Help="" Name="Count" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.Int32" ErrorMessage="Parameter 'Count' :" __idx="2">
+            <Default>-1</Default>
+            <Constraint/>
+          </item>
+          <item Help="" Name="Files" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.Boolean" ErrorMessage="Parameter 'Files' :" __idx="3">
+            <Default>true</Default>
+            <Constraint/>
+          </item>
+          <item Help="" Name="Pages" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.Boolean" ErrorMessage="Parameter 'Pages' :" __idx="4">
+            <Default>true</Default>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="createversion">
+      <value Help="Создать версию Wiki" Arm="sys">
+        <parameters>
+          <item Help="" Name="Code" Required="true" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="true" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'Code' : is required;" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+          <item Help="" Name="Comment" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'Comment' :" __idx="1">
+            <Default/>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="exists">
+      <value Help="Получить наличие Wiki по заданным кодам" Arm="default">
+        <parameters>
+          <item Help="" Name="Code" Required="true" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="true" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'Code' : is required;" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="get">
+      <value Help="Получить Wiki по заданным кодам" Arm="default">
+        <parameters>
+          <item Help="" Name="PageVersion" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'PageVersion' :" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+          <item Help="" Name="Code" Required="true" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="true" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'Code' : is required;" __idx="1">
+            <Default/>
+            <Constraint/>
+          </item>
+          <item Help="" Name="Usage" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'Usage' :" __idx="2">
+            <Default>default</Default>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="getfile">
+      <value Help="Получить бинарный контент из Wiki" Arm="default">
+        <parameters>
+          <item Help="" Name="AsFile" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.Boolean" ErrorMessage="Parameter 'AsFile' :" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+          <item Help="" Name="WithData" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.Boolean" ErrorMessage="Parameter 'WithData' :" __idx="1">
+            <Default>true</Default>
+            <Constraint/>
+          </item>
+          <item Help="" Name="Code" Required="true" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="true" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'Code' : is required;" __idx="2">
+            <Default/>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="save">
+      <value Help="Сохранить правки в страницу" Arm="sys">
+        <parameters>
+          <item Help="" Name="Code" Required="true" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="true" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'Code' : is required;" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+          <item Help="" Name="Title" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'Title' :" __idx="1">
+            <Default/>
+            <Constraint/>
+          </item>
+          <item Help="" Name="Text" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'Text' :" __idx="2">
+            <Default/>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="savefile">
+      <value Help="Загрузить бинарный контент в Wiki" Arm="sys">
+        <parameters>
+          <item Help="" Name="Code" Required="true" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="true" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'Code' : is required;" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+          <item Help="" Name="Title" Required="false" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="false" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'Title' :" __idx="1">
+            <Default/>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+  </item>
+  <item key="zdev">
+    <item key="substattributes">
+      <value Help="" Arm="dev">
+        <parameters/>
+      </value>
+    </item>
+    <item key="dropcache">
+      <value Help="" Arm="dev">
+        <parameters/>
+      </value>
+    </item>
+    <item key="colattributes">
+      <value Help="" Arm="dev">
+        <parameters/>
+      </value>
+    </item>
+    <item key="formattributes">
+      <value Help="" Arm="dev">
+        <parameters/>
+      </value>
+    </item>
+    <item key="paramattributes">
+      <value Help="" Arm="default">
+        <parameters/>
+      </value>
+    </item>
+    <item key="reportattributes">
+      <value Help="" Arm="dev">
+        <parameters/>
+      </value>
+    </item>
+    <item key="themaattributes">
+      <value Help="" Arm="dev">
+        <parameters/>
+      </value>
+    </item>
+    <item key="hwout">
+      <value Help="Проверка роли у пользователя22" Arm="default">
+        <parameters>
+          <item Help="" Name="usr" Required="true" ValidatePattern="" IsLargeText="false" IsComplexString="false" IsColor="false" RequireValidation="true" LowerCase="false" UpperCase="false" TypeName="System.String" ErrorMessage="Parameter 'usr' : is required;" __idx="0">
+            <Default/>
+            <Constraint/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+  </item>
+</root>
