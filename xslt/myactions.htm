@@ -2,7 +2,7 @@
   <head>
     <META http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>MyAction</title>
-    <link rel="stylesheet" href="zdev.base.css">
+    <link rel="stylesheet" href="../styles/zdev.base.css">
   </head>
   <body>
     <h1>My Action</h1>
@@ -41,6 +41,7 @@
           </th>
           <th>Help</th>
           <th>Arm</th>
+          <th>Форма вызова для действия:</th>
         </tr>
       </thead>
       <tbody>
@@ -49,18 +50,21 @@
           <td>
           </td>
           <td>admin</td>
+          <td><a href="./myactions.qweb/_sys/addconnection.form.qweb">Перейти на addconnection</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-connections">connections</a></td>
           <td>
           </td>
           <td>admin</td>
+          <td><a href="./myactions.qweb/_sys/connections.form.qweb">Перейти на connections</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-removeconnection">removeconnection</a></td>
           <td>
           </td>
           <td>admin</td>
+          <td><a href="./myactions.qweb/_sys/removeconnection.form.qweb">Перейти на removeconnection</a></td>
         </tr>
       </tbody>
     </table>
@@ -271,6 +275,7 @@
           </th>
           <th>Help</th>
           <th>Arm</th>
+          <th>Форма вызова для действия:</th>
         </tr>
       </thead>
       <tbody>
@@ -278,121 +283,143 @@
           <td><a href="#podgroup-donothing">donothing</a></td>
           <td>Do absolutely nothing</td>
           <td>default</td>
+          <td><a href="./myactions.qweb/_sys/donothing.form.qweb">Перейти на donothing</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-nodeload">nodeload</a></td>
           <td>
           </td>
           <td>default</td>
+          <td><a href="./myactions.qweb/_sys/nodeload.form.qweb">Перейти на nodeload</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-getcss">getcss</a></td>
           <td>
           </td>
           <td>default</td>
+          <td><a href="./myactions.qweb/_sys/getcss.form.qweb">Перейти на getcss</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-getjs">getjs</a></td>
           <td>
           </td>
           <td>default</td>
+          <td><a href="./myactions.qweb/_sys/getjs.form.qweb">Перейти на getjs</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-getresource">getresource</a></td>
           <td>Позволяет получить зашитый в сборку ресурс, считается безопасной операцией;если ресурс в составе имени имеет qvexr (QView Export Resource), то он рассматривается как общедоступный иначе требуется доступ уровня DEVELOPER</td>
           <td>default</td>
+          <td><a href="./myactions.qweb/_sys/getresource.form.qweb">Перейти на getresource</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-impersonate">impersonate</a></td>
           <td>Позволяет имитировать вход от имени другого пользователя</td>
           <td>default</td>
+          <td><a href="./myactions.qweb/_sys/impersonate.form.qweb">Перейти на impersonate</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-isinrole">isinrole</a></td>
           <td>Проверка роли у пользователя</td>
           <td>admin</td>
+          <td><a href="./myactions.qweb/_sys/isinrole.form.qweb">Перейти на isinrole</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-info">info</a></td>
           <td>
           </td>
           <td>admin</td>
+          <td><a href="./myactions.qweb/_sys/info.form.qweb">Перейти на info</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-compileloadscript">compileloadscript</a></td>
           <td>
           </td>
           <td>admin</td>
+          <td><a href="./myactions.qweb/_sys/compileloadscript.form.qweb">Перейти на compileloadscript</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-loadscript">loadscript</a></td>
           <td>
           </td>
           <td>default</td>
+          <td><a href="./myactions.qweb/_sys/loadscript.form.qweb">Перейти на loadscript</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-myactions">myactions</a></td>
           <td>Позволяет получить список доступных операций</td>
           <td>default</td>
+          <td><a href="./myactions.qweb/_sys/myactions.form.qweb">Перейти на myactions</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-myrenders">myrenders</a></td>
           <td>Позволяет получить список доступных рендеров</td>
           <td>admin</td>
+          <td><a href="./myactions.qweb/_sys/myrenders.form.qweb">Перейти на myrenders</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-manifest">manifest</a></td>
           <td>Считывает и возвращает сведенный файл манифеста</td>
           <td>admin</td>
+          <td><a href="./myactions.qweb/_sys/manifest.form.qweb">Перейти на manifest</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-whoami">whoami</a></td>
           <td>Позволяет получить первичные данные по своей учетной записи</td>
           <td>default</td>
+          <td><a href="./myactions.qweb/_sys/whoami.form.qweb">Перейти на whoami</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-bxlparse">bxlparse</a></td>
           <td>Converts BXL to XML</td>
           <td>dev</td>
+          <td><a href="./myactions.qweb/_sys/bxlparse.form.qweb">Перейти на bxlparse</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-login">login</a></td>
           <td>EN: used to authenticate with form based method</td>
           <td>default</td>
+          <td><a href="./myactions.qweb/_sys/login.form.qweb">Перейти на login</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-logout">logout</a></td>
           <td>EN: used to logout if forms used</td>
           <td>default</td>
+          <td><a href="./myactions.qweb/_sys/logout.form.qweb">Перейти на logout</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-echo">echo</a></td>
           <td>
           </td>
           <td>admin</td>
+          <td><a href="./myactions.qweb/_sys/echo.form.qweb">Перейти на echo</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-fileresolve">fileresolve</a></td>
           <td>
           </td>
           <td>admin</td>
+          <td><a href="./myactions.qweb/_sys/fileresolve.form.qweb">Перейти на fileresolve</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-getresourceurl">getresourceurl</a></td>
           <td>
           </td>
           <td>default</td>
+          <td><a href="./myactions.qweb/_sys/getresourceurl.form.qweb">Перейти на getresourceurl</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-reset">reset</a></td>
           <td>
           </td>
           <td>admin</td>
+          <td><a href="./myactions.qweb/_sys/reset.form.qweb">Перейти на reset</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-resethandlers">resethandlers</a></td>
           <td>Список возможных объектов для сброса состояния</td>
           <td>admin</td>
+          <td><a href="./myactions.qweb/_sys/resethandlers.form.qweb">Перейти на resethandlers</a></td>
         </tr>
       </tbody>
     </table>
@@ -404,41 +431,7 @@
     </h4>
     <h5>Help - "Do absolutely nothing"
       Arm - "default"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-nodeload">
         Подгруппа  nodeload</a></h3>
     <h4>
@@ -447,41 +440,7 @@
     </h4>
     <h5>Help - ""
       Arm - "default"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-getcss">
         Подгруппа  getcss</a></h3>
     <h4>
@@ -779,41 +738,7 @@
     </h4>
     <h5>Help - ""
       Arm - "admin"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-compileloadscript">
         Подгруппа  compileloadscript</a></h3>
     <h4>
@@ -822,41 +747,7 @@
     </h4>
     <h5>Help - ""
       Arm - "admin"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-loadscript">
         Подгруппа  loadscript</a></h3>
     <h4>
@@ -865,41 +756,7 @@
     </h4>
     <h5>Help - ""
       Arm - "default"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-myactions">
         Подгруппа  myactions</a></h3>
     <h4>
@@ -956,41 +813,7 @@
     </h4>
     <h5>Help - "Позволяет получить список доступных рендеров"
       Arm - "admin"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-manifest">
         Подгруппа  manifest</a></h3>
     <h4>
@@ -999,41 +822,7 @@
     </h4>
     <h5>Help - "Считывает и возвращает сведенный файл манифеста"
       Arm - "admin"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-whoami">
         Подгруппа  whoami</a></h3>
     <h4>
@@ -1042,41 +831,7 @@
     </h4>
     <h5>Help - "Позволяет получить первичные данные по своей учетной записи"
       Arm - "default"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-bxlparse">
         Подгруппа  bxlparse</a></h3>
     <h4>
@@ -1247,41 +1002,7 @@
     </h4>
     <h5>Help - "EN: used to logout if forms used"
       Arm - "default"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-echo">
         Подгруппа  echo</a></h3>
     <h4>
@@ -1290,41 +1011,7 @@
     </h4>
     <h5>Help - ""
       Arm - "admin"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-fileresolve">
         Подгруппа  fileresolve</a></h3>
     <h4>
@@ -1463,41 +1150,7 @@
     </h4>
     <h5>Help - ""
       Arm - "admin"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-resethandlers">
         Подгруппа  resethandlers</a></h3>
     <h4>
@@ -1506,41 +1159,7 @@
     </h4>
     <h5>Help - "Список возможных объектов для сброса состояния"
       Arm - "admin"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h2><a name="group-wiki">
         Группа wiki</a></h2>
     <h4>
@@ -1553,6 +1172,7 @@
           </th>
           <th>Help</th>
           <th>Arm</th>
+          <th>Форма вызова для действия:</th>
         </tr>
       </thead>
       <tbody>
@@ -1560,57 +1180,68 @@
           <td><a href="#podgroup-getlock">getlock</a></td>
           <td>установить блокировку на страницу, если это возможно</td>
           <td>sys</td>
+          <td><a href="./myactions.qweb/_sys/getlock.form.qweb">Перейти на getlock</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-getversionslist">getversionslist</a></td>
           <td>Получить список версий страницы Wiki</td>
           <td>default</td>
+          <td><a href="./myactions.qweb/_sys/getversionslist.form.qweb">Перейти на getversionslist</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-releaselock">releaselock</a></td>
           <td>Снять блокировку, если это возможно</td>
           <td>sys</td>
+          <td><a href="./myactions.qweb/_sys/releaselock.form.qweb">Перейти на releaselock</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-restoreversion">restoreversion</a></td>
           <td>
           </td>
           <td>sys</td>
+          <td><a href="./myactions.qweb/_sys/restoreversion.form.qweb">Перейти на restoreversion</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-find">find</a></td>
           <td>Осуществляет поиск объектов</td>
           <td>default</td>
+          <td><a href="./myactions.qweb/_sys/find.form.qweb">Перейти на find</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-createversion">createversion</a></td>
           <td>Создать версию Wiki</td>
           <td>sys</td>
+          <td><a href="./myactions.qweb/_sys/createversion.form.qweb">Перейти на createversion</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-exists">exists</a></td>
           <td>Получить наличие Wiki по заданным кодам</td>
           <td>default</td>
+          <td><a href="./myactions.qweb/_sys/exists.form.qweb">Перейти на exists</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-get">get</a></td>
           <td>Получить Wiki по заданным кодам</td>
           <td>default</td>
+          <td><a href="./myactions.qweb/_sys/get.form.qweb">Перейти на get</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-getfile">getfile</a></td>
           <td>Получить бинарный контент из Wiki</td>
           <td>default</td>
+          <td><a href="./myactions.qweb/_sys/getfile.form.qweb">Перейти на getfile</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-save">save</a></td>
           <td>Сохранить правки в страницу</td>
           <td>sys</td>
+          <td><a href="./myactions.qweb/_sys/save.form.qweb">Перейти на save</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-savefile">savefile</a></td>
           <td>Загрузить бинарный контент в Wiki</td>
           <td>sys</td>
+          <td><a href="./myactions.qweb/_sys/savefile.form.qweb">Перейти на savefile</a></td>
         </tr>
       </tbody>
     </table>
@@ -2375,6 +2006,7 @@
           </th>
           <th>Help</th>
           <th>Arm</th>
+          <th>Форма вызова для действия:</th>
         </tr>
       </thead>
       <tbody>
@@ -2383,47 +2015,55 @@
           <td>
           </td>
           <td>dev</td>
+          <td><a href="./myactions.qweb/_sys/substattributes.form.qweb">Перейти на substattributes</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-dropcache">dropcache</a></td>
           <td>
           </td>
           <td>dev</td>
+          <td><a href="./myactions.qweb/_sys/dropcache.form.qweb">Перейти на dropcache</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-colattributes">colattributes</a></td>
           <td>
           </td>
           <td>dev</td>
+          <td><a href="./myactions.qweb/_sys/colattributes.form.qweb">Перейти на colattributes</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-formattributes">formattributes</a></td>
           <td>
           </td>
           <td>dev</td>
+          <td><a href="./myactions.qweb/_sys/formattributes.form.qweb">Перейти на formattributes</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-paramattributes">paramattributes</a></td>
           <td>
           </td>
           <td>default</td>
+          <td><a href="./myactions.qweb/_sys/paramattributes.form.qweb">Перейти на paramattributes</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-reportattributes">reportattributes</a></td>
           <td>
           </td>
           <td>dev</td>
+          <td><a href="./myactions.qweb/_sys/reportattributes.form.qweb">Перейти на reportattributes</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-themaattributes">themaattributes</a></td>
           <td>
           </td>
           <td>dev</td>
+          <td><a href="./myactions.qweb/_sys/themaattributes.form.qweb">Перейти на themaattributes</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-hwout">hwout</a></td>
           <td>Проверка роли у пользователя22</td>
           <td>default</td>
+          <td><a href="./myactions.qweb/_sys/hwout.form.qweb">Перейти на hwout</a></td>
         </tr>
       </tbody>
     </table>
@@ -2435,41 +2075,7 @@
     </h4>
     <h5>Help - ""
       Arm - "dev"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-dropcache">
         Подгруппа  dropcache</a></h3>
     <h4>
@@ -2478,41 +2084,7 @@
     </h4>
     <h5>Help - ""
       Arm - "dev"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-colattributes">
         Подгруппа  colattributes</a></h3>
     <h4>
@@ -2521,41 +2093,7 @@
     </h4>
     <h5>Help - ""
       Arm - "dev"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-formattributes">
         Подгруппа  formattributes</a></h3>
     <h4>
@@ -2564,41 +2102,7 @@
     </h4>
     <h5>Help - ""
       Arm - "dev"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-paramattributes">
         Подгруппа  paramattributes</a></h3>
     <h4>
@@ -2607,41 +2111,7 @@
     </h4>
     <h5>Help - ""
       Arm - "default"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-reportattributes">
         Подгруппа  reportattributes</a></h3>
     <h4>
@@ -2650,41 +2120,7 @@
     </h4>
     <h5>Help - ""
       Arm - "dev"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-themaattributes">
         Подгруппа  themaattributes</a></h3>
     <h4>
@@ -2693,41 +2129,7 @@
     </h4>
     <h5>Help - ""
       Arm - "dev"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-hwout">
         Подгруппа  hwout</a></h3>
     <h4>

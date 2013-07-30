@@ -5,7 +5,7 @@
     <html>
       <head>
         <title>MyAction</title>
-        <link rel="stylesheet" href="zdev.base.css" />
+        <link rel="stylesheet" href="../styles/zdev.base.css" />
       </head>
       <body>
         <h1>My Action</h1>
@@ -82,6 +82,7 @@
           </th>
           <th>Help</th>
           <th>Arm</th>
+          <th>Форма вызова для действия:</th> 
         </tr>
       </thead>
       <tbody>
@@ -119,7 +120,11 @@
       <td>
         <xsl:value-of select="value/@Arm"/>
       </td>
-    </tr>
+  <td>
+    <a href="./myactions.qweb/_sys/{@key}.form.qweb">Перейти на <xsl:value-of select="@key"/></a>
+   <!--<a href="./myactions.qweb"><xsl:value-of select="@Key"/>dsf</a>-->
+      </td>  
+  </tr>
   </xsl:template>
   <!--==========================================
    Тимплейт, выводящий таблицы с заголовком /root/item/item/@key
@@ -138,7 +143,14 @@
       <xsl:value-of select="name(value/@Help)"/> - "<xsl:value-of select="value/@Help"/>"
       <xsl:value-of select="  name(value/@Arm)"/> - "<xsl:value-of select="value/@Arm"/>"
     </h5>
-    <table class="data">
+   <!-- 
+          <xsl:value-of select="@Comment" disable-output-escaping="yes"/>
+      </xsl:if> 
+    <xsl:if test="/shop/user_id/node()"> узел существует </xsl:if>-->
+    <xsl:choose>
+      <xsl:when test="value/parameters/item">
+      
+      <table class="data">
       <thead>
         <tr>
           <!--<th>Расположение элемента</th>-->
@@ -188,6 +200,10 @@
         <!-- -->
       </tbody>
     </table>
+ </xsl:when>
+    <xsl:otherwise><a>Параметры отсутсвуют</a>
+    </xsl:otherwise></xsl:choose>
+      
     <div>
       <a href="#up">назад к оглавлению</a>
     </div>
