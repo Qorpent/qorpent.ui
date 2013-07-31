@@ -1,0 +1,423 @@
+<root>
+  <item key="_db">
+    <item key="addconnection">
+      <value Help="" Arm="admin">
+        <parameters>
+          <item Name="temporal" TypeName="System.Boolean" DataType="Boolean" ErrorMessage="Parameter 'temporal' :" __idx="0">
+            <Default/>
+          </item>
+          <item Required="true" Name="name" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'name' : is required;" __idx="1">
+            <Default/>
+          </item>
+          <item Required="true" Name="connection" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'connection' : is required;" __idx="2">
+            <Default/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="connections">
+      <value Help="" Arm="admin">
+        <parameters>
+          <item Name="testConnection" TypeName="System.Boolean" DataType="Boolean" ErrorMessage="Parameter 'testConnection' :" __idx="0">
+            <Default/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="removeconnection">
+      <value Help="" Arm="admin">
+        <parameters>
+          <item Name="temporal" TypeName="System.Boolean" DataType="Boolean" ErrorMessage="Parameter 'temporal' :" __idx="0">
+            <Default/>
+          </item>
+          <item Required="true" Name="name" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'name' : is required;" __idx="1">
+            <Default/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+  </item>
+  <item key="_sys">
+    <item key="donothing">
+      <value Help="Do absolutely nothing" Arm="default">
+        <parameters/>
+      </value>
+    </item>
+    <item key="nodeload">
+      <value Help="" Arm="default">
+        <parameters/>
+      </value>
+    </item>
+    <item key="getcss">
+      <value Help="" Arm="default">
+        <parameters>
+          <item Name="StyleName" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'StyleName' :" __idx="0">
+            <Default>true</Default>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="getjs">
+      <value Help="" Arm="default">
+        <parameters>
+          <item Name="ScriptName" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'ScriptName' :" __idx="0">
+            <Default>true</Default>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="getresource">
+      <value Help="Позволяет получить зашитый в сборку ресурс, считается безопасной операцией;если ресурс в составе имени имеет qvexr (QView Export Resource), то он рассматривается как общедоступный иначе требуется доступ уровня DEVELOPER" Arm="default">
+        <parameters>
+          <item Help="Имя сборки" Name="a" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'a' :" __idx="0">
+            <Default/>
+          </item>
+          <item Help="Имя ресурса (можно суффикс)" Name="r" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'r' :" __idx="1">
+            <Default/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="impersonate">
+      <value Help="Позволяет имитировать вход от имени другого пользователя" Arm="default">
+        <parameters>
+          <item Name="Target" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Target' :" __idx="0">
+            <Default/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="isinrole">
+      <value Help="Проверка роли у пользователя" Arm="admin">
+        <parameters>
+          <item Required="true" Name="usr" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'usr' : is required;" __idx="0">
+            <Default/>
+          </item>
+          <item Required="true" Name="role" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'role' : is required;" __idx="1">
+            <Default/>
+          </item>
+          <item Name="exact" TypeName="System.Boolean" DataType="Boolean" ErrorMessage="Parameter 'exact' :" __idx="2">
+            <Default/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="info">
+      <value Help="" Arm="admin">
+        <parameters/>
+      </value>
+    </item>
+    <item key="compileloadscript">
+      <value Help="" Arm="admin">
+        <parameters/>
+      </value>
+    </item>
+    <item key="loadscript">
+      <value Help="" Arm="default">
+        <parameters/>
+      </value>
+    </item>
+    <item key="myactions">
+      <value Help="Позволяет получить список доступных операций" Arm="default">
+        <parameters>
+          <item Name="Usage" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Usage' :" __idx="0">
+            <Default/>
+          </item>
+          <item Name="Command" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Command' :" __idx="1">
+            <Default/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="myrenders">
+      <value Help="Позволяет получить список доступных рендеров" Arm="admin">
+        <parameters/>
+      </value>
+    </item>
+    <item key="manifest">
+      <value Help="Считывает и возвращает сведенный файл манифеста" Arm="admin">
+        <parameters/>
+      </value>
+    </item>
+    <item key="whoami">
+      <value Help="Позволяет получить первичные данные по своей учетной записи" Arm="default">
+        <parameters/>
+      </value>
+    </item>
+    <item key="bxlparse">
+      <value Help="Converts BXL to XML" Arm="dev">
+        <parameters>
+          <item Name="NoLexData" TypeName="System.Boolean" DataType="Boolean" ErrorMessage="Parameter 'NoLexData' :" __idx="0">
+            <Default/>
+          </item>
+          <item Name="SafeAttributes" TypeName="System.Boolean" DataType="Boolean" ErrorMessage="Parameter 'SafeAttributes' :" __idx="1">
+            <Default/>
+          </item>
+          <item Name="Text" IsLargeText="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Text' :" __idx="2">
+            <Default/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="login">
+      <value Help="EN: used to authenticate with form based method" Arm="default">
+        <parameters>
+          <item Name="_l_o_g_i_n_" ValidatePattern="^[\w\.\d\-\\]+$" TypeName="System.String" DataType="String" ErrorMessage="Parameter '_l_o_g_i_n_' :" __idx="0">
+            <Default/>
+          </item>
+          <item Name="_p_a_s_s_" ValidatePattern="^[\w\S]{2,}$" TypeName="System.String" DataType="String" ErrorMessage="Parameter '_p_a_s_s_' :" __idx="1">
+            <Default/>
+          </item>
+          <item Name="ReturnUrl" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'ReturnUrl' :" __idx="2">
+            <Default/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="logout">
+      <value Help="EN: used to logout if forms used" Arm="default">
+        <parameters/>
+      </value>
+    </item>
+    <item key="echo">
+      <value Help="" Arm="admin">
+        <parameters/>
+      </value>
+    </item>
+    <item key="fileresolve">
+      <value Help="" Arm="admin">
+        <parameters>
+          <item Name="Existed" TypeName="System.Boolean" DataType="Boolean" ErrorMessage="Parameter 'Existed' :" __idx="0">
+            <Default>true</Default>
+          </item>
+          <item Name="name" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'name' :" __idx="1">
+            <Default/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="getresourceurl">
+      <value Help="" Arm="default">
+        <parameters>
+          <item Required="true" Name="name" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'name' : is required;" __idx="0">
+            <Default/>
+          </item>
+          <item Name="type" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'type' : is constrainted to js, css, img;" __idx="1">
+            <Default>js</Default>
+            <Constraint>
+              <item __idx="0">js</item>
+              <item __idx="1">css</item>
+              <item __idx="2">img</item>
+            </Constraint>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="reset">
+      <value Help="" Arm="admin">
+        <parameters/>
+      </value>
+    </item>
+    <item key="resethandlers">
+      <value Help="Список возможных объектов для сброса состояния" Arm="admin">
+        <parameters/>
+      </value>
+    </item>
+  </item>
+  <item key="wiki">
+    <item key="getlock">
+      <value Help="установить блокировку на страницу, если это возможно" Arm="sys">
+        <parameters>
+          <item Required="true" Name="Code" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Code' : is required;" __idx="0">
+            <Default/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="getversionslist">
+      <value Help="Получить список версий страницы Wiki" Arm="default">
+        <parameters>
+          <item Required="true" Name="Code" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Code' : is required;" __idx="0">
+            <Default/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="releaselock">
+      <value Help="Снять блокировку, если это возможно" Arm="sys">
+        <parameters>
+          <item Required="true" Name="Code" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Code' : is required;" __idx="0">
+            <Default/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="restoreversion">
+      <value Help="" Arm="sys">
+        <parameters>
+          <item Required="true" Name="Code" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Code' : is required;" __idx="0">
+            <Default/>
+          </item>
+          <item Required="true" Name="Version" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Version' : is required;" __idx="1">
+            <Default/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="find">
+      <value Help="Осуществляет поиск объектов" Arm="default">
+        <parameters>
+          <item Required="true" Name="Search" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Search' : is required;" __idx="0">
+            <Default/>
+          </item>
+          <item Name="Start" TypeName="System.Int32" DataType="Int32" ErrorMessage="Parameter 'Start' :" __idx="1">
+            <Default>-1</Default>
+          </item>
+          <item Name="Count" TypeName="System.Int32" DataType="Int32" ErrorMessage="Parameter 'Count' :" __idx="2">
+            <Default>-1</Default>
+          </item>
+          <item Name="Files" TypeName="System.Boolean" DataType="Boolean" ErrorMessage="Parameter 'Files' :" __idx="3">
+            <Default>true</Default>
+          </item>
+          <item Name="Pages" TypeName="System.Boolean" DataType="Boolean" ErrorMessage="Parameter 'Pages' :" __idx="4">
+            <Default>true</Default>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="createversion">
+      <value Help="Создать версию Wiki" Arm="sys">
+        <parameters>
+          <item Required="true" Name="Code" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Code' : is required;" __idx="0">
+            <Default/>
+          </item>
+          <item Name="Comment" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Comment' :" __idx="1">
+            <Default/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="exists">
+      <value Help="Получить наличие Wiki по заданным кодам" Arm="default">
+        <parameters>
+          <item Required="true" Name="Code" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Code' : is required;" __idx="0">
+            <Default/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="get">
+      <value Help="Получить Wiki по заданным кодам" Arm="default">
+        <parameters>
+          <item Name="PageVersion" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'PageVersion' :" __idx="0">
+            <Default/>
+          </item>
+          <item Required="true" Name="Code" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Code' : is required;" __idx="1">
+            <Default/>
+          </item>
+          <item Name="Usage" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Usage' :" __idx="2">
+            <Default>default</Default>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="getfile">
+      <value Help="Получить бинарный контент из Wiki" Arm="default">
+        <parameters>
+          <item Name="AsFile" TypeName="System.Boolean" DataType="Boolean" ErrorMessage="Parameter 'AsFile' :" __idx="0">
+            <Default/>
+          </item>
+          <item Name="WithData" TypeName="System.Boolean" DataType="Boolean" ErrorMessage="Parameter 'WithData' :" __idx="1">
+            <Default>true</Default>
+          </item>
+          <item Required="true" Name="Code" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Code' : is required;" __idx="2">
+            <Default/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="save">
+      <value Help="Сохранить правки в страницу" Arm="sys">
+        <parameters>
+          <item Required="true" Name="Code" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Code' : is required;" __idx="0">
+            <Default/>
+          </item>
+          <item Name="Title" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Title' :" __idx="1">
+            <Default/>
+          </item>
+          <item Name="Text" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Text' :" __idx="2">
+            <Default/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="savefile">
+      <value Help="Загрузить бинарный контент в Wiki" Arm="sys">
+        <parameters>
+          <item Required="true" Name="Code" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Code' : is required;" __idx="0">
+            <Default/>
+          </item>
+          <item Name="Title" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Title' :" __idx="1">
+            <Default/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+  </item>
+  <item key="zdev">
+    <item key="substattributes">
+      <value Help="" Arm="dev">
+        <parameters/>
+      </value>
+    </item>
+    <item key="dropcache">
+      <value Help="" Arm="dev">
+        <parameters/>
+      </value>
+    </item>
+    <item key="colattributes">
+      <value Help="" Arm="dev">
+        <parameters/>
+      </value>
+    </item>
+    <item key="formattributes">
+      <value Help="" Arm="dev">
+        <parameters/>
+      </value>
+    </item>
+    <item key="paramattributes">
+      <value Help="" Arm="default">
+        <parameters/>
+      </value>
+    </item>
+    <item key="params">
+      <value Help="" Arm="dev">
+        <parameters/>
+      </value>
+    </item>
+    <item key="reportattributes">
+      <value Help="" Arm="dev">
+        <parameters/>
+      </value>
+    </item>
+    <item key="themaattributes">
+      <value Help="" Arm="dev">
+        <parameters/>
+      </value>
+    </item>
+    <item key="hwout">
+      <value Help="Проверка роли у пользователя22" Arm="default">
+        <parameters>
+          <item Required="true" Name="usr" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'usr' : is required;" __idx="0">
+            <Default/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+    <item key="getelementsmap">
+      <value Help="" Arm="default">
+        <parameters/>
+      </value>
+    </item>
+  </item>
+</root>

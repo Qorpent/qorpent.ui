@@ -128,17 +128,17 @@
         <!--<a href="./myactions.qweb"><xsl:value-of select="@Key"/>dsf</a>-->
       </td>
       <td>
-        <a href="./myactions.html.qweb?usage=ui&amp;Command={../@key}.{@key}&amp;__xslt=myonlyaction">
-          Перейти на <xsl:value-of select="@key"/>
-        </a>
-        <!--<a href="./myactions.qweb"><xsl:value-of select="@Key"/>dsf</a>-->
+      <a href="./myactions.qweb/_sys/{@key}.form.qweb">
+        Перейти на <xsl:value-of select="@key"/>
+      </a>
+      <!--<a href="./myactions.qweb"><xsl:value-of select="@Key"/>dsf</a>-->
       </td>
     </tr>
   </xsl:template>
   <!--==========================================
    Тимплейт, выводящий таблицы с заголовком /root/item/item/@key
-    http://localhost/a1/_sys/myactions.html.qweb?usage=ui&Command=_db.connections&__xslt=myonlyaction
- 
+   http://localhost/a1/_sys/myactions.html.qweb?usage=ui&Command=_db.connections&__xslt=myonlyaction
+   http://localhost/a1/_sys/myactions.xml.qweb?usage=ui&command=_db.connections
   ==========================================-->
   <xsl:template match="//item/item"  mode="valTableHead2">
     <h3>
@@ -154,67 +154,69 @@
       <xsl:value-of select="name(value/@Help)"/> - "<xsl:value-of select="value/@Help"/>"
       <xsl:value-of select="  name(value/@Arm)"/> - "<xsl:value-of select="value/@Arm"/>"
     </h5>
-   <!-- 
+    <!-- 
           <xsl:value-of select="@Comment" disable-output-escaping="yes"/>
       </xsl:if> 
     <xsl:if test="/shop/user_id/node()"> узел существует </xsl:if>-->
     <xsl:choose>
       <xsl:when test="value/parameters/item">
-      
-      <table class="data">
-      <thead>
-        <tr>
-          <!--<th>Расположение элемента</th>-->
-          <th>
-            <xsl:value-of select ="name(value/parameters/item/@Help)"/>
-          </th>
-          <th>
-            <xsl:value-of select ="name(value/parameters/item/@Name)"/>
-          </th>
-          <th>
-            <xsl:value-of select ="name(value/parameters/item/@Required)"/>
-          </th>
-          <th>
-            <xsl:value-of select ="name(value/parameters/item/@ValidatePattern)"/>
-          </th>
-          <th>
-            <xsl:value-of select ="name(value/parameters/item/@IsLargeText)"/>
-          </th>
-          <th>
-            <xsl:value-of select ="name(value/parameters/item/@IsComplexString)"/>
-          </th>
-          <th>
-            <xsl:value-of select ="name(value/parameters/item/@IsColor)"/>
-          </th>
-          <th>
-            <xsl:value-of select ="name(value/parameters/item/@RequireValidation)"/>
-          </th>
-          <th>
-            <xsl:value-of select ="name(value/parameters/item/@LowerCase)"/>
-          </th>
-          <th>
-            <xsl:value-of select ="name(value/parameters/item/@UpperCase)"/>
-          </th>
-          <th>
-            <xsl:value-of select ="name(value/parameters/item/@TypeName)"/>
-          </th>
-          <th>
-            <xsl:value-of select ="name(value/parameters/item/@ErrorMessage)"/>
-          </th>
-          <th>
-            <xsl:value-of select ="name(value/parameters/item/@__idx)"/>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <xsl:apply-templates select="value/parameters" mode="ValParamTBody"/>
-        <!-- -->
-      </tbody>
-    </table>
- </xsl:when>
-    <xsl:otherwise><a>Параметры отсутсвуют</a>
-    </xsl:otherwise></xsl:choose>
-      
+
+        <table class="data">
+          <thead>
+            <tr>
+              <!--<th>Расположение элемента</th>-->
+              <th>
+                <xsl:value-of select ="name(value/parameters/item/@Help)"/>
+              </th>
+              <th>
+                <xsl:value-of select ="name(value/parameters/item/@Name)"/>
+              </th>
+              <th>
+                <xsl:value-of select ="name(value/parameters/item/@Required)"/>
+              </th>
+              <th>
+                <xsl:value-of select ="name(value/parameters/item/@ValidatePattern)"/>
+              </th>
+              <th>
+                <xsl:value-of select ="name(value/parameters/item/@IsLargeText)"/>
+              </th>
+              <th>
+                <xsl:value-of select ="name(value/parameters/item/@IsComplexString)"/>
+              </th>
+              <th>
+                <xsl:value-of select ="name(value/parameters/item/@IsColor)"/>
+              </th>
+              <th>
+                <xsl:value-of select ="name(value/parameters/item/@RequireValidation)"/>
+              </th>
+              <th>
+                <xsl:value-of select ="name(value/parameters/item/@LowerCase)"/>
+              </th>
+              <th>
+                <xsl:value-of select ="name(value/parameters/item/@UpperCase)"/>
+              </th>
+              <th>
+                <xsl:value-of select ="name(value/parameters/item/@TypeName)"/>
+              </th>
+              <th>
+                <xsl:value-of select ="name(value/parameters/item/@ErrorMessage)"/>
+              </th>
+              <th>
+                <xsl:value-of select ="name(value/parameters/item/@__idx)"/>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <xsl:apply-templates select="value/parameters" mode="ValParamTBody"/>
+            <!-- -->
+          </tbody>
+        </table>
+      </xsl:when>
+      <xsl:otherwise>
+        <a>Параметры отсутсвуют</a>
+      </xsl:otherwise>
+    </xsl:choose>
+
     <div>
       <a href="#up">назад к оглавлению</a>
     </div>

@@ -53,8 +53,8 @@
           <td>admin</td>
           <td><a href="./myactions.qweb/_db/addconnection.form.qweb">
           Перейти на addconnection</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_db.addconnection&amp;__xslt=myonlyaction">
-          Перейти на addconnection</a></td>
+          <td><a href="./myactions.qweb/_sys/addconnection.form.qweb">
+        Перейти на addconnection</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-connections">connections</a></td>
@@ -63,8 +63,8 @@
           <td>admin</td>
           <td><a href="./myactions.qweb/_db/connections.form.qweb">
           Перейти на connections</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_db.connections&amp;__xslt=myonlyaction">
-          Перейти на connections</a></td>
+          <td><a href="./myactions.qweb/_sys/connections.form.qweb">
+        Перейти на connections</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-removeconnection">removeconnection</a></td>
@@ -73,8 +73,8 @@
           <td>admin</td>
           <td><a href="./myactions.qweb/_db/removeconnection.form.qweb">
           Перейти на removeconnection</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_db.removeconnection&amp;__xslt=myonlyaction">
-          Перейти на removeconnection</a></td>
+          <td><a href="./myactions.qweb/_sys/removeconnection.form.qweb">
+        Перейти на removeconnection</a></td>
         </tr>
       </tbody>
     </table>
@@ -90,23 +90,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
           <th>Required</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
           <th>RequireValidation</th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -117,22 +110,15 @@
           <td>
           </td>
           <td>temporal</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.Boolean</td>
           <td>Parameter 'temporal' :</td>
           <td>0</td>
@@ -144,17 +130,12 @@
           <td>true</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>true</td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'name' : is required;</td>
           <td>1</td>
@@ -166,17 +147,12 @@
           <td>true</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>true</td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'connection' : is required;</td>
           <td>2</td>
@@ -196,25 +172,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>Required</th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
+          <th>RequireValidation</th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -225,22 +192,15 @@
           <td>
           </td>
           <td>testConnection</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.Boolean</td>
           <td>Parameter 'testConnection' :</td>
           <td>0</td>
@@ -260,23 +220,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
           <th>Required</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
           <th>RequireValidation</th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -287,22 +240,15 @@
           <td>
           </td>
           <td>temporal</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.Boolean</td>
           <td>Parameter 'temporal' :</td>
           <td>0</td>
@@ -314,17 +260,12 @@
           <td>true</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>true</td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'name' : is required;</td>
           <td>1</td>
@@ -355,8 +296,8 @@
           <td>default</td>
           <td><a href="./myactions.qweb/_sys/donothing.form.qweb">
           Перейти на donothing</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.donothing&amp;__xslt=myonlyaction">
-          Перейти на donothing</a></td>
+          <td><a href="./myactions.qweb/_sys/donothing.form.qweb">
+        Перейти на donothing</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-nodeload">nodeload</a></td>
@@ -365,8 +306,8 @@
           <td>default</td>
           <td><a href="./myactions.qweb/_sys/nodeload.form.qweb">
           Перейти на nodeload</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.nodeload&amp;__xslt=myonlyaction">
-          Перейти на nodeload</a></td>
+          <td><a href="./myactions.qweb/_sys/nodeload.form.qweb">
+        Перейти на nodeload</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-getcss">getcss</a></td>
@@ -375,8 +316,8 @@
           <td>default</td>
           <td><a href="./myactions.qweb/_sys/getcss.form.qweb">
           Перейти на getcss</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.getcss&amp;__xslt=myonlyaction">
-          Перейти на getcss</a></td>
+          <td><a href="./myactions.qweb/_sys/getcss.form.qweb">
+        Перейти на getcss</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-getjs">getjs</a></td>
@@ -385,8 +326,8 @@
           <td>default</td>
           <td><a href="./myactions.qweb/_sys/getjs.form.qweb">
           Перейти на getjs</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.getjs&amp;__xslt=myonlyaction">
-          Перейти на getjs</a></td>
+          <td><a href="./myactions.qweb/_sys/getjs.form.qweb">
+        Перейти на getjs</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-getresource">getresource</a></td>
@@ -394,8 +335,8 @@
           <td>default</td>
           <td><a href="./myactions.qweb/_sys/getresource.form.qweb">
           Перейти на getresource</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.getresource&amp;__xslt=myonlyaction">
-          Перейти на getresource</a></td>
+          <td><a href="./myactions.qweb/_sys/getresource.form.qweb">
+        Перейти на getresource</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-impersonate">impersonate</a></td>
@@ -403,8 +344,8 @@
           <td>default</td>
           <td><a href="./myactions.qweb/_sys/impersonate.form.qweb">
           Перейти на impersonate</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.impersonate&amp;__xslt=myonlyaction">
-          Перейти на impersonate</a></td>
+          <td><a href="./myactions.qweb/_sys/impersonate.form.qweb">
+        Перейти на impersonate</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-isinrole">isinrole</a></td>
@@ -412,8 +353,8 @@
           <td>admin</td>
           <td><a href="./myactions.qweb/_sys/isinrole.form.qweb">
           Перейти на isinrole</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.isinrole&amp;__xslt=myonlyaction">
-          Перейти на isinrole</a></td>
+          <td><a href="./myactions.qweb/_sys/isinrole.form.qweb">
+        Перейти на isinrole</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-info">info</a></td>
@@ -422,8 +363,8 @@
           <td>admin</td>
           <td><a href="./myactions.qweb/_sys/info.form.qweb">
           Перейти на info</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.info&amp;__xslt=myonlyaction">
-          Перейти на info</a></td>
+          <td><a href="./myactions.qweb/_sys/info.form.qweb">
+        Перейти на info</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-compileloadscript">compileloadscript</a></td>
@@ -432,8 +373,8 @@
           <td>admin</td>
           <td><a href="./myactions.qweb/_sys/compileloadscript.form.qweb">
           Перейти на compileloadscript</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.compileloadscript&amp;__xslt=myonlyaction">
-          Перейти на compileloadscript</a></td>
+          <td><a href="./myactions.qweb/_sys/compileloadscript.form.qweb">
+        Перейти на compileloadscript</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-loadscript">loadscript</a></td>
@@ -442,8 +383,8 @@
           <td>default</td>
           <td><a href="./myactions.qweb/_sys/loadscript.form.qweb">
           Перейти на loadscript</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.loadscript&amp;__xslt=myonlyaction">
-          Перейти на loadscript</a></td>
+          <td><a href="./myactions.qweb/_sys/loadscript.form.qweb">
+        Перейти на loadscript</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-myactions">myactions</a></td>
@@ -451,8 +392,8 @@
           <td>default</td>
           <td><a href="./myactions.qweb/_sys/myactions.form.qweb">
           Перейти на myactions</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.myactions&amp;__xslt=myonlyaction">
-          Перейти на myactions</a></td>
+          <td><a href="./myactions.qweb/_sys/myactions.form.qweb">
+        Перейти на myactions</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-myrenders">myrenders</a></td>
@@ -460,8 +401,8 @@
           <td>admin</td>
           <td><a href="./myactions.qweb/_sys/myrenders.form.qweb">
           Перейти на myrenders</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.myrenders&amp;__xslt=myonlyaction">
-          Перейти на myrenders</a></td>
+          <td><a href="./myactions.qweb/_sys/myrenders.form.qweb">
+        Перейти на myrenders</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-manifest">manifest</a></td>
@@ -469,8 +410,8 @@
           <td>admin</td>
           <td><a href="./myactions.qweb/_sys/manifest.form.qweb">
           Перейти на manifest</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.manifest&amp;__xslt=myonlyaction">
-          Перейти на manifest</a></td>
+          <td><a href="./myactions.qweb/_sys/manifest.form.qweb">
+        Перейти на manifest</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-whoami">whoami</a></td>
@@ -478,8 +419,8 @@
           <td>default</td>
           <td><a href="./myactions.qweb/_sys/whoami.form.qweb">
           Перейти на whoami</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.whoami&amp;__xslt=myonlyaction">
-          Перейти на whoami</a></td>
+          <td><a href="./myactions.qweb/_sys/whoami.form.qweb">
+        Перейти на whoami</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-bxlparse">bxlparse</a></td>
@@ -487,8 +428,8 @@
           <td>dev</td>
           <td><a href="./myactions.qweb/_sys/bxlparse.form.qweb">
           Перейти на bxlparse</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.bxlparse&amp;__xslt=myonlyaction">
-          Перейти на bxlparse</a></td>
+          <td><a href="./myactions.qweb/_sys/bxlparse.form.qweb">
+        Перейти на bxlparse</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-login">login</a></td>
@@ -496,8 +437,8 @@
           <td>default</td>
           <td><a href="./myactions.qweb/_sys/login.form.qweb">
           Перейти на login</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.login&amp;__xslt=myonlyaction">
-          Перейти на login</a></td>
+          <td><a href="./myactions.qweb/_sys/login.form.qweb">
+        Перейти на login</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-logout">logout</a></td>
@@ -505,8 +446,8 @@
           <td>default</td>
           <td><a href="./myactions.qweb/_sys/logout.form.qweb">
           Перейти на logout</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.logout&amp;__xslt=myonlyaction">
-          Перейти на logout</a></td>
+          <td><a href="./myactions.qweb/_sys/logout.form.qweb">
+        Перейти на logout</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-echo">echo</a></td>
@@ -515,8 +456,8 @@
           <td>admin</td>
           <td><a href="./myactions.qweb/_sys/echo.form.qweb">
           Перейти на echo</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.echo&amp;__xslt=myonlyaction">
-          Перейти на echo</a></td>
+          <td><a href="./myactions.qweb/_sys/echo.form.qweb">
+        Перейти на echo</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-fileresolve">fileresolve</a></td>
@@ -525,8 +466,8 @@
           <td>admin</td>
           <td><a href="./myactions.qweb/_sys/fileresolve.form.qweb">
           Перейти на fileresolve</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.fileresolve&amp;__xslt=myonlyaction">
-          Перейти на fileresolve</a></td>
+          <td><a href="./myactions.qweb/_sys/fileresolve.form.qweb">
+        Перейти на fileresolve</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-getresourceurl">getresourceurl</a></td>
@@ -535,8 +476,8 @@
           <td>default</td>
           <td><a href="./myactions.qweb/_sys/getresourceurl.form.qweb">
           Перейти на getresourceurl</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.getresourceurl&amp;__xslt=myonlyaction">
-          Перейти на getresourceurl</a></td>
+          <td><a href="./myactions.qweb/_sys/getresourceurl.form.qweb">
+        Перейти на getresourceurl</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-reset">reset</a></td>
@@ -545,8 +486,8 @@
           <td>admin</td>
           <td><a href="./myactions.qweb/_sys/reset.form.qweb">
           Перейти на reset</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.reset&amp;__xslt=myonlyaction">
-          Перейти на reset</a></td>
+          <td><a href="./myactions.qweb/_sys/reset.form.qweb">
+        Перейти на reset</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-resethandlers">resethandlers</a></td>
@@ -554,8 +495,8 @@
           <td>admin</td>
           <td><a href="./myactions.qweb/_sys/resethandlers.form.qweb">
           Перейти на resethandlers</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=_sys.resethandlers&amp;__xslt=myonlyaction">
-          Перейти на resethandlers</a></td>
+          <td><a href="./myactions.qweb/_sys/resethandlers.form.qweb">
+        Перейти на resethandlers</a></td>
         </tr>
       </tbody>
     </table>
@@ -589,25 +530,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>Required</th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
+          <th>RequireValidation</th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -618,22 +550,15 @@
           <td>
           </td>
           <td>StyleName</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'StyleName' :</td>
           <td>0</td>
@@ -653,25 +578,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>Required</th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
+          <th>RequireValidation</th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -682,22 +598,15 @@
           <td>
           </td>
           <td>ScriptName</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'ScriptName' :</td>
           <td>0</td>
@@ -719,22 +628,14 @@
         <tr>
           <th>Help</th>
           <th>Name</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>Required</th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
+          <th>RequireValidation</th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -744,22 +645,15 @@
           <tr>
           <td>Имя сборки</td>
           <td>a</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'a' :</td>
           <td>0</td>
@@ -767,22 +661,15 @@
           <tr>
           <td>Имя ресурса (можно суффикс)</td>
           <td>r</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'r' :</td>
           <td>1</td>
@@ -802,25 +689,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>Required</th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
+          <th>RequireValidation</th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -831,22 +709,15 @@
           <td>
           </td>
           <td>Target</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'Target' :</td>
           <td>0</td>
@@ -866,23 +737,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
           <th>Required</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
           <th>RequireValidation</th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -896,17 +760,12 @@
           <td>true</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>true</td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'usr' : is required;</td>
           <td>0</td>
@@ -918,17 +777,12 @@
           <td>true</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>true</td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'role' : is required;</td>
           <td>1</td>
@@ -937,22 +791,15 @@
           <td>
           </td>
           <td>exact</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.Boolean</td>
           <td>Parameter 'exact' :</td>
           <td>2</td>
@@ -999,25 +846,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>Required</th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
+          <th>RequireValidation</th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -1028,49 +866,18 @@
           <td>
           </td>
           <td>Usage</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'Usage' :</td>
           <td>0</td>
-        </tr>
-          <tr>
-          <td>
-          </td>
-          <td>Command</td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>System.String</td>
-          <td>Parameter 'Command' :</td>
-          <td>1</td>
         </tr>
         </tbody>
     </table>
@@ -1114,24 +921,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>Required</th>
+          <th>ValidatePattern</th>
           <th>IsLargeText</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
+          <th>RequireValidation</th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -1142,22 +941,15 @@
           <td>
           </td>
           <td>NoLexData</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.Boolean</td>
           <td>Parameter 'NoLexData' :</td>
           <td>0</td>
@@ -1166,22 +958,15 @@
           <td>
           </td>
           <td>SafeAttributes</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.Boolean</td>
           <td>Parameter 'SafeAttributes' :</td>
           <td>1</td>
@@ -1190,21 +975,15 @@
           <td>
           </td>
           <td>Text</td>
-          <td>
-          </td>
+          <td>false</td>
           <td>
           </td>
           <td>true</td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'Text' :</td>
           <td>2</td>
@@ -1224,24 +1003,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
-          <th>
-          </th>
+          <th>Required</th>
           <th>ValidatePattern</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
+          <th>RequireValidation</th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -1252,21 +1023,14 @@
           <td>
           </td>
           <td>_l_o_g_i_n_</td>
-          <td>
-          </td>
+          <td>false</td>
           <td>^[\w\.\d\-\\]+$</td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter '_l_o_g_i_n_' :</td>
           <td>0</td>
@@ -1275,21 +1039,14 @@
           <td>
           </td>
           <td>_p_a_s_s_</td>
-          <td>
-          </td>
+          <td>false</td>
           <td>^[\w\S]{2,}$</td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter '_p_a_s_s_' :</td>
           <td>1</td>
@@ -1298,22 +1055,15 @@
           <td>
           </td>
           <td>ReturnUrl</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'ReturnUrl' :</td>
           <td>2</td>
@@ -1351,25 +1101,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>Required</th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
+          <th>RequireValidation</th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -1380,22 +1121,15 @@
           <td>
           </td>
           <td>Existed</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.Boolean</td>
           <td>Parameter 'Existed' :</td>
           <td>0</td>
@@ -1404,22 +1138,15 @@
           <td>
           </td>
           <td>name</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'name' :</td>
           <td>1</td>
@@ -1439,23 +1166,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
           <th>Required</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
           <th>RequireValidation</th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -1469,17 +1189,12 @@
           <td>true</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>true</td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'name' : is required;</td>
           <td>0</td>
@@ -1488,21 +1203,15 @@
           <td>
           </td>
           <td>type</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>true</td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'type' : is constrainted to js, css, img;</td>
           <td>1</td>
@@ -1551,8 +1260,8 @@
           <td>sys</td>
           <td><a href="./myactions.qweb/wiki/getlock.form.qweb">
           Перейти на getlock</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=wiki.getlock&amp;__xslt=myonlyaction">
-          Перейти на getlock</a></td>
+          <td><a href="./myactions.qweb/_sys/getlock.form.qweb">
+        Перейти на getlock</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-getversionslist">getversionslist</a></td>
@@ -1560,8 +1269,8 @@
           <td>default</td>
           <td><a href="./myactions.qweb/wiki/getversionslist.form.qweb">
           Перейти на getversionslist</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=wiki.getversionslist&amp;__xslt=myonlyaction">
-          Перейти на getversionslist</a></td>
+          <td><a href="./myactions.qweb/_sys/getversionslist.form.qweb">
+        Перейти на getversionslist</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-releaselock">releaselock</a></td>
@@ -1569,8 +1278,8 @@
           <td>sys</td>
           <td><a href="./myactions.qweb/wiki/releaselock.form.qweb">
           Перейти на releaselock</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=wiki.releaselock&amp;__xslt=myonlyaction">
-          Перейти на releaselock</a></td>
+          <td><a href="./myactions.qweb/_sys/releaselock.form.qweb">
+        Перейти на releaselock</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-restoreversion">restoreversion</a></td>
@@ -1579,8 +1288,8 @@
           <td>sys</td>
           <td><a href="./myactions.qweb/wiki/restoreversion.form.qweb">
           Перейти на restoreversion</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=wiki.restoreversion&amp;__xslt=myonlyaction">
-          Перейти на restoreversion</a></td>
+          <td><a href="./myactions.qweb/_sys/restoreversion.form.qweb">
+        Перейти на restoreversion</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-find">find</a></td>
@@ -1588,8 +1297,8 @@
           <td>default</td>
           <td><a href="./myactions.qweb/wiki/find.form.qweb">
           Перейти на find</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=wiki.find&amp;__xslt=myonlyaction">
-          Перейти на find</a></td>
+          <td><a href="./myactions.qweb/_sys/find.form.qweb">
+        Перейти на find</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-createversion">createversion</a></td>
@@ -1597,8 +1306,8 @@
           <td>sys</td>
           <td><a href="./myactions.qweb/wiki/createversion.form.qweb">
           Перейти на createversion</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=wiki.createversion&amp;__xslt=myonlyaction">
-          Перейти на createversion</a></td>
+          <td><a href="./myactions.qweb/_sys/createversion.form.qweb">
+        Перейти на createversion</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-exists">exists</a></td>
@@ -1606,8 +1315,8 @@
           <td>default</td>
           <td><a href="./myactions.qweb/wiki/exists.form.qweb">
           Перейти на exists</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=wiki.exists&amp;__xslt=myonlyaction">
-          Перейти на exists</a></td>
+          <td><a href="./myactions.qweb/_sys/exists.form.qweb">
+        Перейти на exists</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-get">get</a></td>
@@ -1615,8 +1324,8 @@
           <td>default</td>
           <td><a href="./myactions.qweb/wiki/get.form.qweb">
           Перейти на get</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=wiki.get&amp;__xslt=myonlyaction">
-          Перейти на get</a></td>
+          <td><a href="./myactions.qweb/_sys/get.form.qweb">
+        Перейти на get</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-getfile">getfile</a></td>
@@ -1624,8 +1333,8 @@
           <td>default</td>
           <td><a href="./myactions.qweb/wiki/getfile.form.qweb">
           Перейти на getfile</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=wiki.getfile&amp;__xslt=myonlyaction">
-          Перейти на getfile</a></td>
+          <td><a href="./myactions.qweb/_sys/getfile.form.qweb">
+        Перейти на getfile</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-save">save</a></td>
@@ -1633,8 +1342,8 @@
           <td>sys</td>
           <td><a href="./myactions.qweb/wiki/save.form.qweb">
           Перейти на save</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=wiki.save&amp;__xslt=myonlyaction">
-          Перейти на save</a></td>
+          <td><a href="./myactions.qweb/_sys/save.form.qweb">
+        Перейти на save</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-savefile">savefile</a></td>
@@ -1642,8 +1351,8 @@
           <td>sys</td>
           <td><a href="./myactions.qweb/wiki/savefile.form.qweb">
           Перейти на savefile</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=wiki.savefile&amp;__xslt=myonlyaction">
-          Перейти на savefile</a></td>
+          <td><a href="./myactions.qweb/_sys/savefile.form.qweb">
+        Перейти на savefile</a></td>
         </tr>
       </tbody>
     </table>
@@ -1659,23 +1368,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
           <th>Required</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
           <th>RequireValidation</th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -1689,17 +1391,12 @@
           <td>true</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>true</td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'Code' : is required;</td>
           <td>0</td>
@@ -1719,23 +1416,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
           <th>Required</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
           <th>RequireValidation</th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -1749,17 +1439,12 @@
           <td>true</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>true</td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'Code' : is required;</td>
           <td>0</td>
@@ -1779,23 +1464,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
           <th>Required</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
           <th>RequireValidation</th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -1809,17 +1487,12 @@
           <td>true</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>true</td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'Code' : is required;</td>
           <td>0</td>
@@ -1839,23 +1512,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
           <th>Required</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
           <th>RequireValidation</th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -1869,17 +1535,12 @@
           <td>true</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>true</td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'Code' : is required;</td>
           <td>0</td>
@@ -1891,17 +1552,12 @@
           <td>true</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>true</td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'Version' : is required;</td>
           <td>1</td>
@@ -1921,23 +1577,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
           <th>Required</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
           <th>RequireValidation</th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -1951,17 +1600,12 @@
           <td>true</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>true</td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'Search' : is required;</td>
           <td>0</td>
@@ -1970,22 +1614,15 @@
           <td>
           </td>
           <td>Start</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.Int32</td>
           <td>Parameter 'Start' :</td>
           <td>1</td>
@@ -1994,22 +1631,15 @@
           <td>
           </td>
           <td>Count</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.Int32</td>
           <td>Parameter 'Count' :</td>
           <td>2</td>
@@ -2018,22 +1648,15 @@
           <td>
           </td>
           <td>Files</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.Boolean</td>
           <td>Parameter 'Files' :</td>
           <td>3</td>
@@ -2042,22 +1665,15 @@
           <td>
           </td>
           <td>Pages</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.Boolean</td>
           <td>Parameter 'Pages' :</td>
           <td>4</td>
@@ -2077,23 +1693,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
           <th>Required</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
           <th>RequireValidation</th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -2107,17 +1716,12 @@
           <td>true</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>true</td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'Code' : is required;</td>
           <td>0</td>
@@ -2126,22 +1730,15 @@
           <td>
           </td>
           <td>Comment</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'Comment' :</td>
           <td>1</td>
@@ -2161,23 +1758,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
           <th>Required</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
           <th>RequireValidation</th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -2191,17 +1781,12 @@
           <td>true</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>true</td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'Code' : is required;</td>
           <td>0</td>
@@ -2221,23 +1806,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
           <th>Required</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
           <th>RequireValidation</th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -2248,22 +1826,15 @@
           <td>
           </td>
           <td>PageVersion</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'PageVersion' :</td>
           <td>0</td>
@@ -2275,17 +1846,12 @@
           <td>true</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>true</td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'Code' : is required;</td>
           <td>1</td>
@@ -2294,22 +1860,15 @@
           <td>
           </td>
           <td>Usage</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'Usage' :</td>
           <td>2</td>
@@ -2329,23 +1888,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
           <th>Required</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
           <th>RequireValidation</th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -2356,22 +1908,15 @@
           <td>
           </td>
           <td>AsFile</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.Boolean</td>
           <td>Parameter 'AsFile' :</td>
           <td>0</td>
@@ -2380,22 +1925,15 @@
           <td>
           </td>
           <td>WithData</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.Boolean</td>
           <td>Parameter 'WithData' :</td>
           <td>1</td>
@@ -2407,17 +1945,12 @@
           <td>true</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>true</td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'Code' : is required;</td>
           <td>2</td>
@@ -2437,23 +1970,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
           <th>Required</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
           <th>RequireValidation</th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -2467,17 +1993,12 @@
           <td>true</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>true</td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'Code' : is required;</td>
           <td>0</td>
@@ -2486,22 +2007,15 @@
           <td>
           </td>
           <td>Title</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'Title' :</td>
           <td>1</td>
@@ -2510,22 +2024,15 @@
           <td>
           </td>
           <td>Text</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'Text' :</td>
           <td>2</td>
@@ -2545,23 +2052,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
           <th>Required</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
           <th>RequireValidation</th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -2575,17 +2075,12 @@
           <td>true</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>true</td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'Code' : is required;</td>
           <td>0</td>
@@ -2594,22 +2089,15 @@
           <td>
           </td>
           <td>Title</td>
+          <td>false</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'Title' :</td>
           <td>1</td>
@@ -2641,8 +2129,8 @@
           <td>dev</td>
           <td><a href="./myactions.qweb/zdev/substattributes.form.qweb">
           Перейти на substattributes</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=zdev.substattributes&amp;__xslt=myonlyaction">
-          Перейти на substattributes</a></td>
+          <td><a href="./myactions.qweb/_sys/substattributes.form.qweb">
+        Перейти на substattributes</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-dropcache">dropcache</a></td>
@@ -2651,8 +2139,8 @@
           <td>dev</td>
           <td><a href="./myactions.qweb/zdev/dropcache.form.qweb">
           Перейти на dropcache</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=zdev.dropcache&amp;__xslt=myonlyaction">
-          Перейти на dropcache</a></td>
+          <td><a href="./myactions.qweb/_sys/dropcache.form.qweb">
+        Перейти на dropcache</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-colattributes">colattributes</a></td>
@@ -2661,8 +2149,8 @@
           <td>dev</td>
           <td><a href="./myactions.qweb/zdev/colattributes.form.qweb">
           Перейти на colattributes</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=zdev.colattributes&amp;__xslt=myonlyaction">
-          Перейти на colattributes</a></td>
+          <td><a href="./myactions.qweb/_sys/colattributes.form.qweb">
+        Перейти на colattributes</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-formattributes">formattributes</a></td>
@@ -2671,8 +2159,8 @@
           <td>dev</td>
           <td><a href="./myactions.qweb/zdev/formattributes.form.qweb">
           Перейти на formattributes</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=zdev.formattributes&amp;__xslt=myonlyaction">
-          Перейти на formattributes</a></td>
+          <td><a href="./myactions.qweb/_sys/formattributes.form.qweb">
+        Перейти на formattributes</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-paramattributes">paramattributes</a></td>
@@ -2681,18 +2169,8 @@
           <td>default</td>
           <td><a href="./myactions.qweb/zdev/paramattributes.form.qweb">
           Перейти на paramattributes</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=zdev.paramattributes&amp;__xslt=myonlyaction">
-          Перейти на paramattributes</a></td>
-        </tr>
-        <tr>
-          <td><a href="#podgroup-params">params</a></td>
-          <td>
-          </td>
-          <td>dev</td>
-          <td><a href="./myactions.qweb/zdev/params.form.qweb">
-          Перейти на params</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=zdev.params&amp;__xslt=myonlyaction">
-          Перейти на params</a></td>
+          <td><a href="./myactions.qweb/_sys/paramattributes.form.qweb">
+        Перейти на paramattributes</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-reportattributes">reportattributes</a></td>
@@ -2701,8 +2179,8 @@
           <td>dev</td>
           <td><a href="./myactions.qweb/zdev/reportattributes.form.qweb">
           Перейти на reportattributes</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=zdev.reportattributes&amp;__xslt=myonlyaction">
-          Перейти на reportattributes</a></td>
+          <td><a href="./myactions.qweb/_sys/reportattributes.form.qweb">
+        Перейти на reportattributes</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-themaattributes">themaattributes</a></td>
@@ -2711,8 +2189,8 @@
           <td>dev</td>
           <td><a href="./myactions.qweb/zdev/themaattributes.form.qweb">
           Перейти на themaattributes</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=zdev.themaattributes&amp;__xslt=myonlyaction">
-          Перейти на themaattributes</a></td>
+          <td><a href="./myactions.qweb/_sys/themaattributes.form.qweb">
+        Перейти на themaattributes</a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-hwout">hwout</a></td>
@@ -2720,18 +2198,8 @@
           <td>default</td>
           <td><a href="./myactions.qweb/zdev/hwout.form.qweb">
           Перейти на hwout</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=zdev.hwout&amp;__xslt=myonlyaction">
-          Перейти на hwout</a></td>
-        </tr>
-        <tr>
-          <td><a href="#podgroup-getelementsmap">getelementsmap</a></td>
-          <td>
-          </td>
-          <td>default</td>
-          <td><a href="./myactions.qweb/zdev/getelementsmap.form.qweb">
-          Перейти на getelementsmap</a></td>
-          <td><a href="./myactions.html.qweb?usage=ui&amp;Command=zdev.getelementsmap&amp;__xslt=myonlyaction">
-          Перейти на getelementsmap</a></td>
+          <td><a href="./myactions.qweb/_sys/hwout.form.qweb">
+        Перейти на hwout</a></td>
         </tr>
       </tbody>
     </table>
@@ -2780,15 +2248,6 @@
     <h5>Help - ""
       Arm - "default"
     </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
-    <h3><a name="podgroup-params">
-        Подгруппа  params</a></h3>
-    <h4>
-      Расположение в XML:
-      root/item/item/value/parameters/item/
-    </h4>
-    <h5>Help - ""
-      Arm - "dev"
-    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-reportattributes">
         Подгруппа  reportattributes</a></h3>
     <h4>
@@ -2819,23 +2278,16 @@
     <table class="data">
       <thead>
         <tr>
-          <th>
-          </th>
+          <th>Help</th>
           <th>Name</th>
           <th>Required</th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>ValidatePattern</th>
+          <th>IsLargeText</th>
+          <th>IsComplexString</th>
+          <th>IsColor</th>
           <th>RequireValidation</th>
-          <th>
-          </th>
-          <th>
-          </th>
+          <th>LowerCase</th>
+          <th>UpperCase</th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -2849,17 +2301,12 @@
           <td>true</td>
           <td>
           </td>
-          <td>
-          </td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
+          <td>false</td>
           <td>true</td>
-          <td>
-          </td>
-          <td>
-          </td>
+          <td>false</td>
+          <td>false</td>
           <td>System.String</td>
           <td>Parameter 'usr' : is required;</td>
           <td>0</td>
@@ -2867,14 +2314,5 @@
         </tbody>
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
-    <h3><a name="podgroup-getelementsmap">
-        Подгруппа  getelementsmap</a></h3>
-    <h4>
-      Расположение в XML:
-      root/item/item/value/parameters/item/
-    </h4>
-    <h5>Help - ""
-      Arm - "default"
-    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
   </body>
 </html>
