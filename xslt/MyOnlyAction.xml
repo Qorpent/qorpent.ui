@@ -1,0 +1,13 @@
+<root>
+  <item key="wiki">
+    <item key="releaselock">
+      <value Help="Снять блокировку, если это возможно" Arm="sys">
+        <parameters>
+          <item Name="Code" Required="false" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Code' : is required;" __idx="0">
+            <Default/>
+          </item>
+        </parameters>
+      </value>
+    </item>
+  </item>
+</root>
