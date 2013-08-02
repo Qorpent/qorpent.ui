@@ -51,38 +51,10 @@
           </select>
           <input type="button" onclick="actionform.submit(document.querySelector('#formcall'))" value="Выполнить →"/>
           <iframe id="formresult" name="formresult"/>
-        </section>
-        <!--
-        <section>
-          <h2>Описание</h2>
-          <p>Позволяет получить список доступных операций</p>
-          <form id="formcall" actionname="_sys.myactions.action" action="./myactions.qweb/{root/item/@key}/{root/item/item/@key}.xml.qweb" target="formresult" method="POST">
-            <table>
-              <tr>
-                <td>Usage</td>
-                <td>
-                  <input name="Usage" value="" size="50" />
-                </td>
-                <td />
-              </tr>
-              <tr>
-                <td>Command</td>
-                <td>
-                  <input name="Command" value="" size="50" />
-                </td>
-                <td />
-              </tr>
-            </table>
-          </form>
-          <input type="button" value="Выполнить  →" onclick="actionform.submit(document.querySelector('#formcall'))" />
-          <section>
-            <iframe id="formresult" name="formresult" />
-          </section>
-        </section>-->
+        </section>      
       </body>
     </html>
   </xsl:template>
-
   <xsl:template match="//value/parameters" mode="farmcall">
     <form id="formcall" method="POST" target="formresult" action="../{../../../@key}/{../../@key}.RENDER.qweb" actionname="{../../../@key}.{../../@key}.action">
       <table class="data">
@@ -96,15 +68,14 @@
   
   <xsl:template match ="item" mode ="tbstring">
     <xsl:choose>
-      <xsl:when test="@DataType='String' and @IsLargeText!='true'">
+      <xsl:when test="@DataType='String' and not(@IsLargeText)">
         <tr>
           <th>
             <xsl:value-of select="@Name"/>
           </th>
           <td>
-            <input size="50" required="true" value="" name="@Name"/>
-          </td>
-         
+            <input size="50" value="" name="{@Name}"/> <xsl:if test="@Required='true'">Required="true"</xsl:if> 
+          </td>         
         </tr>
       </xsl:when>
       <xsl:when test="@DataType='Boolean'">
@@ -113,7 +84,7 @@
             <xsl:value-of select="@Name"/>
           </th>
           <td>
-            <input type="checkbox" size="50" value="true" name="@Name"/>
+            <input type="checkbox" size="50" value="true" name="{@Name}"/>
           </td>          
         </tr>
       </xsl:when>
@@ -123,25 +94,11 @@
             <xsl:value-of select="@Name"/>
           </th>          
             <td>
-              <textarea value="" name="@Name" style="width: 563px; height: 185px;"></textarea>
+              <textarea value="" name="{@Name}" style="width: 563px; height: 185px;"></textarea>
             </td>          
         </tr>
       </xsl:when>
     </xsl:choose>
-   <!--<tr>
-      <th><xsl:value-of select="@Name"/>
-      </th>
-      <td>Знач</td>
-    </tr>
-    <tr>
-      <th>
-        <xsl:value-of select="@DataType"/>
-      </th>
-      <td>Знач</td>
-    </tr>
-    <tr>
-      <th COLSPAN="2"> ======</th>
-    </tr>-->
     </xsl:template>
 
 </xsl:stylesheet>
