@@ -1,142 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
-  <xsl:template match="/">
+  <xsl:template match="/root">
     <html>
       <head>
-        <title>MyAction</title>
-        <link rel="stylesheet" href="../styles/zdev.base.css" />
+        <link rel='stylesheet' href='../styles/zdev.base.css' />
       </head>
       <body>
         <header>
-          <h1>Форма вызова для действия: _sys.myactions.action</h1>
+          <h1>
+            Форма вызова для действия: <xsl:value-of select=" item/@key"/>.<xsl:value-of select="item/item/@key"/>.action
+          </h1>
         </header>
-        <xsl:apply-templates select="root" mode="main"/>
-
+        <section>
+          <xsl:if test="item/item/value/@Help!=''">
+            <h2>Описание</h2>
+            <p>
+              <xsl:value-of select="item/item/value/@Help"/>
+            </p>
+          </xsl:if>
+          <xsl:apply-templates select="//value/parameters" mode="farmcall"/>
+        </section>
+        <!--
+        <section>
+          <h2>Описание</h2>
+          <p>Позволяет получить список доступных операций</p>
+          <form id="formcall" actionname="_sys.myactions.action" action="./myactions.qweb/{root/item/@key}/{root/item/item/@key}.xml.qweb" target="formresult" method="POST">
+            <table>
+              <tr>
+                <td>Usage</td>
+                <td>
+                  <input name="Usage" value="" size="50" />
+                </td>
+                <td />
+              </tr>
+              <tr>
+                <td>Command</td>
+                <td>
+                  <input name="Command" value="" size="50" />
+                </td>
+                <td />
+              </tr>
+            </table>
+          </form>
+          <input type="button" value="Выполнить  →" onclick="actionform.submit(document.querySelector('#formcall'))" />
+          <section>
+            <iframe id="formresult" name="formresult" />
+          </section>
+        </section>-->
       </body>
     </html>
   </xsl:template>
-  <xsl:template match="root" mode="main">
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-            Группа </th>
-          <td>
-              <xsl:value-of select="item/@key"/>
-            </td>          
-          </tr>
-        <tr>
-          <th>
-            Команда
-          </th>
-          <td>
-            <xsl:value-of select="item/item/@key"/>
-          </td>
-        </tr>
-        <xsl:if test="item/item/value/@Help!=''">
-        <tr>
-          <th>
-            <xsl:value-of select="name(item/item/value/@Help)"/>
-          </th>
-          <td>
-            <xsl:value-of select="item/item/value/@Help"/>
-          </td>
-        </tr>
-        </xsl:if>
-        <tr>
-          <th>
-            <xsl:value-of select="name(item/item/value/@Arm)"/>
-          </th>
-          <td>
-            <xsl:value-of select="item/item/value/@Arm"/>
-          </td>
-        </tr>
-        <tr>
-          <th colspan="2">Параметры</th>
-        </tr> 
-         <tr>
-          <th>
-            <xsl:value-of select="name(item/item/value/parameters/item/@Name)"/>
-          </th>
-          <td>
-            <xsl:value-of select="item/item/value/parameters/item/@Name"/>
-          </td>
-        </tr>
-        <xsl:if test="item/item/value/parameters/item/@Required">
-          <tr>
-            <th>
-              <xsl:value-of select="name(item/item/value/parameters/item/@Required)"/>
-            </th>
 
-            <td>
-              <xsl:choose>
-                <xsl:when test='item/item/value/parameters/item/@Required="true"'>
-                  <input name ="Required" type="radio"  checked="checked" disabled="disabled" />
-                </xsl:when>
-                <xsl:otherwise>
-                  <input name ="Required" type="radio"   disabled="disabled" />
-                </xsl:otherwise>
-              </xsl:choose>
-            </td>
-
-          </tr>
-        </xsl:if>
-        <xsl:if test="item/item/value/parameters/item/@RequireValidation">
-        <tr>
-          <th>
-            <xsl:value-of select="name(item/item/value/parameters/item/@RequireValidation)"/>
-          </th>
-          <td>
-            <xsl:choose>
-              <xsl:when test='item/item/value/parameters/item/@RequireValidation="true"'>
-                <input name ="RequireValidation" type="radio"  checked="checked" disabled="disabled" />
-              </xsl:when>
-              <xsl:otherwise>
-                <input name ="RequireValidation" type="radio"   disabled="disabled" />
-              </xsl:otherwise>
-            </xsl:choose>
-          </td>
-        </tr>
-        </xsl:if>
-        <tr>
-          <th>
-            <xsl:value-of select="name(item/item/value/parameters/item/@TypeName)"/>
-          </th>
-          <td>
-            <xsl:value-of select="item/item/value/parameters/item/@TypeName"/>
-          </td>
-        </tr>
-        <tr>
-          <th>
-            <xsl:value-of select="name(item/item/value/parameters/item/@DataType)"/>
-          </th>
-          <td>
-            <xsl:value-of select="item/item/value/parameters/item/@DataType"/>
-          </td>
-        </tr>
-        <tr>
-          <th>
-            <xsl:value-of select="name(item/item/value/parameters/item/@ErrorMessage)"/>
-          </th>
-          <td>
-            <xsl:value-of select="item/item/value/parameters/item/@ErrorMessage"/>
-          </td>
-        </tr>
-        <tr>
-          <th>
-            <xsl:value-of select="name(item/item/value/parameters/item/@__idx)"/>
-          </th>
-          <td>
-            <xsl:value-of select="item/item/value/parameters/item/@__idx"/>
-          </td>
-        </tr>
-        
-      
-      </thead>
-    </table>
+  <xsl:template match="//value/parameters" mode="farmcall">
+    <form id="formcall" method="POST" target="formresult" actionname="{../../../@key}.{../../@key}.action">
+      <table class="data">
+        <tbody>
+          <xsl:apply-templates select="item" mode="tbstring"/>
+        </tbody>
+      </table>
+    </form>
   </xsl:template>
-
+  <xsl:template match ="item" mode ="tbstring">
+    <tr>
+      <th><xsl:value-of select="@Name"/>
+      </th>
+      <td>Знач</td>
+    </tr>
+    <tr>
+      <th>
+        <xsl:value-of select="@DataType"/>
+      </th>
+      <td>Знач</td>
+    </tr>
+  </xsl:template>
 
 </xsl:stylesheet>
 

@@ -1,9 +1,15 @@
 <root>
-  <item key="wiki">
-    <item key="releaselock">
-      <value Help="Снять блокировку, если это возможно" Arm="sys">
+  <item key="_db">
+    <item key="addconnection">
+      <value Help="" Arm="admin">
         <parameters>
-          <item Name="Code" Required="false" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Code' : is required;" __idx="0">
+          <item Name="temporal" TypeName="System.Boolean" DataType="Boolean" ErrorMessage="Parameter 'temporal' :" __idx="0">
+            <Default/>
+          </item>
+          <item Required="true" Name="name" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'name' : is required;" __idx="1">
+            <Default/>
+          </item>
+          <item Required="true" Name="connection" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'connection' : is required;" __idx="2">
             <Default/>
           </item>
         </parameters>

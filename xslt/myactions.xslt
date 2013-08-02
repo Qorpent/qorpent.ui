@@ -122,16 +122,17 @@
         <xsl:value-of select="value/@Arm"/>
       </td>
       <td>
-        <a href="./myactions.qweb/{../@key}/{@key}.form.qweb">
+        <a href="../{../@key}/{@key}.form.qweb"  target="_blank">
           Перейти на <xsl:value-of select="@key"/>
         </a>
         <!--<a href="./myactions.qweb"><xsl:value-of select="@Key"/>dsf</a>-->
       </td>
       <td>
-        <a href="./myactions.html.qweb?usage=ui&amp;Command={../@key}.{@key}&amp;__xslt=myonlyaction">
+        <a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command={../@key}.{@key}" target="_blank">
           Перейти на <xsl:value-of select="@key"/>
         </a>
         <!--<a href="./myactions.qweb"><xsl:value-of select="@Key"/>dsf</a>-->
+        <!--_sys/myactions.xml.qweb?usage=ui&command=_sys.impersonate-->
       </td>
     </tr>
   </xsl:template>
@@ -143,9 +144,14 @@
   <xsl:template match="//item/item"  mode="valTableHead2">
     <h3>
       <a name ="podgroup-{@key}">
-        Подгруппа  <xsl:value-of select="@key"/>
+        Команда  <xsl:value-of select="@key"/>
       </a>
     </h3>
+    <p>
+      <a href="../{../@key}/{@key}.form.qweb"  target="_blank">
+        Вызов <xsl:value-of select="@key"/>
+      </a>
+    </p>
     <h4>
       Расположение в XML:
       <xsl:value-of select=" name(/root)"/>/<xsl:value-of select="name(/root/item)"/>/<xsl:value-of select="name(/root/item/item)"/>/<xsl:value-of select="name(/root/item/item/value)"/>/<xsl:value-of select="name(/root/item/item/value/parameters)"/>/<xsl:value-of select="name(/root/item/item/value/parameters/item)"/>/
