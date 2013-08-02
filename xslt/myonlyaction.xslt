@@ -7,12 +7,12 @@
         <link rel='stylesheet' href='../styles/zdev.base.css' />
         <script>
           var actionform = {
-            submit: function (target) {
-              target.setAttribute("action", location.pathname.replace("html", document.querySelector('#formrender').value));
-              if (target.checkValidity()) {
-                target.submit();
-              }
-            }
+          submit: function (target) {
+          target.setAttribute("action", target.getAttribute("action").replace(/\w+\.qweb/, document.querySelector('#formrender').value + ".qweb"));
+          if (target.checkValidity()) {
+          target.submit();
+          }
+          }
           }
         </script>
           
@@ -84,7 +84,7 @@
   </xsl:template>
 
   <xsl:template match="//value/parameters" mode="farmcall">
-    <form id="formcall" method="POST" target="formresult" actionname="{../../../@key}.{../../@key}.action">
+    <form id="formcall" method="POST" target="formresult" action="../{../../../@key}/{../../@key}.RENDER.qweb" actionname="{../../../@key}.{../../@key}.action">
       <table class="data">
         <tbody>
           <xsl:apply-templates select="item" mode="tbstring"/>
@@ -96,7 +96,7 @@
   
   <xsl:template match ="item" mode ="tbstring">
     <xsl:choose>
-      <xsl:when test="@DataType='String'">
+      <xsl:when test="@DataType='String' and @IsLargeText!='true'">
         <tr>
           <th>
             <xsl:value-of select="@Name"/>
@@ -104,6 +104,7 @@
           <td>
             <input size="50" required="true" value="" name="@Name"/>
           </td>
+         
         </tr>
       </xsl:when>
       <xsl:when test="@DataType='Boolean'">
@@ -113,7 +114,17 @@
           </th>
           <td>
             <input type="checkbox" size="50" value="true" name="@Name"/>
-          </td>
+          </td>          
+        </tr>
+      </xsl:when>
+      <xsl:when test='@IsLargeText="true"'>
+        <tr>
+          <th>
+            <xsl:value-of select="@Name"/>
+          </th>          
+            <td>
+              <textarea value="" name="@Name" style="width: 563px; height: 185px;"></textarea>
+            </td>          
         </tr>
       </xsl:when>
     </xsl:choose>

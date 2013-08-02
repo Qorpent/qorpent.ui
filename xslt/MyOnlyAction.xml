@@ -1,15 +1,15 @@
 <root>
-  <item key="_db">
-    <item key="addconnection">
-      <value Help="" Arm="admin">
+  <item key="_sys">
+    <item key="bxlparse">
+      <value Help="Converts BXL to XML" Arm="dev">
         <parameters>
-          <item Name="temporal" TypeName="System.Boolean" DataType="Boolean" ErrorMessage="Parameter 'temporal' :" __idx="0">
+          <item Name="NoLexData" TypeName="System.Boolean" DataType="Boolean" ErrorMessage="Parameter 'NoLexData' :" __idx="0">
             <Default/>
           </item>
-          <item Required="true" Name="name" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'name' : is required;" __idx="1">
+          <item Name="SafeAttributes" TypeName="System.Boolean" DataType="Boolean" ErrorMessage="Parameter 'SafeAttributes' :" __idx="1">
             <Default/>
           </item>
-          <item Required="true" Name="connection" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'connection' : is required;" __idx="2">
+          <item IsLargeText="true" Name="Text" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Text' :" __idx="2">
             <Default/>
           </item>
         </parameters>

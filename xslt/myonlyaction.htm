@@ -1,47 +1,41 @@
 ﻿<html>
   <head>
     <META http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" href="../styles/zdev.base.css">
-  </head>
+    <link rel="stylesheet" href="../styles/zdev.base.css"><script>
+          var actionform = {
+          submit: function (target) {
+          target.setAttribute("action", target.getAttribute("action").replace(/\w+\.qweb/, document.querySelector('#formrender').value + ".qweb"));
+          if (target.checkValidity()) {
+          target.submit();
+          }
+          }
+          }
+        </script></head>
   <body><header><h1>
-            Форма вызова для действия: _db.addconnection.action
-          </h1></header><section><form id="formcall" method="POST" target="formresult" actionname="_db.addconnection.action">
+            Форма вызова для действия: _sys.bxlparse.action
+          </h1></header><section><h2>Описание</h2>
+      <p>Converts BXL to XML</p>
+      <form id="formcall" method="POST" target="formresult" action="../_sys/bxlparse.RENDER.qweb" actionname="_sys.bxlparse.action">
         <table class="data">
           <tbody>
             <tr>
-              <th>temporal</th>
-              <td>Знач</td>
+              <th>NoLexData</th>
+              <td><input type="checkbox" size="50" value="true" name="@Name"></td>
             </tr>
             <tr>
-              <th>Boolean</th>
-              <td>Знач</td>
+              <th>SafeAttributes</th>
+              <td><input type="checkbox" size="50" value="true" name="@Name"></td>
             </tr>
             <tr>
-              <th COLSPAN="2"> ======</th>
-            </tr>
-            <tr>
-              <th>name</th>
-              <td>Знач</td>
-            </tr>
-            <tr>
-              <th>String</th>
-              <td>Знач</td>
-            </tr>
-            <tr>
-              <th COLSPAN="2"> ======</th>
-            </tr>
-            <tr>
-              <th>connection</th>
-              <td>Знач</td>
-            </tr>
-            <tr>
-              <th>String</th>
-              <td>Знач</td>
-            </tr>
-            <tr>
-              <th COLSPAN="2"> ======</th>
+              <th>Text</th>
+              <td><input size="50" required="true" value="" name="@Name"></td>
             </tr>
           </tbody>
         </table>
-      </form></section></body>
-</html>
+      </form><select id="formrender"><option value="bxl">BXL</option>
+        <option value="embedjs">EMBEDJS</option>
+        <option value="embedjson">EMBEDJSON</option>
+        <option value="empty">EMPTY</option>
+        <option value="file">FILE</option>
+        <option value="filedesc">FILEDESC</option>
+        <option value="form">FORM</option>
