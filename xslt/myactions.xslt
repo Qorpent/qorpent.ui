@@ -84,6 +84,7 @@
           <th>Arm</th>
           <th>Форма вызова для действия:</th>
           <th>Новая форма вызова для действия:</th>
+          <th>Вызова действия(xml):</th>
         </tr>
       </thead>
       <tbody>
@@ -129,6 +130,13 @@
       </td>
       <td>
         <a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command={../@key}.{@key}" target="_blank">
+          Перейти на <xsl:value-of select="@key"/>
+        </a>
+        <!--<a href="./myactions.qweb"><xsl:value-of select="@Key"/>dsf</a>-->
+        <!--_sys/myactions.xml.qweb?usage=ui&command=_sys.impersonate-->
+      </td>
+      <td>
+        <a href="./myactions.xml.qweb?usage=ui&amp;command={../@key}.{@key}" target="_blank">
           Перейти на <xsl:value-of select="@key"/>
         </a>
         <!--<a href="./myactions.qweb"><xsl:value-of select="@Key"/>dsf</a>-->

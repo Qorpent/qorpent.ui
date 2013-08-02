@@ -5,6 +5,17 @@
     <html>
       <head>
         <link rel='stylesheet' href='../styles/zdev.base.css' />
+        <script>
+          var actionform = {
+            submit: function (target) {
+              target.setAttribute("action", location.pathname.replace("html", document.querySelector('#formrender').value));
+              if (target.checkValidity()) {
+                target.submit();
+              }
+            }
+          }
+        </script>
+          
       </head>
       <body>
         <header>
@@ -20,6 +31,26 @@
             </p>
           </xsl:if>
           <xsl:apply-templates select="//value/parameters" mode="farmcall"/>
+          <select id="formrender">
+            <option value="bxl">BXL</option>
+            <option value="embedjs">EMBEDJS</option>
+            <option value="embedjson">EMBEDJSON</option>
+            <option value="empty">EMPTY</option>
+            <option value="file">FILE</option>
+            <option value="filedesc">FILEDESC</option>
+            <option value="form">FORM</option>
+            <option value="html">HTML</option>
+            <option value="js">JS</option>
+            <option value="json">JSON</option>
+            <option value="md5">MD5</option>
+            <option value="qview">QVIEW</option>
+            <option value="string">STRING</option>
+            <option value="view">VIEW</option>
+            <option value="wiki">WIKI</option>
+            <option value="xml">XML</option>
+          </select>
+          <input type="button" onclick="actionform.submit(document.querySelector('#formcall'))" value="Выполнить →"/>
+          <iframe id="formresult" name="formresult"/>
         </section>
         <!--
         <section>
@@ -61,8 +92,32 @@
       </table>
     </form>
   </xsl:template>
+  
+  
   <xsl:template match ="item" mode ="tbstring">
-    <tr>
+    <xsl:choose>
+      <xsl:when test="@DataType='String'">
+        <tr>
+          <th>
+            <xsl:value-of select="@Name"/>
+          </th>
+          <td>
+            <input size="50" required="true" value="" name="@Name"/>
+          </td>
+        </tr>
+      </xsl:when>
+      <xsl:when test="@DataType='Boolean'">
+        <tr>
+          <th>
+            <xsl:value-of select="@Name"/>
+          </th>
+          <td>
+            <input type="checkbox" size="50" value="true" name="@Name"/>
+          </td>
+        </tr>
+      </xsl:when>
+    </xsl:choose>
+   <!--<tr>
       <th><xsl:value-of select="@Name"/>
       </th>
       <td>Знач</td>
@@ -73,7 +128,10 @@
       </th>
       <td>Знач</td>
     </tr>
-  </xsl:template>
+    <tr>
+      <th COLSPAN="2"> ======</th>
+    </tr>-->
+    </xsl:template>
 
 </xsl:stylesheet>
 
