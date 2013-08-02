@@ -3,19 +3,21 @@
  */
 (function() {
     var showWiki = function(result) {
-        var article_tpl = app.user.isAdmin() ? templates["wiki-admin"] : templates["wiki-user"];
-        var attach_form_tpl = templates["wiki-attach-form"];
+        var article_tpl = _.qorpent.user.logonadmin ? "qorpent_wiki_admin" : "qorpent_wiki_user";
+        var attach_form_tpl = "qorpent_wiki_attachform";
         var content = $('<div class="wiki-body"/>');
+        var code = "";
         $.each(result, function(i, w) {
+            code += "__" + w.Code.replace(/\//g, "_");
             w.Date = w.Date.format("dd.mm.yyyy HH:MM:ss");
-            var html = $(Mustache.to_html(article_tpl, w));
+            var html = _.render.compile(article_tpl, w);
             html.find('.wiki-text').append(qwiki.toHTML(w.Text));
             html.delegate(".wiki-print-btn", "click", function(e) {
                 $(e.delegateTarget).printelement();
             });
             content.append(html);
         });
-        var form = $(attach_form_tpl);
+        var form = _.render.compile(attach_form_tpl);
         content.prepend(form);
         var file = form.find('.wiki-file');
         var attachbtn = form.find('.wiki-file-attach');
@@ -58,7 +60,7 @@
             form.find('.bar').css("width", 0);
         });
 
-        content.miamodal({title: "База знаний", id: ""});
+        content.miamodal({title: "База знаний", id: code, resizable: true});
     };
 
     _.api.wiki.get.onSuccess(function(e, result) {
