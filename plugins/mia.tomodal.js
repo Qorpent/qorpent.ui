@@ -21,6 +21,14 @@
                 if (!this.modalmode) {
                     this.modal = this.el.miamodal({
                         closebutton: false,
+                        resizable: true,
+                        customButton: {
+                            class : "btn-mini",
+                            text : "Закрыть",
+                            click : function() {
+                                btn.trigger("click");
+                            }
+                        },
                         id: (this.el.attr("id") || this.el.attr("class").replace(/\s*/g, "")) + "modal",
                         width: this.el.width() + 30,
                         onClose: $.proxy(function() {

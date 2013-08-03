@@ -101,7 +101,8 @@
             $(this).remove();
             backdrop.remove();
         });
-        $(modal).draggable({ handle: ".modal-header", containment: "window"});
+        var draggable_handle = !!p.title ? ".modal-header" : ".modal-body";
+        $(modal).draggable({ handle: draggable_handle, containment: "window"});
         modal.mousedown(function() {
             $('.modal').css("z-index", 100);
             modal.css("z-index", 101);
