@@ -1,0 +1,9 @@
+.element-withmodalmode {
+	position: relative;
+}
+
+.element-withmodalmode .modalmode-icon {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
