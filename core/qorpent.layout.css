@@ -17,6 +17,16 @@
     -webkit-flex-basis: 100%;
 }
 
+
+#appFooter {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 22px;
+    background-color: #f5f5f5;
+    z-index: 1000;
+}
+
 /*body>.row-fluid {
 	margin-top: 50px;
 }*/
