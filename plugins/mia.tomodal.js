@@ -24,7 +24,7 @@
                         resizable: true,
                         customButton: {
                             class : "btn-mini",
-                            text : "Р—Р°РєСЂС‹С‚СЊ",
+                            text : "Закрыть",
                             click : function() {
                                 btn.trigger("click");
                             }
