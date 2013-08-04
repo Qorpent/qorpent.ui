@@ -11,6 +11,10 @@ a>i {
     padding: 0;   
 }
 
+.tab-content {
+    overflow: visible;
+}
+
 .nav-list>li>a,
 i.icon,
 .label {
