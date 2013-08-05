@@ -74,7 +74,28 @@
             <xsl:value-of select="@Name"/>
           </th>
           <td>
-            <input size="50" value="" name="{@Name}"/> <xsl:if test="@Required='true'">Required="true"</xsl:if> 
+            <xsl:choose>
+            
+              <xsl:when test="@Required='true'">
+              <input size="50" value="" required='true' name="{@Name}"/>              
+            </xsl:when>
+              
+                <xsl:when test="@ValidatePattern!=''">
+                <input size="50" value="" pattern='{@ValidatePattern}' name="{@Name}"/>
+              </xsl:when>
+                
+                  <xsl:when test="@ValidatePattern!='' and @Required='true'  ">
+              <input size="50" value="" required='true' pattern='{@ValidatePattern}' name="{@Name}"/>              
+            </xsl:when>
+               
+                 <xsl:when test="@ValidatePattern!=''">
+              <input size="50" value="" patern='{@ValidatePattern}' name="{@Name}"/> 
+            </xsl:when>
+              
+                <xsl:otherwise>
+                 <input size="50" value="" name="{@Name}"/>
+              </xsl:otherwise>
+            </xsl:choose>
           </td>         
         </tr>
       </xsl:when>
@@ -97,6 +118,8 @@
               <textarea value="" name="{@Name}" style="width: 563px; height: 185px;"></textarea>
             </td>          
         </tr>
+      
+    
       </xsl:when>
     </xsl:choose>
     </xsl:template>

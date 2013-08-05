@@ -1,16 +1,18 @@
 <root>
   <item key="_sys">
-    <item key="bxlparse">
-      <value Help="Converts BXL to XML" Arm="dev">
+    <item key="getresourceurl">
+      <value Help="" Arm="default">
         <parameters>
-          <item Name="NoLexData" TypeName="System.Boolean" DataType="Boolean" ErrorMessage="Parameter 'NoLexData' :" __idx="0">
+          <item Required="true" Name="name" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'name' : is required;" __idx="0">
             <Default/>
           </item>
-          <item Name="SafeAttributes" TypeName="System.Boolean" DataType="Boolean" ErrorMessage="Parameter 'SafeAttributes' :" __idx="1">
-            <Default/>
-          </item>
-          <item IsLargeText="true" Name="Text" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'Text' :" __idx="2">
-            <Default/>
+          <item Name="type" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'type' : is constrainted to js, css, img;" __idx="1">
+            <Constraint>
+              <item __idx="0">js</item>
+              <item __idx="1">css</item>
+              <item __idx="2">img</item>
+            </Constraint>
+            <Default>js</Default>
           </item>
         </parameters>
       </value>
