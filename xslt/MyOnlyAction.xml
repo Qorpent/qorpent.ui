@@ -1,0 +1,21 @@
+<root>
+  <item key="_sys">
+    <item key="getresourceurl">
+      <value Help="" Arm="default">
+        <parameters>
+          <item Required="true" Name="name" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'name' : is required;" __idx="0">
+            <Default/>
+          </item>
+          <item Name="type" RequireValidation="true" TypeName="System.String" DataType="String" ErrorMessage="Parameter 'type' : is constrainted to js, css, img;" __idx="1">
+            <Constraint>
+              <item __idx="0">js</item>
+              <item __idx="1">css</item>
+              <item __idx="2">img</item>
+            </Constraint>
+            <Default>js</Default>
+          </item>
+        </parameters>
+      </value>
+    </item>
+  </item>
+</root>

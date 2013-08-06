@@ -2,7 +2,7 @@
   <head>
     <META http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>MyAction</title>
-    <link rel="stylesheet" href="zdev.base.css">
+    <link rel="stylesheet" href="../styles/zdev.base.css">
   </head>
   <body>
     <h1>My Action</h1>
@@ -31,8 +31,6 @@
     </table>
     <h2><a name="group-_db">
         Группа _db</a></h2>
-    <h4>
-      Расположение в XML:  root/item/item</h4>
     <table class="data">
       <thead>
         <tr>
@@ -41,6 +39,9 @@
           </th>
           <th>Help</th>
           <th>Arm</th>
+          <th>Вызов (old):</th>
+          <th>Вызов:</th>
+          <th>xml:</th>
         </tr>
       </thead>
       <tbody>
@@ -48,24 +49,35 @@
           <td><a href="#podgroup-addconnection">addconnection</a></td>
           <td>
           </td>
-          <td>admin</td>
+          <td>admin_db</td>
+          <td><a href="../_db/addconnection.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды addconnection" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_db.addconnection" target="_blank"><span title="Переход на новую форму вызова команды addconnection" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_db.addconnection" target="_blank"><span title="Просмотр исходного xml вызова команды addconnection" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-connections">connections</a></td>
           <td>
           </td>
-          <td>admin</td>
+          <td>admin_db</td>
+          <td><a href="../_db/connections.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды connections" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_db.connections" target="_blank"><span title="Переход на новую форму вызова команды connections" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_db.connections" target="_blank"><span title="Просмотр исходного xml вызова команды connections" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-removeconnection">removeconnection</a></td>
           <td>
           </td>
-          <td>admin</td>
+          <td>admin_db</td>
+          <td><a href="../_db/removeconnection.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды removeconnection" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_db.removeconnection" target="_blank"><span title="Переход на новую форму вызова команды removeconnection" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_db.removeconnection" target="_blank"><span title="Просмотр исходного xml вызова команды removeconnection" class="icon icon-open"></span></a></td>
         </tr>
       </tbody>
     </table>
     <h3><a name="podgroup-addconnection">
-        Подгруппа  addconnection</a></h3>
+        Команда  addconnection</a></h3>
+    <p><a href="../_db/addconnection.form.qweb" target="_blank">
+        Вызов addconnection</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -76,16 +88,23 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
           <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -96,15 +115,22 @@
           <td>
           </td>
           <td>temporal</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.Boolean</td>
           <td>Parameter 'temporal' :</td>
           <td>0</td>
@@ -116,12 +142,17 @@
           <td>true</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>true</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'name' : is required;</td>
           <td>1</td>
@@ -133,12 +164,17 @@
           <td>true</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>true</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'connection' : is required;</td>
           <td>2</td>
@@ -147,7 +183,9 @@
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-connections">
-        Подгруппа  connections</a></h3>
+        Команда  connections</a></h3>
+    <p><a href="../_db/connections.form.qweb" target="_blank">
+        Вызов connections</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -158,16 +196,25 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
-          <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
-          <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -178,15 +225,22 @@
           <td>
           </td>
           <td>testConnection</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.Boolean</td>
           <td>Parameter 'testConnection' :</td>
           <td>0</td>
@@ -195,7 +249,9 @@
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-removeconnection">
-        Подгруппа  removeconnection</a></h3>
+        Команда  removeconnection</a></h3>
+    <p><a href="../_db/removeconnection.form.qweb" target="_blank">
+        Вызов removeconnection</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -206,16 +262,23 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
           <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -226,15 +289,22 @@
           <td>
           </td>
           <td>temporal</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.Boolean</td>
           <td>Parameter 'temporal' :</td>
           <td>0</td>
@@ -246,12 +316,17 @@
           <td>true</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>true</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'name' : is required;</td>
           <td>1</td>
@@ -261,8 +336,6 @@
     <div><a href="#up">назад к оглавлению</a></div>
     <h2><a name="group-_sys">
         Группа _sys</a></h2>
-    <h4>
-      Расположение в XML:  root/item/item</h4>
     <table class="data">
       <thead>
         <tr>
@@ -271,219 +344,226 @@
           </th>
           <th>Help</th>
           <th>Arm</th>
+          <th>Вызов (old):</th>
+          <th>Вызов:</th>
+          <th>xml:</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><a href="#podgroup-donothing">donothing</a></td>
           <td>Do absolutely nothing</td>
-          <td>default</td>
+          <td>default_sys</td>
+          <td><a href="../_sys/donothing.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды donothing" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.donothing" target="_blank"><span title="Переход на новую форму вызова команды donothing" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.donothing" target="_blank"><span title="Просмотр исходного xml вызова команды donothing" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-nodeload">nodeload</a></td>
           <td>
           </td>
-          <td>default</td>
+          <td>default_sys</td>
+          <td><a href="../_sys/nodeload.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды nodeload" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.nodeload" target="_blank"><span title="Переход на новую форму вызова команды nodeload" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.nodeload" target="_blank"><span title="Просмотр исходного xml вызова команды nodeload" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-getcss">getcss</a></td>
           <td>
           </td>
-          <td>default</td>
+          <td>default_sys</td>
+          <td><a href="../_sys/getcss.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды getcss" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.getcss" target="_blank"><span title="Переход на новую форму вызова команды getcss" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.getcss" target="_blank"><span title="Просмотр исходного xml вызова команды getcss" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-getjs">getjs</a></td>
           <td>
           </td>
-          <td>default</td>
+          <td>default_sys</td>
+          <td><a href="../_sys/getjs.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды getjs" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.getjs" target="_blank"><span title="Переход на новую форму вызова команды getjs" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.getjs" target="_blank"><span title="Просмотр исходного xml вызова команды getjs" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-getresource">getresource</a></td>
           <td>Позволяет получить зашитый в сборку ресурс, считается безопасной операцией;если ресурс в составе имени имеет qvexr (QView Export Resource), то он рассматривается как общедоступный иначе требуется доступ уровня DEVELOPER</td>
-          <td>default</td>
+          <td>default_sys</td>
+          <td><a href="../_sys/getresource.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды getresource" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.getresource" target="_blank"><span title="Переход на новую форму вызова команды getresource" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.getresource" target="_blank"><span title="Просмотр исходного xml вызова команды getresource" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-impersonate">impersonate</a></td>
           <td>Позволяет имитировать вход от имени другого пользователя</td>
-          <td>default</td>
+          <td>default_sys</td>
+          <td><a href="../_sys/impersonate.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды impersonate" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.impersonate" target="_blank"><span title="Переход на новую форму вызова команды impersonate" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.impersonate" target="_blank"><span title="Просмотр исходного xml вызова команды impersonate" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-isinrole">isinrole</a></td>
           <td>Проверка роли у пользователя</td>
-          <td>admin</td>
+          <td>admin_sys</td>
+          <td><a href="../_sys/isinrole.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды isinrole" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.isinrole" target="_blank"><span title="Переход на новую форму вызова команды isinrole" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.isinrole" target="_blank"><span title="Просмотр исходного xml вызова команды isinrole" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-info">info</a></td>
           <td>
           </td>
-          <td>admin</td>
+          <td>admin_sys</td>
+          <td><a href="../_sys/info.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды info" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.info" target="_blank"><span title="Переход на новую форму вызова команды info" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.info" target="_blank"><span title="Просмотр исходного xml вызова команды info" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-compileloadscript">compileloadscript</a></td>
           <td>
           </td>
-          <td>admin</td>
+          <td>admin_sys</td>
+          <td><a href="../_sys/compileloadscript.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды compileloadscript" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.compileloadscript" target="_blank"><span title="Переход на новую форму вызова команды compileloadscript" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.compileloadscript" target="_blank"><span title="Просмотр исходного xml вызова команды compileloadscript" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-loadscript">loadscript</a></td>
           <td>
           </td>
-          <td>default</td>
+          <td>default_sys</td>
+          <td><a href="../_sys/loadscript.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды loadscript" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.loadscript" target="_blank"><span title="Переход на новую форму вызова команды loadscript" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.loadscript" target="_blank"><span title="Просмотр исходного xml вызова команды loadscript" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-myactions">myactions</a></td>
           <td>Позволяет получить список доступных операций</td>
-          <td>default</td>
+          <td>default_sys</td>
+          <td><a href="../_sys/myactions.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды myactions" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.myactions" target="_blank"><span title="Переход на новую форму вызова команды myactions" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.myactions" target="_blank"><span title="Просмотр исходного xml вызова команды myactions" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-myrenders">myrenders</a></td>
           <td>Позволяет получить список доступных рендеров</td>
-          <td>admin</td>
+          <td>admin_sys</td>
+          <td><a href="../_sys/myrenders.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды myrenders" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.myrenders" target="_blank"><span title="Переход на новую форму вызова команды myrenders" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.myrenders" target="_blank"><span title="Просмотр исходного xml вызова команды myrenders" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-manifest">manifest</a></td>
           <td>Считывает и возвращает сведенный файл манифеста</td>
-          <td>admin</td>
+          <td>admin_sys</td>
+          <td><a href="../_sys/manifest.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды manifest" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.manifest" target="_blank"><span title="Переход на новую форму вызова команды manifest" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.manifest" target="_blank"><span title="Просмотр исходного xml вызова команды manifest" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-whoami">whoami</a></td>
           <td>Позволяет получить первичные данные по своей учетной записи</td>
-          <td>default</td>
+          <td>default_sys</td>
+          <td><a href="../_sys/whoami.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды whoami" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.whoami" target="_blank"><span title="Переход на новую форму вызова команды whoami" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.whoami" target="_blank"><span title="Просмотр исходного xml вызова команды whoami" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-bxlparse">bxlparse</a></td>
           <td>Converts BXL to XML</td>
-          <td>dev</td>
+          <td>dev_sys</td>
+          <td><a href="../_sys/bxlparse.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды bxlparse" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.bxlparse" target="_blank"><span title="Переход на новую форму вызова команды bxlparse" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.bxlparse" target="_blank"><span title="Просмотр исходного xml вызова команды bxlparse" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-login">login</a></td>
           <td>EN: used to authenticate with form based method</td>
-          <td>default</td>
+          <td>default_sys</td>
+          <td><a href="../_sys/login.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды login" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.login" target="_blank"><span title="Переход на новую форму вызова команды login" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.login" target="_blank"><span title="Просмотр исходного xml вызова команды login" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-logout">logout</a></td>
           <td>EN: used to logout if forms used</td>
-          <td>default</td>
+          <td>default_sys</td>
+          <td><a href="../_sys/logout.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды logout" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.logout" target="_blank"><span title="Переход на новую форму вызова команды logout" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.logout" target="_blank"><span title="Просмотр исходного xml вызова команды logout" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-echo">echo</a></td>
           <td>
           </td>
-          <td>admin</td>
+          <td>admin_sys</td>
+          <td><a href="../_sys/echo.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды echo" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.echo" target="_blank"><span title="Переход на новую форму вызова команды echo" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.echo" target="_blank"><span title="Просмотр исходного xml вызова команды echo" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-fileresolve">fileresolve</a></td>
           <td>
           </td>
-          <td>admin</td>
+          <td>admin_sys</td>
+          <td><a href="../_sys/fileresolve.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды fileresolve" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.fileresolve" target="_blank"><span title="Переход на новую форму вызова команды fileresolve" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.fileresolve" target="_blank"><span title="Просмотр исходного xml вызова команды fileresolve" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-getresourceurl">getresourceurl</a></td>
           <td>
           </td>
-          <td>default</td>
+          <td>default_sys</td>
+          <td><a href="../_sys/getresourceurl.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды getresourceurl" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.getresourceurl" target="_blank"><span title="Переход на новую форму вызова команды getresourceurl" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.getresourceurl" target="_blank"><span title="Просмотр исходного xml вызова команды getresourceurl" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-reset">reset</a></td>
           <td>
           </td>
-          <td>admin</td>
+          <td>admin_sys</td>
+          <td><a href="../_sys/reset.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды reset" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.reset" target="_blank"><span title="Переход на новую форму вызова команды reset" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.reset" target="_blank"><span title="Просмотр исходного xml вызова команды reset" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-resethandlers">resethandlers</a></td>
           <td>Список возможных объектов для сброса состояния</td>
-          <td>admin</td>
+          <td>admin_sys</td>
+          <td><a href="../_sys/resethandlers.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды resethandlers" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=_sys.resethandlers" target="_blank"><span title="Переход на новую форму вызова команды resethandlers" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=_sys.resethandlers" target="_blank"><span title="Просмотр исходного xml вызова команды resethandlers" class="icon icon-open"></span></a></td>
         </tr>
       </tbody>
     </table>
     <h3><a name="podgroup-donothing">
-        Подгруппа  donothing</a></h3>
+        Команда  donothing</a></h3>
+    <p><a href="../_sys/donothing.form.qweb" target="_blank">
+        Вызов donothing</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
     </h4>
     <h5>Help - "Do absolutely nothing"
       Arm - "default"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-nodeload">
-        Подгруппа  nodeload</a></h3>
+        Команда  nodeload</a></h3>
+    <p><a href="../_sys/nodeload.form.qweb" target="_blank">
+        Вызов nodeload</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
     </h4>
     <h5>Help - ""
       Arm - "default"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-getcss">
-        Подгруппа  getcss</a></h3>
+        Команда  getcss</a></h3>
+    <p><a href="../_sys/getcss.form.qweb" target="_blank">
+        Вызов getcss</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -494,16 +574,25 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
-          <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
-          <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -514,15 +603,22 @@
           <td>
           </td>
           <td>StyleName</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'StyleName' :</td>
           <td>0</td>
@@ -531,7 +627,9 @@
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-getjs">
-        Подгруппа  getjs</a></h3>
+        Команда  getjs</a></h3>
+    <p><a href="../_sys/getjs.form.qweb" target="_blank">
+        Вызов getjs</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -542,16 +640,25 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
-          <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
-          <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -562,15 +669,22 @@
           <td>
           </td>
           <td>ScriptName</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'ScriptName' :</td>
           <td>0</td>
@@ -579,7 +693,9 @@
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-getresource">
-        Подгруппа  getresource</a></h3>
+        Команда  getresource</a></h3>
+    <p><a href="../_sys/getresource.form.qweb" target="_blank">
+        Вызов getresource</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -592,14 +708,22 @@
         <tr>
           <th>Help</th>
           <th>Name</th>
-          <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
-          <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -609,15 +733,22 @@
           <tr>
           <td>Имя сборки</td>
           <td>a</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'a' :</td>
           <td>0</td>
@@ -625,15 +756,22 @@
           <tr>
           <td>Имя ресурса (можно суффикс)</td>
           <td>r</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'r' :</td>
           <td>1</td>
@@ -642,7 +780,9 @@
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-impersonate">
-        Подгруппа  impersonate</a></h3>
+        Команда  impersonate</a></h3>
+    <p><a href="../_sys/impersonate.form.qweb" target="_blank">
+        Вызов impersonate</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -653,16 +793,25 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
-          <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
-          <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -673,15 +822,22 @@
           <td>
           </td>
           <td>Target</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'Target' :</td>
           <td>0</td>
@@ -690,7 +846,9 @@
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-isinrole">
-        Подгруппа  isinrole</a></h3>
+        Команда  isinrole</a></h3>
+    <p><a href="../_sys/isinrole.form.qweb" target="_blank">
+        Вызов isinrole</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -701,16 +859,23 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
           <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -724,12 +889,17 @@
           <td>true</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>true</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'usr' : is required;</td>
           <td>0</td>
@@ -741,12 +911,17 @@
           <td>true</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>true</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'role' : is required;</td>
           <td>1</td>
@@ -755,15 +930,22 @@
           <td>
           </td>
           <td>exact</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.Boolean</td>
           <td>Parameter 'exact' :</td>
           <td>2</td>
@@ -772,136 +954,42 @@
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-info">
-        Подгруппа  info</a></h3>
+        Команда  info</a></h3>
+    <p><a href="../_sys/info.form.qweb" target="_blank">
+        Вызов info</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
     </h4>
     <h5>Help - ""
       Arm - "admin"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-compileloadscript">
-        Подгруппа  compileloadscript</a></h3>
+        Команда  compileloadscript</a></h3>
+    <p><a href="../_sys/compileloadscript.form.qweb" target="_blank">
+        Вызов compileloadscript</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
     </h4>
     <h5>Help - ""
       Arm - "admin"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-loadscript">
-        Подгруппа  loadscript</a></h3>
+        Команда  loadscript</a></h3>
+    <p><a href="../_sys/loadscript.form.qweb" target="_blank">
+        Вызов loadscript</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
     </h4>
     <h5>Help - ""
       Arm - "default"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-myactions">
-        Подгруппа  myactions</a></h3>
+        Команда  myactions</a></h3>
+    <p><a href="../_sys/myactions.form.qweb" target="_blank">
+        Вызов myactions</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -912,16 +1000,25 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
-          <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
-          <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -932,153 +1029,90 @@
           <td>
           </td>
           <td>Usage</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'Usage' :</td>
           <td>0</td>
+        </tr>
+          <tr>
+          <td>
+          </td>
+          <td>Command</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>System.String</td>
+          <td>Parameter 'Command' :</td>
+          <td>1</td>
         </tr>
         </tbody>
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-myrenders">
-        Подгруппа  myrenders</a></h3>
+        Команда  myrenders</a></h3>
+    <p><a href="../_sys/myrenders.form.qweb" target="_blank">
+        Вызов myrenders</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
     </h4>
     <h5>Help - "Позволяет получить список доступных рендеров"
       Arm - "admin"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-manifest">
-        Подгруппа  manifest</a></h3>
+        Команда  manifest</a></h3>
+    <p><a href="../_sys/manifest.form.qweb" target="_blank">
+        Вызов manifest</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
     </h4>
     <h5>Help - "Считывает и возвращает сведенный файл манифеста"
       Arm - "admin"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-whoami">
-        Подгруппа  whoami</a></h3>
+        Команда  whoami</a></h3>
+    <p><a href="../_sys/whoami.form.qweb" target="_blank">
+        Вызов whoami</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
     </h4>
     <h5>Help - "Позволяет получить первичные данные по своей учетной записи"
       Arm - "default"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-bxlparse">
-        Подгруппа  bxlparse</a></h3>
+        Команда  bxlparse</a></h3>
+    <p><a href="../_sys/bxlparse.form.qweb" target="_blank">
+        Вызов bxlparse</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -1089,16 +1123,24 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
-          <th>Required</th>
-          <th>ValidatePattern</th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
-          <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -1109,15 +1151,22 @@
           <td>
           </td>
           <td>NoLexData</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.Boolean</td>
           <td>Parameter 'NoLexData' :</td>
           <td>0</td>
@@ -1126,15 +1175,22 @@
           <td>
           </td>
           <td>SafeAttributes</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.Boolean</td>
           <td>Parameter 'SafeAttributes' :</td>
           <td>1</td>
@@ -1143,15 +1199,21 @@
           <td>
           </td>
           <td>Text</td>
-          <td>false</td>
+          <td>
+          </td>
           <td>
           </td>
           <td>true</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'Text' :</td>
           <td>2</td>
@@ -1160,7 +1222,9 @@
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-login">
-        Подгруппа  login</a></h3>
+        Команда  login</a></h3>
+    <p><a href="../_sys/login.form.qweb" target="_blank">
+        Вызов login</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -1171,16 +1235,24 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
-          <th>Required</th>
+          <th>
+          </th>
           <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
-          <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -1191,14 +1263,21 @@
           <td>
           </td>
           <td>_l_o_g_i_n_</td>
-          <td>false</td>
+          <td>
+          </td>
           <td>^[\w\.\d\-\\]+$</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter '_l_o_g_i_n_' :</td>
           <td>0</td>
@@ -1207,14 +1286,21 @@
           <td>
           </td>
           <td>_p_a_s_s_</td>
-          <td>false</td>
+          <td>
+          </td>
           <td>^[\w\S]{2,}$</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter '_p_a_s_s_' :</td>
           <td>1</td>
@@ -1223,15 +1309,22 @@
           <td>
           </td>
           <td>ReturnUrl</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'ReturnUrl' :</td>
           <td>2</td>
@@ -1240,93 +1333,31 @@
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-logout">
-        Подгруппа  logout</a></h3>
+        Команда  logout</a></h3>
+    <p><a href="../_sys/logout.form.qweb" target="_blank">
+        Вызов logout</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
     </h4>
     <h5>Help - "EN: used to logout if forms used"
       Arm - "default"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-echo">
-        Подгруппа  echo</a></h3>
+        Команда  echo</a></h3>
+    <p><a href="../_sys/echo.form.qweb" target="_blank">
+        Вызов echo</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
     </h4>
     <h5>Help - ""
       Arm - "admin"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-fileresolve">
-        Подгруппа  fileresolve</a></h3>
+        Команда  fileresolve</a></h3>
+    <p><a href="../_sys/fileresolve.form.qweb" target="_blank">
+        Вызов fileresolve</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -1337,16 +1368,25 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
-          <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
-          <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -1357,15 +1397,22 @@
           <td>
           </td>
           <td>Existed</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.Boolean</td>
           <td>Parameter 'Existed' :</td>
           <td>0</td>
@@ -1374,15 +1421,22 @@
           <td>
           </td>
           <td>name</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'name' :</td>
           <td>1</td>
@@ -1391,7 +1445,9 @@
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-getresourceurl">
-        Подгруппа  getresourceurl</a></h3>
+        Команда  getresourceurl</a></h3>
+    <p><a href="../_sys/getresourceurl.form.qweb" target="_blank">
+        Вызов getresourceurl</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -1402,16 +1458,23 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
           <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -1425,12 +1488,17 @@
           <td>true</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>true</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'name' : is required;</td>
           <td>0</td>
@@ -1439,15 +1507,21 @@
           <td>
           </td>
           <td>type</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>true</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'type' : is constrainted to js, css, img;</td>
           <td>1</td>
@@ -1456,95 +1530,29 @@
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-reset">
-        Подгруппа  reset</a></h3>
+        Команда  reset</a></h3>
+    <p><a href="../_sys/reset.form.qweb" target="_blank">
+        Вызов reset</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
     </h4>
     <h5>Help - ""
       Arm - "admin"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-resethandlers">
-        Подгруппа  resethandlers</a></h3>
+        Команда  resethandlers</a></h3>
+    <p><a href="../_sys/resethandlers.form.qweb" target="_blank">
+        Вызов resethandlers</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
     </h4>
     <h5>Help - "Список возможных объектов для сброса состояния"
       Arm - "admin"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h2><a name="group-wiki">
         Группа wiki</a></h2>
-    <h4>
-      Расположение в XML:  root/item/item</h4>
     <table class="data">
       <thead>
         <tr>
@@ -1553,69 +1561,107 @@
           </th>
           <th>Help</th>
           <th>Arm</th>
+          <th>Вызов (old):</th>
+          <th>Вызов:</th>
+          <th>xml:</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><a href="#podgroup-getlock">getlock</a></td>
           <td>установить блокировку на страницу, если это возможно</td>
-          <td>sys</td>
+          <td>syswiki</td>
+          <td><a href="../wiki/getlock.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды getlock" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=wiki.getlock" target="_blank"><span title="Переход на новую форму вызова команды getlock" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=wiki.getlock" target="_blank"><span title="Просмотр исходного xml вызова команды getlock" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-getversionslist">getversionslist</a></td>
           <td>Получить список версий страницы Wiki</td>
-          <td>default</td>
+          <td>defaultwiki</td>
+          <td><a href="../wiki/getversionslist.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды getversionslist" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=wiki.getversionslist" target="_blank"><span title="Переход на новую форму вызова команды getversionslist" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=wiki.getversionslist" target="_blank"><span title="Просмотр исходного xml вызова команды getversionslist" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-releaselock">releaselock</a></td>
           <td>Снять блокировку, если это возможно</td>
-          <td>sys</td>
+          <td>syswiki</td>
+          <td><a href="../wiki/releaselock.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды releaselock" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=wiki.releaselock" target="_blank"><span title="Переход на новую форму вызова команды releaselock" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=wiki.releaselock" target="_blank"><span title="Просмотр исходного xml вызова команды releaselock" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-restoreversion">restoreversion</a></td>
           <td>
           </td>
-          <td>sys</td>
+          <td>syswiki</td>
+          <td><a href="../wiki/restoreversion.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды restoreversion" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=wiki.restoreversion" target="_blank"><span title="Переход на новую форму вызова команды restoreversion" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=wiki.restoreversion" target="_blank"><span title="Просмотр исходного xml вызова команды restoreversion" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-find">find</a></td>
           <td>Осуществляет поиск объектов</td>
-          <td>default</td>
+          <td>defaultwiki</td>
+          <td><a href="../wiki/find.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды find" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=wiki.find" target="_blank"><span title="Переход на новую форму вызова команды find" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=wiki.find" target="_blank"><span title="Просмотр исходного xml вызова команды find" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-createversion">createversion</a></td>
           <td>Создать версию Wiki</td>
-          <td>sys</td>
+          <td>syswiki</td>
+          <td><a href="../wiki/createversion.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды createversion" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=wiki.createversion" target="_blank"><span title="Переход на новую форму вызова команды createversion" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=wiki.createversion" target="_blank"><span title="Просмотр исходного xml вызова команды createversion" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-exists">exists</a></td>
           <td>Получить наличие Wiki по заданным кодам</td>
-          <td>default</td>
+          <td>defaultwiki</td>
+          <td><a href="../wiki/exists.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды exists" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=wiki.exists" target="_blank"><span title="Переход на новую форму вызова команды exists" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=wiki.exists" target="_blank"><span title="Просмотр исходного xml вызова команды exists" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-get">get</a></td>
           <td>Получить Wiki по заданным кодам</td>
-          <td>default</td>
+          <td>defaultwiki</td>
+          <td><a href="../wiki/get.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды get" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=wiki.get" target="_blank"><span title="Переход на новую форму вызова команды get" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=wiki.get" target="_blank"><span title="Просмотр исходного xml вызова команды get" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-getfile">getfile</a></td>
           <td>Получить бинарный контент из Wiki</td>
-          <td>default</td>
+          <td>defaultwiki</td>
+          <td><a href="../wiki/getfile.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды getfile" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=wiki.getfile" target="_blank"><span title="Переход на новую форму вызова команды getfile" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=wiki.getfile" target="_blank"><span title="Просмотр исходного xml вызова команды getfile" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-save">save</a></td>
           <td>Сохранить правки в страницу</td>
-          <td>sys</td>
+          <td>syswiki</td>
+          <td><a href="../wiki/save.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды save" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=wiki.save" target="_blank"><span title="Переход на новую форму вызова команды save" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=wiki.save" target="_blank"><span title="Просмотр исходного xml вызова команды save" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-savefile">savefile</a></td>
           <td>Загрузить бинарный контент в Wiki</td>
-          <td>sys</td>
+          <td>syswiki</td>
+          <td><a href="../wiki/savefile.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды savefile" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=wiki.savefile" target="_blank"><span title="Переход на новую форму вызова команды savefile" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=wiki.savefile" target="_blank"><span title="Просмотр исходного xml вызова команды savefile" class="icon icon-open"></span></a></td>
         </tr>
       </tbody>
     </table>
     <h3><a name="podgroup-getlock">
-        Подгруппа  getlock</a></h3>
+        Команда  getlock</a></h3>
+    <p><a href="../wiki/getlock.form.qweb" target="_blank">
+        Вызов getlock</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -1626,16 +1672,23 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
           <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -1649,12 +1702,17 @@
           <td>true</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>true</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'Code' : is required;</td>
           <td>0</td>
@@ -1663,7 +1721,9 @@
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-getversionslist">
-        Подгруппа  getversionslist</a></h3>
+        Команда  getversionslist</a></h3>
+    <p><a href="../wiki/getversionslist.form.qweb" target="_blank">
+        Вызов getversionslist</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -1674,16 +1734,23 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
           <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -1697,12 +1764,17 @@
           <td>true</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>true</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'Code' : is required;</td>
           <td>0</td>
@@ -1711,7 +1783,9 @@
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-releaselock">
-        Подгруппа  releaselock</a></h3>
+        Команда  releaselock</a></h3>
+    <p><a href="../wiki/releaselock.form.qweb" target="_blank">
+        Вызов releaselock</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -1722,16 +1796,23 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
           <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -1745,12 +1826,17 @@
           <td>true</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>true</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'Code' : is required;</td>
           <td>0</td>
@@ -1759,7 +1845,9 @@
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-restoreversion">
-        Подгруппа  restoreversion</a></h3>
+        Команда  restoreversion</a></h3>
+    <p><a href="../wiki/restoreversion.form.qweb" target="_blank">
+        Вызов restoreversion</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -1770,16 +1858,23 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
           <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -1793,12 +1888,17 @@
           <td>true</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>true</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'Code' : is required;</td>
           <td>0</td>
@@ -1810,12 +1910,17 @@
           <td>true</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>true</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'Version' : is required;</td>
           <td>1</td>
@@ -1824,7 +1929,9 @@
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-find">
-        Подгруппа  find</a></h3>
+        Команда  find</a></h3>
+    <p><a href="../wiki/find.form.qweb" target="_blank">
+        Вызов find</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -1835,16 +1942,23 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
           <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -1858,12 +1972,17 @@
           <td>true</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>true</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'Search' : is required;</td>
           <td>0</td>
@@ -1872,15 +1991,22 @@
           <td>
           </td>
           <td>Start</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.Int32</td>
           <td>Parameter 'Start' :</td>
           <td>1</td>
@@ -1889,15 +2015,22 @@
           <td>
           </td>
           <td>Count</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.Int32</td>
           <td>Parameter 'Count' :</td>
           <td>2</td>
@@ -1906,15 +2039,22 @@
           <td>
           </td>
           <td>Files</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.Boolean</td>
           <td>Parameter 'Files' :</td>
           <td>3</td>
@@ -1923,15 +2063,22 @@
           <td>
           </td>
           <td>Pages</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.Boolean</td>
           <td>Parameter 'Pages' :</td>
           <td>4</td>
@@ -1940,7 +2087,9 @@
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-createversion">
-        Подгруппа  createversion</a></h3>
+        Команда  createversion</a></h3>
+    <p><a href="../wiki/createversion.form.qweb" target="_blank">
+        Вызов createversion</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -1951,16 +2100,23 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
           <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -1974,12 +2130,17 @@
           <td>true</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>true</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'Code' : is required;</td>
           <td>0</td>
@@ -1988,15 +2149,22 @@
           <td>
           </td>
           <td>Comment</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'Comment' :</td>
           <td>1</td>
@@ -2005,7 +2173,9 @@
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-exists">
-        Подгруппа  exists</a></h3>
+        Команда  exists</a></h3>
+    <p><a href="../wiki/exists.form.qweb" target="_blank">
+        Вызов exists</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -2016,16 +2186,23 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
           <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -2039,12 +2216,17 @@
           <td>true</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>true</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'Code' : is required;</td>
           <td>0</td>
@@ -2053,7 +2235,9 @@
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-get">
-        Подгруппа  get</a></h3>
+        Команда  get</a></h3>
+    <p><a href="../wiki/get.form.qweb" target="_blank">
+        Вызов get</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -2064,16 +2248,23 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
           <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -2084,15 +2275,22 @@
           <td>
           </td>
           <td>PageVersion</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'PageVersion' :</td>
           <td>0</td>
@@ -2104,12 +2302,17 @@
           <td>true</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>true</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'Code' : is required;</td>
           <td>1</td>
@@ -2118,15 +2321,22 @@
           <td>
           </td>
           <td>Usage</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'Usage' :</td>
           <td>2</td>
@@ -2135,7 +2345,9 @@
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-getfile">
-        Подгруппа  getfile</a></h3>
+        Команда  getfile</a></h3>
+    <p><a href="../wiki/getfile.form.qweb" target="_blank">
+        Вызов getfile</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -2146,16 +2358,23 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
           <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -2166,15 +2385,22 @@
           <td>
           </td>
           <td>AsFile</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.Boolean</td>
           <td>Parameter 'AsFile' :</td>
           <td>0</td>
@@ -2183,15 +2409,22 @@
           <td>
           </td>
           <td>WithData</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.Boolean</td>
           <td>Parameter 'WithData' :</td>
           <td>1</td>
@@ -2203,12 +2436,17 @@
           <td>true</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>true</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'Code' : is required;</td>
           <td>2</td>
@@ -2217,7 +2455,9 @@
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-save">
-        Подгруппа  save</a></h3>
+        Команда  save</a></h3>
+    <p><a href="../wiki/save.form.qweb" target="_blank">
+        Вызов save</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -2228,16 +2468,23 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
           <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -2251,12 +2498,17 @@
           <td>true</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>true</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'Code' : is required;</td>
           <td>0</td>
@@ -2265,15 +2517,22 @@
           <td>
           </td>
           <td>Title</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'Title' :</td>
           <td>1</td>
@@ -2282,15 +2541,22 @@
           <td>
           </td>
           <td>Text</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'Text' :</td>
           <td>2</td>
@@ -2299,7 +2565,9 @@
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-savefile">
-        Подгруппа  savefile</a></h3>
+        Команда  savefile</a></h3>
+    <p><a href="../wiki/savefile.form.qweb" target="_blank">
+        Вызов savefile</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -2310,16 +2578,23 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
           <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -2333,12 +2608,17 @@
           <td>true</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>true</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'Code' : is required;</td>
           <td>0</td>
@@ -2347,15 +2627,22 @@
           <td>
           </td>
           <td>Title</td>
-          <td>false</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'Title' :</td>
           <td>1</td>
@@ -2365,8 +2652,6 @@
     <div><a href="#up">назад к оглавлению</a></div>
     <h2><a name="group-zdev">
         Группа zdev</a></h2>
-    <h4>
-      Расположение в XML:  root/item/item</h4>
     <table class="data">
       <thead>
         <tr>
@@ -2375,6 +2660,9 @@
           </th>
           <th>Help</th>
           <th>Arm</th>
+          <th>Вызов (old):</th>
+          <th>Вызов:</th>
+          <th>xml:</th>
         </tr>
       </thead>
       <tbody>
@@ -2382,354 +2670,185 @@
           <td><a href="#podgroup-substattributes">substattributes</a></td>
           <td>
           </td>
-          <td>dev</td>
+          <td>devzdev</td>
+          <td><a href="../zdev/substattributes.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды substattributes" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=zdev.substattributes" target="_blank"><span title="Переход на новую форму вызова команды substattributes" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=zdev.substattributes" target="_blank"><span title="Просмотр исходного xml вызова команды substattributes" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-dropcache">dropcache</a></td>
           <td>
           </td>
-          <td>dev</td>
+          <td>devzdev</td>
+          <td><a href="../zdev/dropcache.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды dropcache" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=zdev.dropcache" target="_blank"><span title="Переход на новую форму вызова команды dropcache" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=zdev.dropcache" target="_blank"><span title="Просмотр исходного xml вызова команды dropcache" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-colattributes">colattributes</a></td>
           <td>
           </td>
-          <td>dev</td>
+          <td>devzdev</td>
+          <td><a href="../zdev/colattributes.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды colattributes" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=zdev.colattributes" target="_blank"><span title="Переход на новую форму вызова команды colattributes" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=zdev.colattributes" target="_blank"><span title="Просмотр исходного xml вызова команды colattributes" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-formattributes">formattributes</a></td>
           <td>
           </td>
-          <td>dev</td>
+          <td>devzdev</td>
+          <td><a href="../zdev/formattributes.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды formattributes" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=zdev.formattributes" target="_blank"><span title="Переход на новую форму вызова команды formattributes" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=zdev.formattributes" target="_blank"><span title="Просмотр исходного xml вызова команды formattributes" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-paramattributes">paramattributes</a></td>
           <td>
           </td>
-          <td>default</td>
+          <td>defaultzdev</td>
+          <td><a href="../zdev/paramattributes.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды paramattributes" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=zdev.paramattributes" target="_blank"><span title="Переход на новую форму вызова команды paramattributes" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=zdev.paramattributes" target="_blank"><span title="Просмотр исходного xml вызова команды paramattributes" class="icon icon-open"></span></a></td>
+        </tr>
+        <tr>
+          <td><a href="#podgroup-params">params</a></td>
+          <td>
+          </td>
+          <td>devzdev</td>
+          <td><a href="../zdev/params.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды params" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=zdev.params" target="_blank"><span title="Переход на новую форму вызова команды params" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=zdev.params" target="_blank"><span title="Просмотр исходного xml вызова команды params" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-reportattributes">reportattributes</a></td>
           <td>
           </td>
-          <td>dev</td>
+          <td>devzdev</td>
+          <td><a href="../zdev/reportattributes.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды reportattributes" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=zdev.reportattributes" target="_blank"><span title="Переход на новую форму вызова команды reportattributes" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=zdev.reportattributes" target="_blank"><span title="Просмотр исходного xml вызова команды reportattributes" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-themaattributes">themaattributes</a></td>
           <td>
           </td>
-          <td>dev</td>
+          <td>devzdev</td>
+          <td><a href="../zdev/themaattributes.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды themaattributes" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=zdev.themaattributes" target="_blank"><span title="Переход на новую форму вызова команды themaattributes" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=zdev.themaattributes" target="_blank"><span title="Просмотр исходного xml вызова команды themaattributes" class="icon icon-open"></span></a></td>
         </tr>
         <tr>
           <td><a href="#podgroup-hwout">hwout</a></td>
           <td>Проверка роли у пользователя22</td>
-          <td>default</td>
+          <td>defaultzdev</td>
+          <td><a href="../zdev/hwout.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды hwout" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=zdev.hwout" target="_blank"><span title="Переход на новую форму вызова команды hwout" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=zdev.hwout" target="_blank"><span title="Просмотр исходного xml вызова команды hwout" class="icon icon-open"></span></a></td>
+        </tr>
+        <tr>
+          <td><a href="#podgroup-getelementsmap">getelementsmap</a></td>
+          <td>
+          </td>
+          <td>defaultzdev</td>
+          <td><a href="../zdev/getelementsmap.form.qweb" target="_blank"><span title="Переход на старую форму вызова команды getelementsmap" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command=zdev.getelementsmap" target="_blank"><span title="Переход на новую форму вызова команды getelementsmap" class="icon icon-open"></span></a></td>
+          <td><a href="./myactions.xml.qweb?usage=ui&amp;command=zdev.getelementsmap" target="_blank"><span title="Просмотр исходного xml вызова команды getelementsmap" class="icon icon-open"></span></a></td>
         </tr>
       </tbody>
     </table>
     <h3><a name="podgroup-substattributes">
-        Подгруппа  substattributes</a></h3>
+        Команда  substattributes</a></h3>
+    <p><a href="../zdev/substattributes.form.qweb" target="_blank">
+        Вызов substattributes</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
     </h4>
     <h5>Help - ""
       Arm - "dev"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-dropcache">
-        Подгруппа  dropcache</a></h3>
+        Команда  dropcache</a></h3>
+    <p><a href="../zdev/dropcache.form.qweb" target="_blank">
+        Вызов dropcache</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
     </h4>
     <h5>Help - ""
       Arm - "dev"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-colattributes">
-        Подгруппа  colattributes</a></h3>
+        Команда  colattributes</a></h3>
+    <p><a href="../zdev/colattributes.form.qweb" target="_blank">
+        Вызов colattributes</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
     </h4>
     <h5>Help - ""
       Arm - "dev"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-formattributes">
-        Подгруппа  formattributes</a></h3>
+        Команда  formattributes</a></h3>
+    <p><a href="../zdev/formattributes.form.qweb" target="_blank">
+        Вызов formattributes</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
     </h4>
     <h5>Help - ""
       Arm - "dev"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-paramattributes">
-        Подгруппа  paramattributes</a></h3>
+        Команда  paramattributes</a></h3>
+    <p><a href="../zdev/paramattributes.form.qweb" target="_blank">
+        Вызов paramattributes</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
     </h4>
     <h5>Help - ""
       Arm - "default"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
+    <h3><a name="podgroup-params">
+        Команда  params</a></h3>
+    <p><a href="../zdev/params.form.qweb" target="_blank">
+        Вызов params</a></p>
+    <h4>
+      Расположение в XML:
+      root/item/item/value/parameters/item/
+    </h4>
+    <h5>Help - ""
+      Arm - "dev"
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-reportattributes">
-        Подгруппа  reportattributes</a></h3>
+        Команда  reportattributes</a></h3>
+    <p><a href="../zdev/reportattributes.form.qweb" target="_blank">
+        Вызов reportattributes</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
     </h4>
     <h5>Help - ""
       Arm - "dev"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-themaattributes">
-        Подгруппа  themaattributes</a></h3>
+        Команда  themaattributes</a></h3>
+    <p><a href="../zdev/themaattributes.form.qweb" target="_blank">
+        Вызов themaattributes</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
     </h4>
     <h5>Help - ""
       Arm - "dev"
-    </h5>
-    <table class="data">
-      <thead>
-        <tr>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-          <th>
-          </th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <div><a href="#up">назад к оглавлению</a></div>
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
     <h3><a name="podgroup-hwout">
-        Подгруппа  hwout</a></h3>
+        Команда  hwout</a></h3>
+    <p><a href="../zdev/hwout.form.qweb" target="_blank">
+        Вызов hwout</a></p>
     <h4>
       Расположение в XML:
       root/item/item/value/parameters/item/
@@ -2740,16 +2859,23 @@
     <table class="data">
       <thead>
         <tr>
-          <th>Help</th>
+          <th>
+          </th>
           <th>Name</th>
           <th>Required</th>
-          <th>ValidatePattern</th>
-          <th>IsLargeText</th>
-          <th>IsComplexString</th>
-          <th>IsColor</th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>RequireValidation</th>
-          <th>LowerCase</th>
-          <th>UpperCase</th>
+          <th>
+          </th>
+          <th>
+          </th>
           <th>TypeName</th>
           <th>ErrorMessage</th>
           <th>__idx</th>
@@ -2763,12 +2889,17 @@
           <td>true</td>
           <td>
           </td>
-          <td>false</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>true</td>
-          <td>false</td>
-          <td>false</td>
+          <td>
+          </td>
+          <td>
+          </td>
           <td>System.String</td>
           <td>Parameter 'usr' : is required;</td>
           <td>0</td>
@@ -2776,5 +2907,16 @@
         </tbody>
     </table>
     <div><a href="#up">назад к оглавлению</a></div>
+    <h3><a name="podgroup-getelementsmap">
+        Команда  getelementsmap</a></h3>
+    <p><a href="../zdev/getelementsmap.form.qweb" target="_blank">
+        Вызов getelementsmap</a></p>
+    <h4>
+      Расположение в XML:
+      root/item/item/value/parameters/item/
+    </h4>
+    <h5>Help - ""
+      Arm - "default"
+    </h5><a>Параметры отсутсвуют</a><div><a href="#up">назад к оглавлению</a></div>
   </body>
 </html>

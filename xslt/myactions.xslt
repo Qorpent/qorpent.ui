@@ -5,7 +5,7 @@
     <html>
       <head>
         <title>MyAction</title>
-        <link rel="stylesheet" href="zdev.base.css" />
+        <link rel="stylesheet" href="../styles/zdev.base.css" />
       </head>
       <body>
         <h1>My Action</h1>
@@ -68,9 +68,9 @@
         Группа <xsl:value-of select="@key"/>
       </a>
     </h2>
-    <h4>
+    <!--!<h4>
       Расположение в XML:  <xsl:value-of select=" name(/root)"/>/<xsl:value-of select="name(/root/item)"/>/<xsl:value-of select="name(/root/item/item)"/>
-    </h4>
+    </h4>-->
     <!--<a name="attr-detail-{@Name}"/> Атрибут <xsl:value-of select="@Name"/>-->
     <table class="data">
       <thead>
@@ -80,9 +80,34 @@
             <!-- Значение атрибута <xsl:value-of select="name(@key)"/>-->
             Команда
           </th>
+          <th>Вызов:
+          </th>
+          <th>xml:</th>
+          <th>
+            Вызов (old):
+            <!--  <select id="CallCommand">
+            <xsl:apply-templates select="item" mode="CallCommand"/><option value="bxl">BXL</option>
+            <option value="embedjs">EMBEDJS</option>
+            <option value="embedjson">EMBEDJSON</option>
+            <option value="empty">EMPTY</option>
+            <option value="file">FILE</option>
+            <option value="filedesc">FILEDESC</option>
+            <option value="form">FORM</option>
+            <option value="html">HTML</option>
+            <option value="js">JS</option>
+            <option value="json">JSON</option>
+            <option value="md5">MD5</option>
+            <option value="qview">QVIEW</option>
+            <option value="string">STRING</option>
+            <option value="view">VIEW</option>
+            <option value="wiki">WIKI</option>
+            <option value="xml">XML</option>
+          
+          </select>-->
+        </th>
           <th>Help</th>
           <th>Arm</th>
-        </tr>
+           </tr>
       </thead>
       <tbody>
         <xsl:apply-templates select="item" mode="valTbody"/>
@@ -113,23 +138,82 @@
           </xsl:otherwise>
         </xsl:choose>
       </td>
+      <!--<xsl:if test="..//item[@key]/item/value/@Help!=''">-->
+      <!--/root/items[not(@handle)]</xsl:if>-->
+      <!--  <xsl:if test="item/value/@Help!=''">
+            <th>Help</th>
+          </xsl:if>-->
+      <!--<xsl:if test="value/@Help!='' and ../../item[@key]">-->
       <td>
-        <xsl:value-of select="value/@Help"/>
+        <a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command={../@key}.{@key}" target="_blank">
+          <span title="Переход на новую форму вызова команды {@key}" class="icon icon-open" ></span>
+        </a>
+        <!--<a href="./myactions.qweb"><xsl:value-of select="@Key"/>dsf</a>-->
+        <!--_sys/myactions.xml.qweb?usage=ui&command=_sys.impersonate-->
       </td>
+      <td>
+        <a href="./myactions.xml.qweb?usage=ui&amp;command={../@key}.{@key}" target="_blank">
+          <span title="Просмотр исходного xml вызова команды {@key}" class="icon icon-open" ></span>
+        </a>
+        <!--<a href="./myactions.qweb"><xsl:value-of select="@Key"/>dsf</a>-->
+        <!--_sys/myactions.xml.qweb?usage=ui&command=_sys.impersonate-->
+      </td>
+      <td>
+        <!--<form>
+          <input type="image" name="Имя_элемента_формы*" src="Картинка.gif"/><input  alt="Переход на старую форму вызова команды {@key}" 
+                  name="{@key}" 
+                  type="image"
+                 vsrc="sfd"
+                  onclick="top.location.href='../{../@key}/{@key}.form.qweb'"
+                  target="_blank"/>
+        </form>-->
+        <!--vsrc="sfd"-->
+        <a href="../{../@key}/{@key}.form.qweb"  target="_blank">
+          <span title="Переход на старую форму вызова команды {@key}" class="icon icon-open" ></span>
+        </a>
+        <!--<a href="./myactions.qweb"><xsl:value-of select="@Key"/>dsf</a>-->
+      </td>
+      <td>
+         <!-- <xsl:value-of select="../../item[@key]/item/value/@Help"/>-->
+          <xsl:value-of select="value/@Help"/>
+        </td>
       <td>
         <xsl:value-of select="value/@Arm"/>
       </td>
-    </tr>
+      </tr>
   </xsl:template>
+
+  <!--==========================================
+   Тимплейт, выводящий всплывающие колонки 
+    ==========================================-->
+  <xsl:template match="//item/item"  mode="CallCommand">
+    <option value="{@key}">
+      <a href="./myactions.xml.qweb?usage=ui&amp;command={../@key}.{@key}" target="_blank">
+        <xsl:value-of select="@key"/>
+      </a>
+    </option>
+  </xsl:template> 
+  
+
+
+
   <!--==========================================
    Тимплейт, выводящий таблицы с заголовком /root/item/item/@key
+    http://localhost/a1/_sys/myactions.html.qweb?usage=ui&Command=_db.connections&__xslt=myonlyaction
+ 
   ==========================================-->
   <xsl:template match="//item/item"  mode="valTableHead2">
     <h3>
-      <a name ="podgroup-{@key}">
-        Подгруппа  <xsl:value-of select="@key"/>
+      <a name ="podgroup-{@key}"
+         href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command={../@key}.{@key}" target="_blank">
+        Команда <xsl:value-of select="@key"/>
       </a>
     </h3>
+    <p>
+      <a href="../{../@key}/{@key}.form.qweb"  target="_blank">
+        Вызов <xsl:value-of select="@key"/>
+      </a>
+    </p>
     <h4>
       Расположение в XML:
       <xsl:value-of select=" name(/root)"/>/<xsl:value-of select="name(/root/item)"/>/<xsl:value-of select="name(/root/item/item)"/>/<xsl:value-of select="name(/root/item/item/value)"/>/<xsl:value-of select="name(/root/item/item/value/parameters)"/>/<xsl:value-of select="name(/root/item/item/value/parameters/item)"/>/
@@ -138,20 +222,27 @@
       <xsl:value-of select="name(value/@Help)"/> - "<xsl:value-of select="value/@Help"/>"
       <xsl:value-of select="  name(value/@Arm)"/> - "<xsl:value-of select="value/@Arm"/>"
     </h5>
-    <table class="data">
+   <!-- 
+          <xsl:value-of select="@Comment" disable-output-escaping="yes"/>
+      </xsl:if> 
+    <xsl:if test="/shop/user_id/node()"> узел существует </xsl:if>-->
+    <xsl:choose>
+      <xsl:when test="value/parameters/item">
+      
+      <table class="data">
       <thead>
         <tr>
           <!--<th>Расположение элемента</th>-->
           <th>
-            <xsl:value-of select ="name(value/parameters/item/@Help)"/>
+            <xsl:value-of select ="name(//@Help)"/>
           </th>
           <th>
             <xsl:value-of select ="name(value/parameters/item/@Name)"/>
           </th>
-          <th>
+         <!-- <th>
             <xsl:value-of select ="name(value/parameters/item/@Required)"/>
-          </th>
-          <th>
+          </th>-->
+          <!--<th>
             <xsl:value-of select ="name(value/parameters/item/@ValidatePattern)"/>
           </th>
           <th>
@@ -163,7 +254,8 @@
           <th>
             <xsl:value-of select ="name(value/parameters/item/@IsColor)"/>
           </th>
-          <th>
+          -->
+          <!--<th>
             <xsl:value-of select ="name(value/parameters/item/@RequireValidation)"/>
           </th>
           <th>
@@ -171,7 +263,7 @@
           </th>
           <th>
             <xsl:value-of select ="name(value/parameters/item/@UpperCase)"/>
-          </th>
+          </th>-->
           <th>
             <xsl:value-of select ="name(value/parameters/item/@TypeName)"/>
           </th>
@@ -181,6 +273,9 @@
           <th>
             <xsl:value-of select ="name(value/parameters/item/@__idx)"/>
           </th>
+          <th>
+           Прочее
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -188,8 +283,18 @@
         <!-- -->
       </tbody>
     </table>
+ </xsl:when>
+    <xsl:otherwise><a>Параметры отсутсвуют</a>
+    </xsl:otherwise></xsl:choose>
+      
     <div>
-      <a href="#up">назад к оглавлению</a>
+      <p>
+        <a href="#group-{../@key}"> назад к группе</a>
+      </p>
+      <p>
+        <a href="#up">назад к оглавлению</a>
+      </p>
+     
     </div>
 
   </xsl:template>
@@ -207,10 +312,10 @@
       <td>
         <xsl:value-of select ="@Name"/>
       </td>
-      <td>
+      <!--<td>
         <xsl:value-of select ="@Required"/>
-      </td>
-      <td>
+      </td>-->
+      <!--<td>
         <xsl:value-of select ="@ValidatePattern"/>
       </td>
       <td>
@@ -221,8 +326,10 @@
       </td>
       <td>
         <xsl:value-of select ="@IsColor"/>
-      </td>
-      <td>
+      </td>-->
+      
+      
+      <!--<td>
         <xsl:value-of select ="@RequireValidation"/>
       </td>
       <td>
@@ -231,6 +338,7 @@
       <td>
         <xsl:value-of select ="@UpperCase"/>
       </td>
+      -->
       <td>
         <xsl:value-of select ="@TypeName"/>
       </td>
@@ -240,8 +348,44 @@
       <td>
         <xsl:value-of select ="@__idx"/>
       </td>
+      <td>
+        <xsl:if test="@Required">
+          <xsl:value-of select ="name(@Required)"/> - <xsl:value-of select ="@Required"/>  <xsl:text> | </xsl:text>
+        </xsl:if>
+        
+        <xsl:if test="@ValidatePattern">
+          <xsl:value-of select ="name(@ValidatePattern)"/> - <xsl:value-of select ="@ValidatePattern"/> <xsl:text> | </xsl:text>
+        </xsl:if>
+        
+        <xsl:if test="@IsLargeText">
+          <xsl:value-of select ="name(@IsLargeText)"/> - <xsl:value-of select ="@IsLargeText"/> <xsl:text> | </xsl:text>
+        </xsl:if>
+
+        <xsl:if test="@IsComplexString">
+          <xsl:value-of select ="name(@IsComplexString)"/> - <xsl:value-of select ="@IsComplexString"/> <xsl:text> | </xsl:text>
+        </xsl:if>
+
+        <xsl:if test="@IsColor">
+          <xsl:value-of select ="name(@IsColor)"/> - <xsl:value-of select ="@IsColor"/> <xsl:text> | </xsl:text>
+        </xsl:if>
+
+        <xsl:if test="@RequireValidation">
+          <xsl:value-of select ="name(@RequireValidation)"/> - <xsl:value-of select ="@RequireValidation"/> <xsl:text> | </xsl:text>
+        </xsl:if>
+
+
+        <xsl:if test="@LowerCase">
+          <xsl:value-of select ="name(@LowerCase)"/> - <xsl:value-of select ="@LowerCase"/> <xsl:text> | </xsl:text>
+        </xsl:if>
+
+
+        <xsl:if test="@UpperCase">
+          <xsl:value-of select ="name(@UpperCase)"/> - <xsl:value-of select ="@UpperCase"/> <xsl:text> | </xsl:text>
+        </xsl:if>
+      </td>
     </tr>
   </xsl:template>
+  
 </xsl:stylesheet>
 
 

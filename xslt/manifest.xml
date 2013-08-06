@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <transient _file="c:/rep/.app/zdev/.config/default-log.ioc-manifest.bxl" 
+             _line="24" 
+             name="Qorpent.Log.TextFileWriter, Qorpent.Log" 
+             code="default.file.writer" 
+             id="default.file.writer" 
+             filename="~/.log/${date}/${host}.log" 
+             level="Warning">
+    Qorpent.Log.ILogWriter, Qorpent.Core
+  </transient>
+  <transient _file="c:/rep/.app/zdev/.config/default-log.ioc-manifest.bxl" 
+             _line="25" 
+             name="Qorpent.Log.ExceptionRegistryWriter, Qorpent.Log" 
+             code="default.error.writer" 
+             id="default.error.writer" 
+             registryname="default.exception.registry">
+    Qorpent.Log.ILogWriter, Qorpent.Core
+  </transient>
+  <transient _file="c:/rep/.app/zdev/.config/default-log.ioc-manifest.bxl" 
+             _line="27" 
+             name="Qorpent.Log.Logger, Qorpent.Log" 
+             code="default.logger" 
+             id="default.logger" 
+             level="Info">
+    Qorpent.Log.ILogger, Qorpent.Core
+    <writer _file="c:/rep/.app/zdev/.config/default-log.ioc-manifest.bxl" 
+            _line="28" 
+            code="default.file.writer" 
+            id="default.file.writer"/>
+  </transient>
+  <transient _file="c:/rep/.app/zdev/.config/default-log.ioc-manifest.bxl" 
+             _line="30" 
+             name="Qorpent.Log.Logger, Qorpent.Log" 
+             code="auto.error-registry.logger" 
+             id="auto.error-registry.logger" 
+             mask="(MvcHandler)|(MvcQView)" 
+             level="Info">
+    Qorpent.Log.ILogger, Qorpent.Core
+    <writer _file="c:/rep/.app/zdev/.config/default-log.ioc-manifest.bxl" 
+            _line="31" 
+            code="default.error.writer" 
+            id="default.error.writer"/>
+  </transient>
+  <ref _file="c:/rep/.app/zdev/.config/local-maksur.zetadev.ioc-manifest.bxl" 
+       _line="1" 
+       code="Zeta.Extreme.Developer" 
+       id="Zeta.Extreme.Developer"/>
+  <using _file="c:/rep/.app/zdev/.config/local-maksur.zetadev.ioc-manifest.bxl" 
+         _line="2" 
+         code="Zeta.Extreme.Developer.Config" 
+         id="Zeta.Extreme.Developer.Config"/>
+  <singleton _file="c:/rep/.app/zdev/.config/local-maksur.zetadev.ioc-manifest.bxl" 
+             _line="5" 
+             code="DeveloperConfig" 
+             id="DeveloperConfig" 
+             ThemaComiledFolder="C:\rep\.app\ecot\tmp\compiled_themas" 
+             DocFolder="C:\reposzdoc">
+    IDeveloperConfig
+    <ThemaSourceFolders _file="c:/rep/.app/zdev/.config/local-maksur.zetadev.ioc-manifest.bxl" 
+                        _line="7">
+      <add _file="c:/rep/.app/zdev/.config/local-maksur.zetadev.ioc-manifest.bxl" 
+           _line="8" 
+           code="C:\rep\themas\sysdata" 
+           id="C:\rep\themas\sysdata"/>
+      <add _file="c:/rep/.app/zdev/.config/local-maksur.zetadev.ioc-manifest.bxl" 
+           _line="9" 
+           code="C:\rep\themas\usrdata" 
+           id="C:\rep\themas\usrdata"/>
+    </ThemaSourceFolders>
+  </singleton>
+  <ref _file="c:/rep/.app/zdev/.config/local-sfo.zetadev.ioc-manifest.bxl" 
+       _line="1" 
+       code="Zeta.Extreme.Developer" 
+       id="Zeta.Extreme.Developer"/>
+  <using 
+    _file="c:/rep/.app/zdev/.config/local-sfo.zetadev.ioc-manifest.bxl" 
+    _line="2" 
+    code="Zeta.Extreme.Developer.Config" 
+    id="Zeta.Extreme.Developer.Config"/>
+  <singleton _file="c:/rep/.app/zdev/.config/local-sfo.zetadev.ioc-manifest.bxl" 
+             _line="5" code="DeveloperConfig" 
+             id="DeveloperConfig" 
+             ThemaComiledFolder="C:\rep\.app\ecot\tmp\compiled_themas" 
+             DocFolder="C:\repzdoc">
+    IDeveloperConfig
+    <ThemaSourceFolders _file="c:/rep/.app/zdev/.config/local-sfo.zetadev.ioc-manifest.bxl" 
+                        _line="9">
+      <add _file="c:/rep/.app/zdev/.config/local-sfo.zetadev.ioc-manifest.bxl" 
+           _line="10" 
+           code="C:\rep\themas\sysdata" id="C:\rep\themas\sysdata"/>
+      <add _file="c:/rep/.app/zdev/.config/local-sfo.zetadev.ioc-manifest.bxl" 
+           _line="11" 
+           code="C:\rep\themas\usrdata" 
+           id="C:\rep\themas\usrdata"/>
+    </ThemaSourceFolders>
+  </singleton>
+  <ref _file="c:/rep/.app/zdev/.config/zetadev.ioc-manifest.bxl" 
+       _line="1" 
+       code="Zeta.Extreme.Developer" 
+       id="Zeta.Extreme.Developer"/>
+  <using _file="c:/rep/.app/zdev/.config/zetadev.ioc-manifest.bxl" 
+         _line="2" 
+         code="Zeta.Extreme.Developer.Analyzers" 
+         id="Zeta.Extreme.Developer.Analyzers"/>
+  <singleton _file="c:/rep/.app/zdev/.config/zetadev.ioc-manifest.bxl" 
+             _line="4" 
+             code="CodeIndex" 
+             id="CodeIndex">
+    ICodeIndex
+  </singleton>
+  <transient _file="c:/rep/.app/zdev/.config/zetadev.ioc-manifest.bxl" 
+             _line="5" 
+             code="Analyzer" 
+             id="Analyzer">
+    IAnalyzer
+  </transient>
+  <mvc _file="c:/rep/.app/zdev/.config/zetadev.ioc-manifest.bxl" 
+       _line="6" 
+       code="Zeta.Extreme.Developer" 
+       id="Zeta.Extreme.Developer"/>
+</root>
