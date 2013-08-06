@@ -15,11 +15,14 @@
           <table class="data">
             <thead>
               <tr>
-                <th>Группа</th>
+                <th>Сервис</th>
+                <th>Пространство имен(service ns)</th>
+                <th>NameSpace(ImpNS)</th>
               </tr>
             </thead>
             <tbody>
-              <xsl:apply-templates select="item[generate-id(.)=generate-id(key('ServiceType',@ServiceType))]" mode="OutputServices"/>
+              <xsl:apply-templates select="item[generate-id(.)=generate-id(key('ServiceType',@ServiceType))]" 
+                                   mode="OutputServices"/>
             </tbody>
           </table>
           <xsl:apply-templates select="item" mode="OutputSecondHeadTable"/>
@@ -31,7 +34,22 @@
   <xsl:template match="item" mode="OutputServices">
     <tr>
       <td>
-        <xsl:value-of select="@ServiceType"/>
+        <xsl:choose>
+          <xsl:when test=".">
+            <a href="#command-{@ServiceType}">
+              <xsl:value-of select="@ServiceType"/>
+            </a>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="@ServiceType"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </td>
+      <td>
+        <xsl:value-of select="@ServiceNs"/>
+      </td>
+      <td>
+        <xsl:value-of select="@ImplNs"/>
       </td>
     </tr>
     <!--<ul>
@@ -48,9 +66,16 @@
 
   <xsl:template match="item" mode="next">
     <tr>
-      <th>
+      <td>
         <xsl:value-of select="@Id"/>
-      </th>
+      </td>
+      <td>
+        <xsl:value-of select="@ServiceNs"/>
+      </td>
+      <td>
+        <xsl:value-of select="@ImplNs"/>
+      </td>
+      
     </tr>
   </xsl:template>
   
@@ -58,15 +83,28 @@
 
   <xsl:template match="item" mode="OutputSecondHeadTable">
     <table class="data">
+      <h2>
+        <a name="command-{@ServiceType}">         
+      Сервис <xsl:value-of select="@ServiceType"/>
+        </a>
+      </h2>
       <thead>
         <tr>
           <th>
-            <xsl:value-of select="@ServiceType"/>
+            <xsl:value-of select="name(@Id)"/>
+          </th>
+          <th>
+            <xsl:value-of select="name(@ServiceNs)"/>
+          </th>
+          <th>
+            <xsl:value-of select="name(@ImplNs)"/>
           </th>
         </tr>
       </thead>
       <tbody>
-        <xsl:apply-templates mode="next" select="key('ServiceType',@ServiceType)">      </xsl:apply-templates>
+        <xsl:apply-templates mode="next" select="key('ServiceType',@ServiceType)">      
+          
+        </xsl:apply-templates>
       </tbody>
     </table>
    
@@ -76,11 +114,10 @@
     </ul>-->
   </xsl:template>
 
-  <xsl:template match="item" mode="OutputServicesMore">
-    
-   
-     <xsl:apply-templates mode="next" select="key('ServiceType',@ServiceType)">      </xsl:apply-templates>
-   
+  <xsl:template match="item" mode="OutputServicesMore">   
+     <xsl:apply-templates mode="next" 
+                          select="key('ServiceType',@ServiceType)">            
+     </xsl:apply-templates>
   </xsl:template>
 
 
