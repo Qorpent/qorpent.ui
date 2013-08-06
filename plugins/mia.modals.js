@@ -92,17 +92,23 @@
         modal.css("top", top);
         $(modal).modal({backdrop: false});
         // Убиваем окно после его закрытия
-        $(modal).on('hidden', function() {
+        $(modal).on('hidden', function(e) {
+            var datatoggle = $(e.target).attr('data-toggle');
+            if(datatoggle === 'dropdown' || datatoggle === 'tooltip') {
+                return;
+            }
+            if (!!p.onClose) p.onClose();
             $(this).remove();
             backdrop.remove();
-            if (!!p.onClose) p.onClose();
         });
-        $(modal).draggable({ handle: ".modal-header", containment: "window"});
+        var draggable_handle = !!p.title ? ".modal-header" : ".modal-body";
+        $(modal).draggable({ handle: draggable_handle, containment: "window"});
         modal.mousedown(function() {
             $('.modal').css("z-index", 100);
             modal.css("z-index", 101);
         });
         modal.trigger('mousedown');
+        return modal;
     };
     $.extend($.fn, { miamodal : miamodal });
 })(jQuery);
