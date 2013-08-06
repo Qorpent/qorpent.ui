@@ -12,27 +12,23 @@
           }
         </script></head>
   <body><header><h1>
-            Форма вызова для действия: _sys.bxlparse.action
-          </h1></header><section><h2>Описание</h2>
-      <p>Converts BXL to XML</p>
-      <form id="formcall" method="POST" target="formresult" action="../_sys/bxlparse.RENDER.qweb" actionname="_sys.bxlparse.action">
+            Форма вызова для действия: _sys.getresourceurl.action
+          </h1></header><section><form id="formcall" method="POST" target="formresult" action="../_sys/getresourceurl.RENDER.qweb" actionname="_sys.getresourceurl.action">
         <table class="data">
           <tbody>
             <tr>
-              <th>NoLexData</th>
-              <td><input type="checkbox" size="50" value="true" name="NoLexData"></td>
+              <th>name</th>
+              <td><input size="50" value="" required="true" name="name"></td>
             </tr>
             <tr>
-              <th>SafeAttributes</th>
-              <td><input type="checkbox" size="50" value="true" name="SafeAttributes"></td>
-            </tr>
-            <tr>
-              <th>Text</th>
-              <td><textarea value="" name="Text" style="width: 563px; height: 185px;"></textarea></td>
+              <th>type</th>
+              <td><input size="50" value="" name="type"></td>
             </tr>
           </tbody>
         </table>
-      </form><select id="formrender"><option value="bxl">BXL</option>
+      </form>
+<select id="formrender">
+        <option value="bxl">BXL</option>
         <option value="embedjs">EMBEDJS</option>
         <option value="embedjson">EMBEDJSON</option>
         <option value="empty">EMPTY</option>
@@ -47,5 +43,10 @@
         <option value="string">STRING</option>
         <option value="view">VIEW</option>
         <option value="wiki">WIKI</option>
-        <option value="xml">XML</option></select><input type="button" onclick="actionform.submit(document.querySelector('#formcall'))" value="Выполнить →"><iframe id="formresult" name="formresult"></iframe></section></body>
+        <option value="xml">XML</option></select>
+    <input type="button" onclick="actionform.submit(document.querySelector('#formcall'))" value="Выполнить →">
+<iframe id="formresult" name="formresult">
+</iframe>
+</section>
+</body>
 </html>

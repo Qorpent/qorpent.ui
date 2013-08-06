@@ -80,12 +80,34 @@
             <!-- Значение атрибута <xsl:value-of select="name(@key)"/>-->
             Команда
           </th>
+          <th>Вызов:
+          </th>
+          <th>xml:</th>
+          <th>
+            Вызов (old):
+            <!--  <select id="CallCommand">
+            <xsl:apply-templates select="item" mode="CallCommand"/><option value="bxl">BXL</option>
+            <option value="embedjs">EMBEDJS</option>
+            <option value="embedjson">EMBEDJSON</option>
+            <option value="empty">EMPTY</option>
+            <option value="file">FILE</option>
+            <option value="filedesc">FILEDESC</option>
+            <option value="form">FORM</option>
+            <option value="html">HTML</option>
+            <option value="js">JS</option>
+            <option value="json">JSON</option>
+            <option value="md5">MD5</option>
+            <option value="qview">QVIEW</option>
+            <option value="string">STRING</option>
+            <option value="view">VIEW</option>
+            <option value="wiki">WIKI</option>
+            <option value="xml">XML</option>
+          
+          </select>-->
+        </th>
           <th>Help</th>
           <th>Arm</th>
-          <th>Вызов (old):</th>
-          <th>Вызов:</th>
-          <th>xml:</th>
-        </tr>
+           </tr>
       </thead>
       <tbody>
         <xsl:apply-templates select="item" mode="valTbody"/>
@@ -123,31 +145,6 @@
           </xsl:if>-->
       <!--<xsl:if test="value/@Help!='' and ../../item[@key]">-->
       <td>
-         <!-- <xsl:value-of select="../../item[@key]/item/value/@Help"/>-->
-          
-          <xsl:value-of select="value/@Help"/>
-        </td>
-      <td>
-        <xsl:value-of select="value/@Arm"/>
-    
-      </td>
-      <td>
-        <!--<form>
-          <input type="image" name="Имя_элемента_формы*" src="Картинка.gif"/><input  alt="Переход на старую форму вызова команды {@key}" 
-                  name="{@key}" 
-                  type="image"
-                 vsrc="sfd"
-                  onclick="top.location.href='../{../@key}/{@key}.form.qweb'"
-                  target="_blank"/>
-          
-        </form>-->
-        <!--vsrc="sfd"-->
-        <a href="../{../@key}/{@key}.form.qweb"  target="_blank">
-          <span title="Переход на старую форму вызова команды {@key}" class="icon icon-open" ></span>
-        </a>
-        <!--<a href="./myactions.qweb"><xsl:value-of select="@Key"/>dsf</a>-->
-      </td>
-      <td>
         <a href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command={../@key}.{@key}" target="_blank">
           <span title="Переход на новую форму вызова команды {@key}" class="icon icon-open" ></span>
         </a>
@@ -161,8 +158,45 @@
         <!--<a href="./myactions.qweb"><xsl:value-of select="@Key"/>dsf</a>-->
         <!--_sys/myactions.xml.qweb?usage=ui&command=_sys.impersonate-->
       </td>
-    </tr>
+      <td>
+        <!--<form>
+          <input type="image" name="Имя_элемента_формы*" src="Картинка.gif"/><input  alt="Переход на старую форму вызова команды {@key}" 
+                  name="{@key}" 
+                  type="image"
+                 vsrc="sfd"
+                  onclick="top.location.href='../{../@key}/{@key}.form.qweb'"
+                  target="_blank"/>
+        </form>-->
+        <!--vsrc="sfd"-->
+        <a href="../{../@key}/{@key}.form.qweb"  target="_blank">
+          <span title="Переход на старую форму вызова команды {@key}" class="icon icon-open" ></span>
+        </a>
+        <!--<a href="./myactions.qweb"><xsl:value-of select="@Key"/>dsf</a>-->
+      </td>
+      <td>
+         <!-- <xsl:value-of select="../../item[@key]/item/value/@Help"/>-->
+          <xsl:value-of select="value/@Help"/>
+        </td>
+      <td>
+        <xsl:value-of select="value/@Arm"/>
+      </td>
+      </tr>
   </xsl:template>
+
+  <!--==========================================
+   Тимплейт, выводящий всплывающие колонки 
+    ==========================================-->
+  <xsl:template match="//item/item"  mode="CallCommand">
+    <option value="{@key}">
+      <a href="./myactions.xml.qweb?usage=ui&amp;command={../@key}.{@key}" target="_blank">
+        <xsl:value-of select="@key"/>
+      </a>
+    </option>
+  </xsl:template> 
+  
+
+
+
   <!--==========================================
    Тимплейт, выводящий таблицы с заголовком /root/item/item/@key
     http://localhost/a1/_sys/myactions.html.qweb?usage=ui&Command=_db.connections&__xslt=myonlyaction
@@ -170,8 +204,9 @@
   ==========================================-->
   <xsl:template match="//item/item"  mode="valTableHead2">
     <h3>
-      <a name ="podgroup-{@key}">
-        Команда  <xsl:value-of select="@key"/>
+      <a name ="podgroup-{@key}"
+         href="./myactions.html.qweb?__xslt=myonlyaction&amp;usage=ui&amp;command={../@key}.{@key}" target="_blank">
+        Команда <xsl:value-of select="@key"/>
       </a>
     </h3>
     <p>
@@ -253,7 +288,13 @@
     </xsl:otherwise></xsl:choose>
       
     <div>
-      <a href="#up">назад к оглавлению</a>
+      <p>
+        <a href="#group-{../@key}"> назад к группе</a>
+      </p>
+      <p>
+        <a href="#up">назад к оглавлению</a>
+      </p>
+     
     </div>
 
   </xsl:template>
@@ -344,6 +385,7 @@
       </td>
     </tr>
   </xsl:template>
+  
 </xsl:stylesheet>
 
 
