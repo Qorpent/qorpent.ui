@@ -17,7 +17,7 @@
               <tr>
                 <th>Сервис</th>
                 <th>Пространство имен(service ns)</th>
-                <th>NameSpace(ImpNS)</th>
+                <th>ServiceAssembly</th>
               </tr>
             </thead>
             <tbody>
@@ -49,7 +49,7 @@
         <xsl:value-of select="@ServiceNs"/>
       </td>
       <td>
-        <xsl:value-of select="@ImplNs"/>
+        <xsl:value-of select="@ServiceAssembly"/>
       </td>
     </tr>
     <!--<ul>
@@ -66,15 +66,29 @@
 
   <xsl:template match="item" mode="next">
     <tr>
-      <td>
-        <xsl:value-of select="@Id"/>
-      </td>
-      <td>
-        <xsl:value-of select="@ServiceNs"/>
-      </td>
-      <td>
-        <xsl:value-of select="@ImplNs"/>
-      </td>
+       <td>
+            <xsl:value-of select="(@Id)"/>
+          </td>
+          
+           <td>
+            <xsl:value-of select="(@Priority)"/>
+          </td>
+          
+           <td>
+            <xsl:value-of select="(@Lifestyle)"/>
+          </td>
+             <td>
+            <xsl:value-of select="(@ImplType)"/>
+          </td>
+            <td>
+            <xsl:value-of select="(@ImplNs)"/>
+          </td> 
+            <td>
+            <xsl:value-of select="(@ImplAssembly)"/>
+          </td>
+            <td>
+            <xsl:value-of select="(@__idx)"/>
+          </td> 
       
     </tr>
   </xsl:template>
@@ -93,12 +107,26 @@
           <th>
             <xsl:value-of select="name(@Id)"/>
           </th>
-          <th>
-            <xsl:value-of select="name(@ServiceNs)"/>
+          
+           <th>
+            <xsl:value-of select="name(@Priority)"/>
           </th>
-          <th>
+          
+           <th>
+            <xsl:value-of select="name(@Lifestyle)"/>
+          </th>
+             <th>
+            <xsl:value-of select="name(@ImplType)"/>
+          </th> <th>
             <xsl:value-of select="name(@ImplNs)"/>
-          </th>
+          </th> <th>
+            <xsl:value-of select="name(@ImplAssembly)"/>
+          </th> <th>
+            <xsl:value-of select="name(@__idx)"/>
+          </th> 
+            
+          
+       
         </tr>
       </thead>
       <tbody>
