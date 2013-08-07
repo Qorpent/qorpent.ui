@@ -39,7 +39,6 @@
             s.click(function(e) {
                 var el = $(e.target);
                 var parent = el.parent();
-                el.nextAll().toggle();
                 parent.toggleClass("fluid-part-hidden");
                 if (!!parent.attr("id")) {
                 	sessionStorage.setItem("fluidlayout__" + parent.attr("id"), parent.hasClass("fluid-part-hidden"));

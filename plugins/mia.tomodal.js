@@ -24,7 +24,7 @@
                         resizable: true,
                         customButton: {
                             class : "btn-mini",
-                            text : "Закрыть",
+                            text : "Р—Р°РєСЂС‹С‚СЊ",
                             click : function() {
                                 btn.trigger("click");
                             }
@@ -56,5 +56,4 @@
             }
         });
     }
-
 })(jQuery);

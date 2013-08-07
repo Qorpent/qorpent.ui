@@ -98,3 +98,12 @@
 legend.collapsed {
 	margin-bottom: 5px;
 }
+
+.fluid-part-hidden>* {
+    display: none;
+}
+
+.fluid-part-hidden>.fluid-splitter,
+.fluid-part-hidden>.fluid-legend {
+    display: inherit;
+}
