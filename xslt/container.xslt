@@ -2,8 +2,8 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
 
-  <xsl:key name="ServiceType" match="item" use="@ServiceType"/>  
-  
+  <xsl:key name="attrByVal" match="root/result/*/@*" use="local-name()"/>  
+ <xsl:key name="ServiceType" match="item" use="@ServiceType"/>  
   <xsl:template match="root/*">
       <html>
         <head>
@@ -20,15 +20,43 @@
                 <th>ServiceAssembly</th>
               </tr>
             </thead>
+            
             <tbody>
               <xsl:apply-templates select="item[generate-id(.)=generate-id(key('ServiceType',@ServiceType))]" 
                                    mode="OutputServices"/>
             </tbody>
           </table>
-          <xsl:apply-templates select="item" mode="OutputSecondHeadTable"/>
+           <h2>Список атрибутов</h2>
+            <xsl:apply-templates select="*/@*"/>
+          
+         <!--
+         -->      
+          <!--<xsl:apply-templates      select="@*[generate-id(.)=generate-id(key('atr',name(@*)))]" mode="AllAtr"/> -->
+        <xsl:apply-templates select="item" mode="OutputSecondHeadTable"/>
+         
         </body>
       </html>
     </xsl:template>
+  
+  <!--
+    <xsl:template match="/">
+        <xsl:apply-templates select="/*/@*"/>
+    </xsl:template>
+    <xsl:template match="@*[generate-id()=generate-id(key('attrByVal', .)[1])]">
+        <xsl:value-of select="concat(name(), ': ', ., '&#xA;')"/>
+    </xsl:template>
+    <xsl:template match="@*"/>
+</xsl:stylesheet>-->
+ 
+  
+   <xsl:template match="@*[generate-id()=generate-id(key('attrByVal', local-name())[1])]">
+    <xsl:value-of select="name()"/>
+  </xsl:template>  
+  
+ <xsl:template match="@*"/> 
+  
+            
+ 
   
   
   <xsl:template match="item" mode="OutputServices">
@@ -93,6 +121,8 @@
     </tr>
   </xsl:template>
   
+  
+   
   
 
   <xsl:template match="item" mode="OutputSecondHeadTable">

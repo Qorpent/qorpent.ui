@@ -144,29 +144,17 @@
         </item>
       </Parametes>
     </item>
-    <item Line="5" FileName="local-sfo.zetadev.ioc-manifest.bxl" Id="115" Priority="1000" Lifestyle="Singleton" ServiceType="IDeveloperConfig" ServiceNs="Zeta.Extreme.Developer.Config" ServiceAssembly="Zeta.Extreme.Developer" ImplType="DeveloperConfig" ImplNs="Zeta.Extreme.Developer.Config" ImplAssembly="Zeta.Extreme.Developer" __idx="115">
-      <Parametes>
-        <item key="ThemaComiledFolder">G:\repos\.app\ecot\tmp\compiled_themas</item>
-        <item key="DocFolder">G:\repos\zdoc</item>
-        <item key="ThemaSourceFolders">
-          <value>
-            <item __idx="0">C:\code\usr\ugmk\eco\data</item>
-            <item __idx="1">C:\code\zeta\zeta\sys\data</item>
-          </value>
-        </item>
-      </Parametes>
-    </item>
-    <item Line="4" FileName="zetadev.ioc-manifest.bxl" Id="116" Priority="1000" Lifestyle="Singleton" ServiceType="ICodeIndex" ServiceNs="Zeta.Extreme.Developer.Analyzers" ServiceAssembly="Zeta.Extreme.Developer" ImplType="CodeIndex" ImplNs="Zeta.Extreme.Developer.Analyzers" ImplAssembly="Zeta.Extreme.Developer" __idx="116"/>
-    <item Line="5" FileName="zetadev.ioc-manifest.bxl" Id="117" Priority="1000" Lifestyle="Transient" ServiceType="IAnalyzer" ServiceNs="Zeta.Extreme.Developer.Analyzers" ServiceAssembly="Zeta.Extreme.Developer" ImplType="Analyzer" ImplNs="Zeta.Extreme.Developer.Analyzers" ImplAssembly="Zeta.Extreme.Developer" __idx="117"/>
-    <item Id="118" Priority="1000" Lifestyle="Transient" ServiceType="IAction" ServiceNs="Qorpent.Mvc" ServiceAssembly="Qorpent.Core" ImplType="GetSubstAttributesAction" ImplNs="Zeta.Extreme.Developer.Actions" ImplAssembly="Zeta.Extreme.Developer" Name="zdev.substattributes.action" __idx="118"/>
-    <item Id="119" Priority="1000" Lifestyle="Transient" ServiceType="IAction" ServiceNs="Qorpent.Mvc" ServiceAssembly="Qorpent.Core" ImplType="DropCacheAction" ImplNs="Zeta.Extreme.Developer.Actions" ImplAssembly="Zeta.Extreme.Developer" Name="zdev.dropcache.action" __idx="119"/>
-    <item Id="120" Priority="1000" Lifestyle="Transient" ServiceType="IAction" ServiceNs="Qorpent.Mvc" ServiceAssembly="Qorpent.Core" ImplType="GetColAttributesAction" ImplNs="Zeta.Extreme.Developer.Actions" ImplAssembly="Zeta.Extreme.Developer" Name="zdev.colattributes.action" __idx="120"/>
-    <item Id="121" Priority="1000" Lifestyle="Transient" ServiceType="IAction" ServiceNs="Qorpent.Mvc" ServiceAssembly="Qorpent.Core" ImplType="GetFormAttributesAction" ImplNs="Zeta.Extreme.Developer.Actions" ImplAssembly="Zeta.Extreme.Developer" Name="zdev.formattributes.action" __idx="121"/>
-    <item Id="122" Priority="1000" Lifestyle="Transient" ServiceType="IAction" ServiceNs="Qorpent.Mvc" ServiceAssembly="Qorpent.Core" ImplType="GetParameterAttributesAction" ImplNs="Zeta.Extreme.Developer.Actions" ImplAssembly="Zeta.Extreme.Developer" Name="zdev.paramattributes.action" __idx="122"/>
-    <item Id="123" Priority="1000" Lifestyle="Transient" ServiceType="IAction" ServiceNs="Qorpent.Mvc" ServiceAssembly="Qorpent.Core" ImplType="GetParamsAction" ImplNs="Zeta.Extreme.Developer.Actions" ImplAssembly="Zeta.Extreme.Developer" Name="zdev.params.action" __idx="123"/>
-    <item Id="124" Priority="1000" Lifestyle="Transient" ServiceType="IAction" ServiceNs="Qorpent.Mvc" ServiceAssembly="Qorpent.Core" ImplType="GetReportAttributesAction" ImplNs="Zeta.Extreme.Developer.Actions" ImplAssembly="Zeta.Extreme.Developer" Name="zdev.reportattributes.action" __idx="124"/>
-    <item Id="125" Priority="1000" Lifestyle="Transient" ServiceType="IAction" ServiceNs="Qorpent.Mvc" ServiceAssembly="Qorpent.Core" ImplType="GetThemaAttributesAction" ImplNs="Zeta.Extreme.Developer.Actions" ImplAssembly="Zeta.Extreme.Developer" Name="zdev.themaattributes.action" __idx="125"/>
-    <item Id="126" Priority="1000" Lifestyle="Transient" ServiceType="IAction" ServiceNs="Qorpent.Mvc" ServiceAssembly="Qorpent.Core" ImplType="HwOutAction" ImplNs="Zeta.Extreme.Developer.Actions" ImplAssembly="Zeta.Extreme.Developer" Name="zdev.hwout.action" __idx="126"/>
-    <item Id="127" Priority="1000" Lifestyle="Transient" ServiceType="IAction" ServiceNs="Qorpent.Mvc" ServiceAssembly="Qorpent.Core" ImplType="GetElementsMapAction" ImplNs="Zeta.Extreme.Developer.Actions" ImplAssembly="Zeta.Extreme.Developer" Name="zdev.getelementsmap.action" __idx="127"/>
+    <item Line="4" FileName="zetadev.ioc-manifest.bxl" Id="115" Priority="1000" Lifestyle="Singleton" ServiceType="ICodeIndex" ServiceNs="Zeta.Extreme.Developer.Analyzers" ServiceAssembly="Zeta.Extreme.Developer" ImplType="CodeIndex" ImplNs="Zeta.Extreme.Developer.Analyzers" ImplAssembly="Zeta.Extreme.Developer" __idx="115"/>
+    <item Line="5" FileName="zetadev.ioc-manifest.bxl" Id="116" Priority="1000" Lifestyle="Transient" ServiceType="IAnalyzer" ServiceNs="Zeta.Extreme.Developer.Analyzers" ServiceAssembly="Zeta.Extreme.Developer" ImplType="Analyzer" ImplNs="Zeta.Extreme.Developer.Analyzers" ImplAssembly="Zeta.Extreme.Developer" __idx="116"/>
+    <item Id="117" Priority="1000" Lifestyle="Transient" ServiceType="IAction" ServiceNs="Qorpent.Mvc" ServiceAssembly="Qorpent.Core" ImplType="GetSubstAttributesAction" ImplNs="Zeta.Extreme.Developer.Actions" ImplAssembly="Zeta.Extreme.Developer" Name="zdev.substattributes.action" __idx="117"/>
+    <item Id="118" Priority="1000" Lifestyle="Transient" ServiceType="IAction" ServiceNs="Qorpent.Mvc" ServiceAssembly="Qorpent.Core" ImplType="DropCacheAction" ImplNs="Zeta.Extreme.Developer.Actions" ImplAssembly="Zeta.Extreme.Developer" Name="zdev.dropcache.action" __idx="118"/>
+    <item Id="119" Priority="1000" Lifestyle="Transient" ServiceType="IAction" ServiceNs="Qorpent.Mvc" ServiceAssembly="Qorpent.Core" ImplType="GetColAttributesAction" ImplNs="Zeta.Extreme.Developer.Actions" ImplAssembly="Zeta.Extreme.Developer" Name="zdev.colattributes.action" __idx="119"/>
+    <item Id="120" Priority="1000" Lifestyle="Transient" ServiceType="IAction" ServiceNs="Qorpent.Mvc" ServiceAssembly="Qorpent.Core" ImplType="GetFormAttributesAction" ImplNs="Zeta.Extreme.Developer.Actions" ImplAssembly="Zeta.Extreme.Developer" Name="zdev.formattributes.action" __idx="120"/>
+    <item Id="121" Priority="1000" Lifestyle="Transient" ServiceType="IAction" ServiceNs="Qorpent.Mvc" ServiceAssembly="Qorpent.Core" ImplType="GetParameterAttributesAction" ImplNs="Zeta.Extreme.Developer.Actions" ImplAssembly="Zeta.Extreme.Developer" Name="zdev.paramattributes.action" __idx="121"/>
+    <item Id="122" Priority="1000" Lifestyle="Transient" ServiceType="IAction" ServiceNs="Qorpent.Mvc" ServiceAssembly="Qorpent.Core" ImplType="GetParamsAction" ImplNs="Zeta.Extreme.Developer.Actions" ImplAssembly="Zeta.Extreme.Developer" Name="zdev.params.action" __idx="122"/>
+    <item Id="123" Priority="1000" Lifestyle="Transient" ServiceType="IAction" ServiceNs="Qorpent.Mvc" ServiceAssembly="Qorpent.Core" ImplType="GetReportAttributesAction" ImplNs="Zeta.Extreme.Developer.Actions" ImplAssembly="Zeta.Extreme.Developer" Name="zdev.reportattributes.action" __idx="123"/>
+    <item Id="124" Priority="1000" Lifestyle="Transient" ServiceType="IAction" ServiceNs="Qorpent.Mvc" ServiceAssembly="Qorpent.Core" ImplType="GetThemaAttributesAction" ImplNs="Zeta.Extreme.Developer.Actions" ImplAssembly="Zeta.Extreme.Developer" Name="zdev.themaattributes.action" __idx="124"/>
+    <item Id="125" Priority="1000" Lifestyle="Transient" ServiceType="IAction" ServiceNs="Qorpent.Mvc" ServiceAssembly="Qorpent.Core" ImplType="HwOutAction" ImplNs="Zeta.Extreme.Developer.Actions" ImplAssembly="Zeta.Extreme.Developer" Name="zdev.hwout.action" __idx="125"/>
+    <item Id="126" Priority="1000" Lifestyle="Transient" ServiceType="IAction" ServiceNs="Qorpent.Mvc" ServiceAssembly="Qorpent.Core" ImplType="GetElementsMapAction" ImplNs="Zeta.Extreme.Developer.Actions" ImplAssembly="Zeta.Extreme.Developer" Name="zdev.getelementsmap.action" __idx="126"/>
   </result>
 </root>
