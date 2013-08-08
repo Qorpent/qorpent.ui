@@ -145,8 +145,9 @@
       
         
           <xsl:if test="child::*">
+            
         <td>
-        <xsl:apply-templates select="Parametes/item" mode="OutPutItemKey"/>
+        <xsl:apply-templates select="Parametes" mode="OutputParametr"/>
       </td>
       </xsl:if>  
       
@@ -159,11 +160,28 @@
   </xsl:template>
   
   
- 
-  <xsl:template match="Parametes/item" mode="OutPutItemKey">
-    <xsl:value-of select="@key"/>=<xsl:value-of select="."/>
-
+  <xsl:template match="Parametes" mode="OutputParametr">
+     <table class="data">
+       
+       <tbody>
+         
+        <xsl:apply-templates select="item" mode="OutPutItemKey"/>
+        
+    
+     </tbody>
+     </table>
+    
+     <!--<xsl:value-of select="@key"/>= <xsl:value-of select="item"/>-->
+  
   </xsl:template>
+  
+  <xsl:template match="item" mode="OutPutItemKey">
+    <tr>
+       
+        <td><xsl:value-of select="@key"/></td>
+      <td><xsl:value-of select="."/></td>
+       </tr>  
+      </xsl:template>
   
   <xsl:template match="item[generate-id(.)=generate-id(key('ServiceType',@ServiceType))]" mode="OutputSecondHeadTable">
     <table class="data">
