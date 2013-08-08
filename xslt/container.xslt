@@ -8,7 +8,7 @@
       <html>
         <head>
           <title>Container</title>
-          <link rel="stylesheet" href="../styles/zdev.base.css" />
+          <link rel="stylesheet" href="../styles/sys.base.css" />
         </head>
         <body>
           <h1>Container</h1>
@@ -19,16 +19,20 @@
                 <th>Пространство имен(service ns)</th>
                 <th>ServiceAssembly</th>
               </tr>
-            </thead>
-            
+            </thead> 
             <tbody>
               <xsl:apply-templates select="item[generate-id(.)=generate-id(key('ServiceType',@ServiceType))]" 
                                    mode="OutputServices"/>
             </tbody>
           </table>
-           <h2>Список атрибутов</h2>
-            <xsl:apply-templates select="*/@*"/>
-          
+          Список атрибутов
+           <table class="data"> 
+            <tbody>
+              <tr>
+              <xsl:apply-templates select="*/@*"/>
+            </tr></tbody>
+          </table>
+                 
          <!--
          -->      
           <!--<xsl:apply-templates      select="@*[generate-id(.)=generate-id(key('atr',name(@*)))]" mode="AllAtr"/> -->
@@ -50,7 +54,9 @@
  
   
    <xsl:template match="@*[generate-id()=generate-id(key('attrByVal', local-name())[1])]">
-    <xsl:value-of select="name()"/>
+      <td>
+        <xsl:value-of select="name()"/>   
+      </td>
   </xsl:template>  
   
  <xsl:template match="@*"/> 
@@ -85,19 +91,11 @@
     </ul>-->
   </xsl:template>
 
-  
-  
-    
-   
-  
-  
-
   <xsl:template match="item" mode="next">
     <tr>
        <td>
             <xsl:value-of select="(@Id)"/>
           </td>
-          
            <td>
             <xsl:value-of select="(@Priority)"/>
           </td>
@@ -116,15 +114,32 @@
           </td>
             <td>
             <xsl:value-of select="(@__idx)"/>
+          </td>
+      <xsl:if test="@Name"><td>
+            <xsl:value-of select="(@Name)"/>
+          </td> 
+     </xsl:if>
+       <xsl:if test="//@CreationCount"><td>
+            <xsl:value-of select="(@CreationCount)"/>
+          </td> 
+     </xsl:if>
+      
+      <xsl:if test="//@ActivationCount"><td>
+            <xsl:value-of select="(@ActivationCount)"/>
+          </td> 
+     </xsl:if>
+      
+      
+  
+            <td>
+            <xsl:value-of select="(@Line)"/>
+          </td> <td>
+            <xsl:value-of select="(@FileName)"/>
           </td> 
       
     </tr>
   </xsl:template>
   
-  
-   
-  
-
   <xsl:template match="item" mode="OutputSecondHeadTable">
     <table class="data">
       <h2>
@@ -154,6 +169,33 @@
           </th> <th>
             <xsl:value-of select="name(@__idx)"/>
           </th> 
+          <xsl:if test="@Name">
+            <th>
+            <xsl:value-of select="name(@Name)"/>
+          </th> </xsl:if>
+          
+          <xsl:if test="//@CreationCount">
+            <th>
+            <xsl:value-of select="name(//@CreationCount)"/>     
+          </th> 
+          </xsl:if>
+          
+            <xsl:if test="//@ActivationCount">
+            <th>
+            <xsl:value-of select="name(//@ActivationCount)"/>     
+          </th> 
+          </xsl:if>
+            
+       <th>
+            <xsl:value-of select="name(@ActivationCount)"/>
+          </th> 
+            <th>
+            <xsl:value-of select="name(@Line)"/>
+          </th> 
+            <th>
+            <xsl:value-of select="name(@FileName)"/>
+          </th> 
+      
             
           
        

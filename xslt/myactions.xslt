@@ -5,7 +5,7 @@
     <html>
       <head>
         <title>MyAction</title>
-        <link rel="stylesheet" href="../styles/zdev.base.css" />
+        <link rel="stylesheet" href="../styles/sys.base.css" />
       </head>
       <body>
         <h1>My Action</h1>

@@ -4,7 +4,7 @@
   <xsl:template match="/root">
     <html>
       <head>
-        <link rel='stylesheet' href='../styles/zdev.base.css' />
+        <link rel='stylesheet' href='../styles/sys.base.css' />
         <script>
           var actionform = {
           submit: function (target) {
