@@ -8,10 +8,12 @@
       <html>
         <head>
           <title>Container</title>
-          <link rel="stylesheet" href="../styles/zdev.base.css" />
+          <link rel="stylesheet" href="../styles/sys.base.css" />
         </head>
         <body>
-          <h1>Container</h1>
+          <a name ="up">
+          <h1 >Container</h1>
+            </a>
           <table class="data">
             <thead>
               <tr>
@@ -19,25 +21,30 @@
                 <th>Пространство имен(service ns)</th>
                 <th>ServiceAssembly</th>
               </tr>
-            </thead>
-            
+            </thead> 
             <tbody>
-              <xsl:apply-templates select="item[generate-id(.)=generate-id(key('ServiceType',@ServiceType))]" 
-                                   mode="OutputServices"/>
+
+              <xsl:apply-templates select="item[generate-id(.)=generate-id(key('ServiceType',@ServiceType))]"
+                                   mode="OutputServices">
+             <xsl:sort select="@ServiceNs"/>
+              <xsl:sort select="@ServiceType"/>
+          </xsl:apply-templates>
             </tbody>
           </table>
-           <h2>Список атрибутов</h2>
-            <xsl:apply-templates select="*/@*"/>
-          
+          Список атрибутов
+           <table class="data"> 
+            <tbody>
+              <tr>
+              <xsl:apply-templates select="*/@*"/>
+            </tr></tbody>
+          </table>
          <!--
          -->      
           <!--<xsl:apply-templates      select="@*[generate-id(.)=generate-id(key('atr',name(@*)))]" mode="AllAtr"/> -->
         <xsl:apply-templates select="item" mode="OutputSecondHeadTable"/>
-         
         </body>
       </html>
     </xsl:template>
-  
   <!--
     <xsl:template match="/">
         <xsl:apply-templates select="/*/@*"/>
@@ -48,17 +55,17 @@
     <xsl:template match="@*"/>
 </xsl:stylesheet>-->
  
+    
   
-   <xsl:template match="@*[generate-id()=generate-id(key('attrByVal', local-name())[1])]">
-    <xsl:value-of select="name()"/>
+  
+  
+  <xsl:template match="@*[generate-id()=generate-id(key('attrByVal', local-name())[1])]">
+      <td>
+        <xsl:value-of select="name()"/>   
+      </td>
   </xsl:template>  
   
  <xsl:template match="@*"/> 
-  
-            
- 
-  
-  
   <xsl:template match="item" mode="OutputServices">
     <tr>
       <td>
@@ -84,28 +91,23 @@
      <xsl:apply-templates mode="next" select="key('ServiceType',@ServiceType)">      </xsl:apply-templates>
     </ul>-->
   </xsl:template>
-
-  
   
     
-   
-  
-  
-
   <xsl:template match="item" mode="next">
     <tr>
-       <td>
+            <td>
             <xsl:value-of select="(@Id)"/>
-          </td>
-          
-           <td>
+          </td>  
+        <td>
+            <xsl:value-of select="(@Name)"/>
+          </td> 
+            <td>
             <xsl:value-of select="(@Priority)"/>
           </td>
-          
            <td>
             <xsl:value-of select="(@Lifestyle)"/>
           </td>
-             <td>
+           <td>
             <xsl:value-of select="(@ImplType)"/>
           </td>
             <td>
@@ -116,16 +118,35 @@
           </td>
             <td>
             <xsl:value-of select="(@__idx)"/>
+          </td>
+    
+   
+      
+
+       <td>
+            <xsl:value-of select="(@CreationCount)"/>
           </td> 
+      <td>
+          <xsl:value-of select="(@ActivationCount)"/>
+        </td>
+
+      
+      
+      
+
+            <td>
+            <xsl:value-of select="(@Line)"/>
+          </td> 
+     
+        <td>
+          <xsl:value-of select="(@FileName)"/>
+        </td>
+   
       
     </tr>
   </xsl:template>
   
-  
-   
-  
-
-  <xsl:template match="item" mode="OutputSecondHeadTable">
+  <xsl:template match="item[generate-id(.)=generate-id(key('ServiceType',@ServiceType))]" mode="OutputSecondHeadTable">
     <table class="data">
       <h2>
         <a name="command-{@ServiceType}">         
@@ -134,38 +155,69 @@
       </h2>
       <thead>
         <tr>
+          
+         
           <th>
-            <xsl:value-of select="name(@Id)"/>
+            Id
+          </th>
+           <th>
+            Name
+          </th> 
+          
+           <th>
+            Priority
           </th>
           
            <th>
-            <xsl:value-of select="name(@Priority)"/>
-          </th>
-          
-           <th>
-            <xsl:value-of select="name(@Lifestyle)"/>
+            Lifestyle
           </th>
              <th>
-            <xsl:value-of select="name(@ImplType)"/>
+            ImplType
           </th> <th>
-            <xsl:value-of select="name(@ImplNs)"/>
+            ImplNs
           </th> <th>
-            <xsl:value-of select="name(@ImplAssembly)"/>
+            ImplAssembly
           </th> <th>
-            <xsl:value-of select="name(@__idx)"/>
+            __idx
           </th> 
-            
-          
-       
+           
+             <th>
+            CrCount     
+          </th> 
+              <th>              
+              ActCount
+            </th>
+              <!--<xsl:if test="../item[generate-id(.)=generate-id(key('ServiceType',@ServiceType))]//@CreationCount">
+             <th>
+            <xsl:value-of select="local-name(@CreationCount)"/>     
+          </th> 
+          </xsl:if>
+          <xsl:if test="../item[generate-id(.)=generate-id(key('ServiceType',@ServiceType))]//@ActivationCount">
+            <th>
+              <xsl:value-of select="local-name(@ActivationCount)"/>
+            </th>
+          </xsl:if>-->
+           <!--<th>
+            <xsl:value-of select="name(@ActivationCount)"/>     
+          </th>-->
+            <th>
+            Line
+          </th> 
+            <th>
+              FileName
+            </th>
         </tr>
       </thead>
       <tbody>
-        <xsl:apply-templates mode="next" select="key('ServiceType',@ServiceType)">      
-          
+        <xsl:apply-templates mode="next" select="key('ServiceType',@ServiceType)">
+             <xsl:sort select="@Name"/>
+          <xsl:sort select="@ImplType"/>
         </xsl:apply-templates>
       </tbody>
     </table>
-   
+   <p>
+        <a href="#up">назад к оглавлению</a>
+      </p>
     
     <!--<ul>
      <xsl:apply-templates mode="next" select="key('ServiceType',@ServiceType)">      </xsl:apply-templates>
