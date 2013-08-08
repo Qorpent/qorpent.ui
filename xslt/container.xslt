@@ -93,17 +93,16 @@
 
   <xsl:template match="item" mode="next">
     <tr>
-       <td>
+          <td>
             <xsl:value-of select="(@Id)"/>
           </td>
            <td>
             <xsl:value-of select="(@Priority)"/>
           </td>
-          
            <td>
             <xsl:value-of select="(@Lifestyle)"/>
           </td>
-             <td>
+           <td>
             <xsl:value-of select="(@ImplType)"/>
           </td>
             <td>
@@ -119,12 +118,12 @@
             <xsl:value-of select="(@Name)"/>
           </td> 
      </xsl:if>
-       <xsl:if test="//@CreationCount"><td>
+       <xsl:if test="@CreationCount"><td>
             <xsl:value-of select="(@CreationCount)"/>
           </td> 
      </xsl:if>
       
-      <xsl:if test="//@ActivationCount"><td>
+      <xsl:if test="@ActivationCount"><td>
             <xsl:value-of select="(@ActivationCount)"/>
           </td> 
      </xsl:if>
@@ -140,7 +139,7 @@
     </tr>
   </xsl:template>
   
-  <xsl:template match="item" mode="OutputSecondHeadTable">
+  <xsl:template match="item[generate-id(.)=generate-id(key('ServiceType',@ServiceType))]" mode="OutputSecondHeadTable">
     <table class="data">
       <h2>
         <a name="command-{@ServiceType}">         
@@ -173,22 +172,16 @@
             <th>
             <xsl:value-of select="name(@Name)"/>
           </th> </xsl:if>
-          
-          <xsl:if test="//@CreationCount">
-            <th>
-            <xsl:value-of select="name(//@CreationCount)"/>     
+          <xsl:if test="@CreationCount">
+           <th>
+            <xsl:value-of select="name(@CreationCount)"/>     
           </th> 
           </xsl:if>
-          
-            <xsl:if test="//@ActivationCount">
+            <xsl:if test="@ActivationCount">
             <th>
-            <xsl:value-of select="name(//@ActivationCount)"/>     
+            <xsl:value-of select="name(@ActivationCount)"/>     
           </th> 
           </xsl:if>
-            
-       <th>
-            <xsl:value-of select="name(@ActivationCount)"/>
-          </th> 
             <th>
             <xsl:value-of select="name(@Line)"/>
           </th> 
