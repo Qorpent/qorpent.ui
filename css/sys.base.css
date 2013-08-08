@@ -125,3 +125,6 @@ select:focus {
     outline: none;
 }
 
+.value {
+    color: #4f7942;
+

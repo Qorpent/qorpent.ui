@@ -91,8 +91,6 @@
      <xsl:apply-templates mode="next" select="key('ServiceType',@ServiceType)">      </xsl:apply-templates>
     </ul>-->
   </xsl:template>
-  
-    
   <xsl:template match="item" mode="next">
     <tr>
             <td>
@@ -100,8 +98,7 @@
           </td>  
         <td>
             <xsl:value-of select="(@Name)"/>
-          </td> 
-           
+          </td>  
            <td>
             <xsl:value-of select="(@Lifestyle)"/>
           </td>
@@ -117,21 +114,12 @@
             <td>
             <xsl:value-of select="(@__idx)"/>
           </td>
-    
-   
-      
-
        <td>
             <xsl:value-of select="(@CreationCount)"/>
           </td> 
       <td>
           <xsl:value-of select="(@ActivationCount)"/>
         </td>
-
-      
-      
-      
-
             <td>
             <xsl:value-of select="(@Line)"/>
           </td> 
@@ -162,12 +150,8 @@
   
   <xsl:template match="Parametes" mode="OutputParametr">
      <table class="data">
-       
        <tbody>
-         
         <xsl:apply-templates select="item" mode="OutPutItemKey"/>
-        
-    
      </tbody>
      </table>
     
@@ -179,7 +163,17 @@
     <tr>
        
         <td><xsl:value-of select="@key"/></td>
-      <td><xsl:value-of select="."/></td>
+      <td>
+        
+        <p> <xsl:value-of select="."/> </p>
+          <xsl:if test="value">
+            <font class="value">
+             Значения:
+            <xsl:text> </xsl:text>        <xsl:value-of select="value/item"/>-<xsl:value-of select="value/item/@__idx"/>
+          
+          </font>
+          </xsl:if>
+    </td>
        </tr>  
       </xsl:template>
   
