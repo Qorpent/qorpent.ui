@@ -101,9 +101,7 @@
         <td>
             <xsl:value-of select="(@Name)"/>
           </td> 
-            <td>
-            <xsl:value-of select="(@Priority)"/>
-          </td>
+           
            <td>
             <xsl:value-of select="(@Lifestyle)"/>
           </td>
@@ -141,9 +139,30 @@
         <td>
           <xsl:value-of select="(@FileName)"/>
         </td>
-   
+       <td>
+            <xsl:value-of select="(@Priority)"/>
+          </td>
+      
+        
+          <xsl:if test="child::*">
+        <td>
+        <xsl:apply-templates select="Parametes/item" mode="OutPutItemKey"/>
+      </td>
+      </xsl:if>  
+      
+    <!--  <xsl:if test="parameters">
+     <xsl:apply-templates select="parameters/item" mode="OutputParametr"/>
+      </xsl:if>
+   -->
       
     </tr>
+  </xsl:template>
+  
+  
+ 
+  <xsl:template match="Parametes/item" mode="OutPutItemKey">
+    <xsl:value-of select="@key"/>=<xsl:value-of select="."/>
+
   </xsl:template>
   
   <xsl:template match="item[generate-id(.)=generate-id(key('ServiceType',@ServiceType))]" mode="OutputSecondHeadTable">
@@ -155,38 +174,34 @@
       </h2>
       <thead>
         <tr>
-          
-         
           <th>
             Id
           </th>
            <th>
             Name
-          </th> 
-          
-           <th>
-            Priority
-          </th>
-          
+          </th>           
            <th>
             Lifestyle
           </th>
              <th>
             ImplType
-          </th> <th>
-            ImplNs
-          </th> <th>
-            ImplAssembly
-          </th> <th>
-            __idx
           </th> 
-           
+            <th>
+            ImplNs
+          </th> 
+            <th>
+            ImplAssembly
+          </th> 
+            <th>
+            __idx
+          </th>            
              <th>
             CrCount     
           </th> 
               <th>              
               ActCount
             </th>
+                   
               <!--<xsl:if test="../item[generate-id(.)=generate-id(key('ServiceType',@ServiceType))]//@CreationCount">
              <th>
             <xsl:value-of select="local-name(@CreationCount)"/>     
@@ -206,6 +221,14 @@
             <th>
               FileName
             </th>
+          <th>
+            Priority
+          </th>
+          <xsl:if test="child::*">
+              <th>
+          Параметры
+          </th>
+        </xsl:if>  
         </tr>
       </thead>
       <tbody>
