@@ -11,7 +11,9 @@
           <link rel="stylesheet" href="../styles/sys.base.css" />
         </head>
         <body>
-          <h1>Container</h1>
+          <a name ="up">
+          <h1 >Container</h1>
+            </a>
           <table class="data">
             <thead>
               <tr>
@@ -52,13 +54,7 @@
     </xsl:template>
     <xsl:template match="@*"/>
 </xsl:stylesheet>-->
- <xsl:template match ="result" mode="sort">
-  
-  </xsl:template>
-  
-  
-    
-      
+ 
     
   
   
@@ -95,11 +91,16 @@
      <xsl:apply-templates mode="next" select="key('ServiceType',@ServiceType)">      </xsl:apply-templates>
     </ul>-->
   </xsl:template>
+  
+    
   <xsl:template match="item" mode="next">
     <tr>
             <td>
             <xsl:value-of select="(@Id)"/>
           </td>  
+        <td>
+            <xsl:value-of select="(@Name)"/>
+          </td> 
             <td>
             <xsl:value-of select="(@Priority)"/>
           </td>
@@ -118,9 +119,7 @@
             <td>
             <xsl:value-of select="(@__idx)"/>
           </td>
-      <td>
-            <xsl:value-of select="(@Name)"/>
-          </td> 
+    
    
       
 
@@ -161,6 +160,9 @@
           <th>
             Id
           </th>
+           <th>
+            Name
+          </th> 
           
            <th>
             Priority
@@ -178,9 +180,7 @@
           </th> <th>
             __idx
           </th> 
-            <th>
-            Name
-          </th> 
+           
              <th>
             CrCount     
           </th> 
@@ -209,12 +209,15 @@
         </tr>
       </thead>
       <tbody>
-        <xsl:apply-templates mode="next" select="key('ServiceType',@ServiceType)">      
-          
+        <xsl:apply-templates mode="next" select="key('ServiceType',@ServiceType)">
+             <xsl:sort select="@Name"/>
+          <xsl:sort select="@ImplType"/>
         </xsl:apply-templates>
       </tbody>
     </table>
-   
+   <p>
+        <a href="#up">назад к оглавлению</a>
+      </p>
     
     <!--<ul>
      <xsl:apply-templates mode="next" select="key('ServiceType',@ServiceType)">      </xsl:apply-templates>
