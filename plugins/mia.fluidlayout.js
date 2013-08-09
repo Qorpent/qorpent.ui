@@ -39,19 +39,18 @@
             s.click(function(e) {
                 var el = $(e.target);
                 var parent = el.parent();
-                el.nextAll().toggle();
                 parent.toggleClass("fluid-part-hidden");
                 if (!!parent.attr("id")) {
-                	sessionStorage.setItem("fluidlayout__" + parent.attr("id"), parent.hasClass("fluid-part-hidden"));
+                	localStorage.setItem("fluidlayout__" + parent.attr("id"), parent.hasClass("fluid-part-hidden"));
                 }
             });
             if (!!elid) {
-            	var valueInStorage = sessionStorage.getItem("fluidlayout__" + elid);
+            	var valueInStorage = localStorage.getItem("fluidlayout__" + elid);
             	if (valueInStorage == "true") {
             		s.trigger("click");
             	}
             	else if (null == valueInStorage) {
-            		sessionStorage.setItem("fluidlayout__" + elid, false);
+            		localStorage.setItem("fluidlayout__" + elid, false);
             	}
             }
         });

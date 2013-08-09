@@ -62,6 +62,9 @@ window._ = window._ || {};
 					button.tooltip({placement: "bottom"});
 				}
 				w.el = button;
+				if (!!w.onclick) {
+					w.el.click($.proxy(w.onclick, w));
+				}
 			}
 			
 			if (!w.completed && !w.initonly && w.type!='menu') {
@@ -101,10 +104,6 @@ window._ = window._ || {};
 							this.command.execute(params);
 						}, w));
 					}
-				}
-				
-				if(w.type == "button" && !!w.onclick ) {
-					w.el.on("click", "button",$.proxy(w.onclick,w));
 				}
 				
 				if (w.authonly && !_.qorpent.user.isAuthorized()) return;
