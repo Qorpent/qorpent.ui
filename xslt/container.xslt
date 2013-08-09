@@ -135,7 +135,7 @@
           <xsl:if test="child::*">
             
         <td>
-        <xsl:apply-templates select="Parametes" mode="OutputParametr"/>
+        <xsl:apply-templates select="Parameters" mode="OutputParametr"/>
       </td>
       </xsl:if>  
       
@@ -148,7 +148,7 @@
   </xsl:template>
   
   
-  <xsl:template match="Parametes" mode="OutputParametr">
+  <xsl:template match="Parameters" mode="OutputParametr">
      <table class="data">
        <tbody>
         <xsl:apply-templates select="item" mode="OutPutItemKey"/>
@@ -161,21 +161,23 @@
   
   <xsl:template match="item" mode="OutPutItemKey">
     <tr>
-       
-        <td><xsl:value-of select="@key"/></td>
+      <td><xsl:value-of select="@key"/></td>
       <td>
-        
         <p> <xsl:value-of select="."/> </p>
           <xsl:if test="value">
-            <font class="value">
-             Значения:
-            <xsl:text> </xsl:text>        <xsl:value-of select="value/item"/>-<xsl:value-of select="value/item/@__idx"/>
-          
-          </font>
+            <p>Значения:</p>
+            <xsl:apply-templates select="value/item" mode="OutputValue"/> 
           </xsl:if>
     </td>
        </tr>  
       </xsl:template>
+  
+  <xsl:template match="item" mode="OutputValue">
+   <font class="value">
+             
+            <xsl:text> </xsl:text>        <xsl:value-of select="."/>-<xsl:value-of select="@__idx"/>
+          </font>
+  </xsl:template>
   
   <xsl:template match="item[generate-id(.)=generate-id(key('ServiceType',@ServiceType))]" mode="OutputSecondHeadTable">
     <table class="data">
