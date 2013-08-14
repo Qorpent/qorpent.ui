@@ -7,6 +7,8 @@ table.data {
      border-collapse:collapse;
 }
 
+textarea, pre { -moz-tab-size:2; -webkit-tab-size:2; -o-tab-size:2; tab-size:2; }
+
 table.data td , table.data th {
      padding:2px;
      border:solid 1px gray;
