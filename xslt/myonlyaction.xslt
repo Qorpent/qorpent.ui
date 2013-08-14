@@ -41,7 +41,7 @@
       <table>
       <tbody>
         <tr>
-          <td>
+          <td id="tableforposition">
             <table class="data">
               <tbody>
                 <xsl:apply-templates select="item" mode="tbstring"/>

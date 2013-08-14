@@ -32,6 +32,10 @@ table.data th {
 	width: 100%;
 }
 
+#tableforposition{
+	vertical-align: top;
+}
+
 .mark {
     padding: 2px;
     border: solid 1px gray;
