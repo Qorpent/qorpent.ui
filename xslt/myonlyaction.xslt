@@ -31,50 +31,61 @@
             </p>
           </xsl:if>
           <xsl:apply-templates select="//value/parameters" mode="farmcall"/>
-          <select id="formrender">
-            <option value="bxl">BXL</option>
-            <option value="embedjs">EMBEDJS</option>
-            <option value="embedjson">EMBEDJSON</option>
-            <option value="empty">EMPTY</option>
-            <option value="file">FILE</option>
-            <option value="filedesc">FILEDESC</option>
-            <option value="form">FORM</option>
-            <option value="html">HTML</option>
-            <option value="js">JS</option>
-            <option value="json">JSON</option>
-            <option value="md5">MD5</option>
-            <option value="qview">QVIEW</option>
-            <option value="string">STRING</option>
-            <option value="view">VIEW</option>
-            <option value="wiki">WIKI</option>
-            <option value="xml">XML</option>
-          </select>
-          <input type="button" onclick="actionform.submit(document.querySelector('#formcall'))" value="Выполнить →"/>
-          <iframe id="formresult" name="formresult"/>
+         
         </section>      
       </body>
     </html>
   </xsl:template>
   <xsl:template match="//value/parameters" mode="farmcall">
     <form id="formcall" method="POST" target="formresult" action="../{../../../@key}/{../../@key}.RENDER.qweb" actionname="{../../../@key}.{../../@key}.action">
-      <table class="data">
-        <tbody>
-          <xsl:apply-templates select="item" mode="tbstring"/>
-        </tbody>
+      <table>
+      <tbody>
+        <tr>
+          <td>
+            <table class="data">
+              <tbody>
+                <xsl:apply-templates select="item" mode="tbstring"/>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <select id="formrender">
+              <option value="bxl">BXL</option>
+              <option value="embedjs">EMBEDJS</option>
+              <option value="embedjson">EMBEDJSON</option>
+              <option value="empty">EMPTY</option>
+              <option value="file">FILE</option>
+              <option value="filedesc">FILEDESC</option>
+              <option value="form">FORM</option>
+              <option value="html">HTML</option>
+              <option value="js">JS</option>
+              <option value="json">JSON</option>
+              <option value="md5">MD5</option>
+              <option value="qview">QVIEW</option>
+              <option value="string">STRING</option>
+              <option value="view">VIEW</option>
+              <option value="wiki">WIKI</option>
+              <option value="xml">XML</option>
+            </select>
+            <input type="button" onclick="actionform.submit(document.querySelector('#formcall'))" value="Выполнить →"/>
+            <iframe id="formresult" name="formresult"/>
+          </td>
+        </tr>
+      </tbody>
       </table>
-    </form>
+      </form>
   </xsl:template>
   
   
   <xsl:template match ="item" mode ="tbstring">
     <xsl:choose>
-      <xsl:when test="@DataType='String' and not(@IsLargeText)">
-        <tr>
-          <th>
-            <xsl:value-of select="@Name"/>
-          </th>
-          <td>
-            <xsl:choose>
+            <xsl:when test="@DataType='String' and not(@IsLargeText)">
+              <tr>
+                <th>
+                  <xsl:value-of select="@Name"/>
+                </th>
+                <td>
+                  <xsl:choose>
             
               <xsl:when test="@Required='true'">
               <input size="50" value="" required='true' name="{@Name}"/>              
@@ -96,7 +107,8 @@
                  <input size="50" value="" name="{@Name}"/>
               </xsl:otherwise>
             </xsl:choose>
-          </td>         
+          </td>
+              <!--  <td rowspan="{count(//parameters/item)}">Item 1</td>-->
         </tr>
       </xsl:when>
       <xsl:when test="@DataType='Boolean'">
@@ -118,11 +130,11 @@
               <textarea value="" name="{@Name}" style="width: 563px; height: 185px;"></textarea>
             </td>          
         </tr>
-      
-    
       </xsl:when>
     </xsl:choose>
+   <!---->
     </xsl:template>
+  
 
 </xsl:stylesheet>
 

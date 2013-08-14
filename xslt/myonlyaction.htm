@@ -1,7 +1,7 @@
 ﻿<html>
   <head>
     <META http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" href="../styles/zdev.base.css"><script>
+    <link rel="stylesheet" href="../styles/sys.base.css"><script>
           var actionform = {
           submit: function (target) {
           target.setAttribute("action", target.getAttribute("action").replace(/\w+\.qweb/, document.querySelector('#formrender').value + ".qweb"));
@@ -26,9 +26,7 @@
             </tr>
           </tbody>
         </table>
-      </form>
-<select id="formrender">
-        <option value="bxl">BXL</option>
+      </form><select id="formrender"><option value="bxl">BXL</option>
         <option value="embedjs">EMBEDJS</option>
         <option value="embedjson">EMBEDJSON</option>
         <option value="empty">EMPTY</option>
@@ -43,10 +41,5 @@
         <option value="string">STRING</option>
         <option value="view">VIEW</option>
         <option value="wiki">WIKI</option>
-        <option value="xml">XML</option></select>
-    <input type="button" onclick="actionform.submit(document.querySelector('#formcall'))" value="Выполнить →">
-<iframe id="formresult" name="formresult">
-</iframe>
-</section>
-</body>
+        <option value="xml">XML</option></select><input type="button" onclick="actionform.submit(document.querySelector('#formcall'))" value="Выполнить →"><iframe id="formresult" name="formresult"></iframe></section></body>
 </html>
