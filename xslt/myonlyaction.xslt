@@ -110,7 +110,7 @@ function catchTab(item,e){
               </tbody>
             </table>
           </td>
-          <td>
+          <td id="forpositioniframe">
             <select id="formrender">
               <option value="bxl">BXL</option>
               <option value="embedjs">EMBEDJS</option>
