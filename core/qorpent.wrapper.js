@@ -22,17 +22,22 @@ window._ = window._ || {};
 
         wiki_getWrap: function(obj) {
             if ($.isEmptyObject(obj)) return obj;
+            var result = {
+                articles: []
+            }
             $.each(obj, function(i, o) {
                 o.Code = o.Code || "";
-                o.Date = eval(o.LastWriteTime ? o.LastWriteTime.substring(2) : "new Date()");
+                o.LastWriteTime = eval(o.LastWriteTime ? o.LastWriteTime.substring(2) : "new Date()").format("dd.mm.yyyy HH:MM");
                 o.ReadableDate
                 o.Existed = o.Existed || false;
                 o.Propeties = o.Propeties || {};
                 o.Text = o.Text || "";
                 o.Title = o.Title || o.Code || "";
                 o.Editor = o.Editor || "";
+                result.articles.push(o);
             });
-            return obj;
+            result.articles.reverse();
+            return result;
         }
     });
 })(_.wrapper = _.wrapper || {});

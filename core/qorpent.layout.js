@@ -1,47 +1,69 @@
 window._ = window._ || {};
 (function(layout) {
     layout.template = "qorpent_layout";
-    layout.add = function(pos, el) {
-        el = $(el);
+    layout.resolvePosition = function(pos) {
+        var result = null;
         // if pos is selector
         if (typeof pos == "object") {
-            $(pos).append(el);
+            result = $(pos);
         }
         // else if string
         else if (typeof pos == "string") {
             if (pos.indexOf(":") != -1) {
-                var parent = null;
-                var align = ""; 
                 var options = pos.split(":");
                 if (options.length > 1) {
                     if (options[0] == "menu" && options[1] != "") {
-                        parent = this.menu(options[1]);
+                        result = this.menu(options[1]);
                     }
                     else if (!!this[options[0].toLowerCase()]) {
-                        parent = this[options[0].toLowerCase()]();
+                        result = this[options[0].toLowerCase()]();
                     }
                     $.each(options, function(i, o) {
                         if (i == 0) return;
-                        if (/^(right|left)$/.test(o)) {
-                            align = o;
-                        } else {
-                            var c = parent.find(o);
+                        if (!/^(right|left)$/.test(o)) {
+                            var c = result.find(o);
                             if (c.length > 0) {
-                                parent = c; 
+                                result = c; 
                             }
                         }
                     });
                 }
-                if (align != "") el.addClass("pull-" + align);
-                if (parent) {
-                    parent.append(el);
-                }
             } else {
                 if (!!this[pos.toLowerCase()]) {
-                    this[pos.toLowerCase()]().append(el);
+                    result = this[pos.toLowerCase()]();
                 }
             }
         }
+        return result;
+    };
+
+    layout.add = function(pos, el) {
+        el = $(el);
+        var parent = this.resolvePosition(pos);
+        if (typeof pos == "string") {
+            if (pos.indexOf(":") != -1) {
+                var options = pos.split(":");
+                $.each(options, function(i, o) {
+                    if (i == 0) return;
+                    if (/^(right|left)$/.test(o)) {
+                        el.addClass("pull-" + o);
+                    }
+                });
+            }
+        }
+        if (!!parent) parent.append(el);  
+    };
+
+    layout.update = function(pos, el) {
+        el = $(el);
+        var parent = this.resolvePosition(pos);
+        if (parent.hasClass("fluid-part")) {
+            parent.children().not('.fluid-legend').not('.fluid-splitter').remove();
+        }
+        else {
+            parent.empty();
+        }
+        if (!!parent) parent.append(el);
     };
 
     layout.init = function() {

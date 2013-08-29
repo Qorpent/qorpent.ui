@@ -11,6 +11,7 @@
             id : "", // id окна который пойдет в аттрибут id
             onClose : null,
             resizable: true,
+            autoclose: 0
         }, p);
         $.extend({
             class : "btn-primary",
@@ -91,6 +92,9 @@
         var top = ($(window).height() / 2) - (modal.height() / 2);
         modal.css("top", top);
         $(modal).modal({backdrop: false});
+        if (p.autoclose > 0) {
+            window.setTimeout(function() { modal.modal("hide") }, p.autoclose);
+        }
         // Убиваем окно после его закрытия
         $(modal).on('hidden', function(e) {
             var datatoggle = $(e.target).attr('data-toggle');

@@ -2,14 +2,13 @@
  * Виджет документации
  */
 (function() {
-    var showWiki = function(result) {
+    var showWiki = function(doc) {
         var article_tpl = _.qorpent.user.logonadmin ? "qorpent_wiki_admin" : "qorpent_wiki_user";
         var attach_form_tpl = "qorpent_wiki_attachform";
         var content = $('<div class="wiki-body"/>');
         var code = "";
-        $.each(result, function(i, w) {
+        $.each(doc, function(i, w) {
             code += "__" + w.Code.replace(/\//g, "_");
-            w.Date = w.Date.format("dd.mm.yyyy HH:MM:ss");
             var html = _.render.compile(article_tpl, w);
             html.find('.wiki-text').append(qwiki.toHTML(w.Text));
             html.delegate(".wiki-print-btn", "click", function(e) {
@@ -63,7 +62,9 @@
         content.miamodal({title: "База знаний", id: code, resizable: true});
     };
 
-    _.api.wiki.get.onSuccess(function(e, result) {
-        showWiki(result);
+    _.qorpent = _.qorpent || {};
+    _.qorpent.wiki = _.qorpent.wiki || {};
+    $.extend(_.qorpent.wiki, {
+        showinmodal: showWiki
     });
 })();
