@@ -119,6 +119,10 @@
                 data : params,
                 complete : function(r) { self.complete(r) }
             };
+            if (params.constructor.name == "FormData") {
+                ajax.processData = false;
+                ajax.contentType = false;
+            }
             if (this.async) {
                 ajax.xhrFields = { withCredentials: true };
             }

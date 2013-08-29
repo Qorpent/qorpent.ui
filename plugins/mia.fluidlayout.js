@@ -22,9 +22,9 @@
             if (e.target.tagName != "LEGEND") return;
             target.toggleClass("collapsed");
             if (target.hasClass("collapsed")) {
-                target.nextAll().hide();
+                target.nextAll().not('.hidden').hide();
             } else {
-                target.nextAll().show();
+                target.nextAll().not('.hidden').show();
             }
         });
 
