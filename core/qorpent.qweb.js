@@ -119,7 +119,7 @@
                 data : params,
                 complete : function(r) { self.complete(r) }
             };
-            if (params.constructor.name == "FormData") {
+            if (params.constructor.name == "FormData" || params.constructor.toString().indexOf("FormData") != -1) {
                 ajax.processData = false;
                 ajax.contentType = false;
             }
