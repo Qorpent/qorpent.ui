@@ -73,10 +73,7 @@ function catchTab(item,e){
 		    
 }
 </script>
-        <body>
-
-
-</body>
+       
           
       </head>
       <body>
@@ -170,16 +167,35 @@ function catchTab(item,e){
               </xsl:otherwise>
             </xsl:choose>
           </td>
-              <!--  <td rowspan="{count(//parameters/item)}">Item 1</td>-->
-        </tr>
+             </tr>
       </xsl:when>
       <xsl:when test="@DataType='Boolean'">
         <tr>
           <th>
             <xsl:value-of select="@Name"/>
           </th>
-          <td>
-            <input type="checkbox" size="50" value="true" name="{@Name}"/>
+          <td> <xsl:choose>
+            <xsl:when test="string(Default)='true'">
+             <input type="checkbox"  checked="checked"   size="50" value="true" name="{@Name}"/>
+               <input type="hidden"  value="false" name="{@Name}"/>
+              
+                    
+            </xsl:when>
+              <xsl:when test="string(Default)='false'">
+                <input type="checkbox"   size="50" value="true" name="{@Name}"/>
+       
+   
+            </xsl:when>
+       <!--<xsl:when test="string(Default)='false'">
+        string(Default)='false'-->
+          
+           <!---->
+            <!--</xsl:when> -->
+            <xsl:otherwise>
+                   <!--<input type="checkbox"  size="50" value="true" name="{@Name}"/>-->
+          <input type="checkbox" size="50" value="true" name="{@Name}"/>
+          </xsl:otherwise>
+            </xsl:choose>
           </td>          
         </tr>
       </xsl:when>
@@ -190,7 +206,6 @@ function catchTab(item,e){
           </th>          
             <td>
               <textarea id="data" onkeydown="return catchTab(this,event)" value="" name="{@Name}" style="width: 563px; height: 185px;"></textarea>
-             
             </td>          
         </tr>
       </xsl:when>
