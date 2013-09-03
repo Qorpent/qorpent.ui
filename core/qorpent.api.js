@@ -39,7 +39,8 @@ window._ = window._ || {};
         save : new Command({ domain: "wiki", name: "save", group: "wiki", title: "Сохранение документации", withProgress: true, method: "POST" }),
         // Проверяет наличие статьи с кодом [code]
         exists : new Command({ domain: "wiki", name: "exists" }),
-        savefile : new Command({ domain: "wiki", name: "savefile", method: "POST", withProgress: true })
+        savefile : new Command({ domain: "wiki", name: "savefile", method: "POST", withProgress: true }),
+        getfile: new Command({domain: "wiki", name: "getfile", datatype: "filedesc"})
     });
     $.each(serverapi, function(dk, dv) { 
         if (!api[dk]) api[dk] = {};
