@@ -27,7 +27,9 @@
         var self = this;
         var defaults = new qweb.defaults(),
         o = $.extend(defaults, o);
-        o.eventName = o.domain + "-" + o.name;
+        if (!o.eventName) {
+            o.eventName = o.domain + "-" + o.name;
+        }
 //      o.eventName = o.safe ? this.name + "-" + new Date().getTime() : o.name;
         if (!o.url) {
             o.url = o.domain + "/" + o.name + "." + o.datatype + ".qweb";
