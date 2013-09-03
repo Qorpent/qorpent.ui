@@ -1,0 +1,71 @@
+#wiki-pages,
+#wiki-files,
+#wiki-attach {
+	padding-left: 15px;
+}
+
+#wiki-attach>form {
+	margin-bottom: 10px;
+}
+
+#wikiEditSource,
+#wikiEditPreview {
+	overflow-y: auto;
+}
+
+#wikiEditSource textarea {
+	width: 100%;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.wiki-preview {
+	margin-left: 15px;
+}
+
+.wiki-page-link {
+	position: relative;
+	overflow: hidden;
+	width: 235px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding-right: 30px !important;
+	box-sizing: border-box;
+}
+
+.wiki-page-link>i {
+	position: absolute;
+}
+
+.wiki-page-link>.wiki-delete-btn {
+	right: 0;
+}
+
+.wiki-page-link>.wiki-edit-btn {
+	right: 18px;
+}
+
+#wiki-attach input {
+	margin-bottom: 3px;
+}
+
+.wiki-attach-name {
+	
+}
+
+.wiki-attach-code {
+
+}
+
+.wiki-attach-file {
+
+}
+
+.wiki-attach-submit {
+	
+}
+
+.wiki-attach-message {
+
+}

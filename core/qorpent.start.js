@@ -8,11 +8,9 @@ window._ = window._ || {};
                 if (!result.isAuthorized()) {
                     _.router.to("login");
                 } else {
-                    _.router.toDefault();
+                    _.router.toStart();
                 }
             }});
-			
-			
         },
 	
         start : function() {
@@ -31,6 +29,11 @@ window._ = window._ || {};
             });
         },
 
+        startWiki : function() {
+            qorpent.start();
+            _.qorpent.wiki.editor.start();
+        },
+
         startqorpent : function() {
             qorpent.start();
         }
@@ -43,6 +46,9 @@ $(document).ready(function() {
     });
     _.router.addRoute("start", function() {
         _.qorpent.startqorpent();
+    });
+    _.router.addRoute("wiki", function() {
+        _.qorpent.startWiki();
     });
     _.router.asDefault("start");
     _.render.init();

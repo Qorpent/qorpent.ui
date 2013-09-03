@@ -1,0 +1,24 @@
+<div id="wiki-attach">
+	<legend>Загрузка файлов</legend>
+	{{>qorpent_wiki-standalone-attach}}
+</div>
+<div id="wiki-pages">
+	<legend>Список статей<button class="btn btn-mini btn-success wiki-create"><i class="icon-plus icon-white"/></button></legend>
+	<ul class="nav nav-list">
+		{{#pages}}
+		<li class="nav-item">
+			<a class="wiki-page-link" wikicode="{{Code}}">{{Name}} [{{Code}}]<i class="icon-trash pull-right wiki-delete-btn"></i></a>
+		</li>
+		{{/pages}}
+	</ul>
+</div>
+<div id="wiki-files">
+	<legend>Список файлов</legend>
+	<ul class="nav nav-list">
+		{{#files}}
+		<li class="nav-item">
+			<a class="wiki-file-link" wikicode="{{Code}}">{{Name}} [{{Code}}]<i class="icon-trash pull-right wiki-delete-btn"></i></a>
+		</li>
+		{{/files}}
+	</ul>
+</div>

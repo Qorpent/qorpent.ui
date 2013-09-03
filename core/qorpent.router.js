@@ -28,6 +28,10 @@ window._ = window._ || {};
 
         toDefault : function() {
             this.to(this.default);
+        },
+
+        toStart: function() {
+            this.to(this.current != "" ? this.current : this.default);
         }
     });
 })(_.router = _.router || {});

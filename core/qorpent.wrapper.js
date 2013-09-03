@@ -19,6 +19,19 @@ window._ = window._ || {};
             });
             return obj;
         },
+        
+        wiki_findWrap: function(obj) {
+            var result = {
+                pages: [],
+                files: []
+            }
+            $.each(obj, function(i, o) {
+                if (o.Type == "Page") result.pages.push(o)
+                else if (o.Type == "File") result.files.push(o); 
+            });
+            result.pages.reverse();
+            return result;
+        },
 
         wiki_getWrap: function(obj) {
             if ($.isEmptyObject(obj)) return obj;

@@ -7,4 +7,10 @@ pkg qorpent.wiki level=auth
     load qorpent.wiki.customrefs.js
     load qorpent.wiki.menu.js
     
-	
+    # Wiki standalone version loading
+    load qorpent.wiki-standalone.js
+    load qorpent.wiki-standalone.css
+    load qorpent.wiki-standalone-list.tpl.html
+    load qorpent.wiki-standalone-editor.tpl.html
+    load qorpent.wiki-standalone-article.partial.tpl.html
+    load qorpent.wiki-standalone-attach.partial.tpl.html
