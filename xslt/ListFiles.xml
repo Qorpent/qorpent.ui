@@ -1,0 +1,37 @@
+﻿<root>
+  <result>
+    <item Type="Directory" LocalPath="./.config" __idx="0"/>
+    <item Type="Directory" LocalPath="./.log" __idx="1"/>
+    <item Type="Directory" LocalPath="./.qviewbin" __idx="2"/>
+    <item Type="Directory" LocalPath="./.tmp" __idx="3"/>
+    <item Type="Directory" LocalPath="./bin" __idx="4"/>
+    <item Type="Directory" LocalPath="./images" __idx="5"/>
+    <item Type="Directory" LocalPath="./scripts" __idx="6"/>
+    <item Type="Directory" LocalPath="./styles" __idx="7"/>
+    <item Type="Directory" LocalPath="./tpl" __idx="8"/>
+    <item Type="Directory" LocalPath="./usr" __idx="9"/>
+    <item Type="Directory" LocalPath="./.log/2013-07-22" __idx="10"/>
+    <item Type="Directory" LocalPath="./.log/2013-07-23" __idx="11"/>
+    <item Type="Directory" LocalPath="./.log/2013-07-24" __idx="12"/>
+    <item Type="Directory" LocalPath="./.log/2013-07-25" __idx="13"/>
+    <item Type="Directory" LocalPath="./.log/2013-07-28" __idx="14"/>
+    <item Type="Directory" LocalPath="./.log/2013-07-30" __idx="15"/>
+    <item Type="Directory" LocalPath="./.log/2013-07-31" __idx="16"/>
+    <item Type="Directory" LocalPath="./.log/2013-08-01" __idx="17"/>
+    <item Type="Directory" LocalPath="./.log/2013-08-02" __idx="18"/>
+    <item Type="Directory" LocalPath="./.log/2013-08-05" __idx="19"/>
+    <item Type="Directory" LocalPath="./.log/2013-08-06" __idx="20"/>
+    <item Type="Directory" LocalPath="./.log/2013-08-07" __idx="21"/>
+    <item Type="Directory" LocalPath="./.log/2013-08-09" __idx="22"/>
+    <item Type="Directory" LocalPath="./.log/2013-08-14" __idx="23"/>
+    <item Type="Directory" LocalPath="./.log/2013-08-22" __idx="24"/>
+    <item Type="Directory" LocalPath="./.log/2013-08-23" __idx="25"/>
+    <item Type="Directory" LocalPath="./.log/2013-08-27" __idx="26"/>
+    <item Type="Directory" LocalPath="./.log/2013-08-28" __idx="27"/>
+    <item Type="Directory" LocalPath="./.log/2013-08-29" __idx="28"/>
+    <item Type="Directory" LocalPath="./.log/2013-09-03" __idx="29"/>
+    <item Type="Directory" LocalPath="./images/Новая папка" __idx="30"/>
+    <item Type="Directory" LocalPath="./images/Новая папка/Новая папка222" __idx="31"/>
+    <item Type="Directory" LocalPath="./images/Новая папка/Новая папка222/Новая папка" __idx="32"/>
+  </result>
+</root>

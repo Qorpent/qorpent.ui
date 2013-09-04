@@ -12,7 +12,9 @@
               <item __idx="1">css</item>
               <item __idx="2">img</item>
             </Constraint>
-            <Default>js</Default>
+            <Default>
+              js
+            </Default>
           </item>
         </parameters>
       </value>
