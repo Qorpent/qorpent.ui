@@ -49,6 +49,7 @@ window._ = window._ || {};
                     template.on(e.event, e.selector, e.handler);
                 });
             }
+            template.find("*[data-original-title]").tooltip({placement: "bottom"});
             return template;
         },  
         tohtml : function( templatecode,obj,tags) { 
