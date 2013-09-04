@@ -24,6 +24,10 @@ table.data th {
      background-color : lightgray;
 }
 
+td.dir {
+     background-color : #ffcc00;
+}
+
 #inserted {
 	background-color: #e5e5e5;
 }

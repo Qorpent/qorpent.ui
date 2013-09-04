@@ -7,7 +7,7 @@
   <xsl:template match="/root/result">
     <html>
       <head>
-        <title>List of files and folders of the current folder</title>
+        <title>List files and folders</title>
         <link rel='stylesheet' href='../styles/sys.base.css' />
       </head>
       <body>
@@ -15,13 +15,18 @@
         <table class="data">
           <thead>
             <tr>
-              <th>ID</th>
+              
               <th>Относительный путь</th>
               <th>Тип</th>
+              
             </tr>
           </thead>
           <tbody>
-            <xsl:apply-templates select="item" mode="item"/>
+            <xsl:apply-templates select="item" mode="item">
+              <xsl:sort select="@LocalPath"/>
+              
+              
+            </xsl:apply-templates>
           </tbody>
         </table>       
       </body>
@@ -30,15 +35,25 @@
   </xsl:template>
   <xsl:template match="item" mode="item">
     <tr>
-      <td>
-        <xsl:value-of select="@__idx"/>
-      </td>
-      <td>
-        <xsl:value-of select="@LocalPath"/>
-      </td>
+      <xsl:choose>
+        <xsl:when test="@Type='Directory'">
+          <td class="dir">
+            <xsl:value-of select="@LocalPath"/>
+          </td>
+        </xsl:when>
+       
+        
+        <xsl:otherwise>
+          <td>
+            <xsl:value-of select="@LocalPath"/>
+          </td>
+        </xsl:otherwise>
+              </xsl:choose>
+      
       <td>
         <xsl:value-of select="@Type"/>
       </td>
+     
     </tr>
   </xsl:template>
 </xsl:stylesheet>
