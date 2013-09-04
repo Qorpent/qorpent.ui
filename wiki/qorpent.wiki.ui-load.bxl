@@ -12,5 +12,6 @@ pkg qorpent.wiki level=auth
     load qorpent.wiki-standalone.css
     load qorpent.wiki-standalone-list.tpl.html
     load qorpent.wiki-standalone-editor.tpl.html
+    load qorpent.wiki-standalone-hist.tpl.html
     load qorpent.wiki-standalone-article.partial.tpl.html
     load qorpent.wiki-standalone-attach.tpl.html

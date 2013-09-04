@@ -1,6 +1,12 @@
 #wiki-list,
+#wiki-history,
 #wiki-attach {
 	padding-left: 15px;
+}
+
+#wiki-history>.nav-list:empty:after {
+    display: block;
+    content: "Нет элементов для отображения";
 }
 
 #wiki-list>.nav-tabs {
@@ -8,7 +14,11 @@
 	position: relative;
 }
 
-#wiki-attach>form {
+#wiki-list {
+	margin-bottom: 10px;
+}
+
+#wiki-attach {
 	margin-bottom: 20px;
 }
 
@@ -30,6 +40,7 @@
 	left: 9px;
 }
 
+.wiki-hist-clear,
 .wiki-create {
 	margin-top: 8px;
 }
@@ -47,6 +58,7 @@
 	white-space: nowrap;
 	padding-right: 30px !important;
 	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
 
 .wiki-file-link>i,

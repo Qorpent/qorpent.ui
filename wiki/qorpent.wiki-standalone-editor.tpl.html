@@ -5,7 +5,10 @@
 	    <div id="wikiEditSource">
 		    {{> qorpent_wiki-standalone-article}}
 		    <label class="checkbox">
-	      		<input type="checkbox" onchange="$(this).is(':checked') ? $('#wikiEditText').addClass('autopreview') : $('#wikiEditText').removeClass('autopreview')" checked="checked"> Предпросмотр "на лету"
+	      		<input type="checkbox" onchange="
+	      			$(this).is(':checked') ? $('#wikiEditText').addClass('autopreview') : $('#wikiEditText').removeClass('autopreview');
+	      			$('#wikiEditText').trigger('keyup');
+	      		" checked="checked"> Предпросмотр "на лету"
 		    </label>
 		    <div>
 		    	<button class="btn btn-primary btn-small pull-right" id="wikiSaveBtn">Сохранить</button>
