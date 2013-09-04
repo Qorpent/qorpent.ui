@@ -9,6 +9,7 @@ _.qorpent = _.qorpent || {};
         attachform: $('<div id="wiki-attach"/>'),
         historyform: $('<div id="wiki-history"/>'),
         history: [],
+        fav: [],
         wikisource: null,
         wikisearch: null,
         preview: null,
@@ -77,7 +78,7 @@ _.qorpent = _.qorpent || {};
                 selector: ".wiki-hist-link",
                 handler: function(e) {
                     if (e.target.tagName == "I") return;
-                    var id = link.attr("wikicode");
+                    var id = $(e.target).attr("wikicode");
                     _.qorpent.wiki.editor.openpage(id);
                 }
             }, {
@@ -94,9 +95,22 @@ _.qorpent = _.qorpent || {};
                 handler: function(e) {
                     _.qorpent.wiki.editor.historyClear();
                 }
+            }, {
+                event: "click",
+                selector: ".wiki-fav-btn",
+                handler: function(e) {
+                    var id = $(e.target).parent().attr("wikicode");
+                    var fav = $(e.target).hasClass("fav-true") ? false : true;
+                    _.qorpent.wiki.editor.historyFav(id, fav);
+                }
             }]
             this.history = JSON.parse(localStorage.getItem("qorpent__wikieditor-history")) || [];
-            var hist = _.render.compile("qorpent_wiki-standalone-hist", { history: this.history }, events);
+            this.fav = JSON.parse(localStorage.getItem("qorpent__wikieditor-fav")) || [];
+            var history = this.history;
+            $.each(history, $.proxy(function(i, h) {
+                if ($.inArray(h.Code, this.fav) != -1) h.Fav = true;
+            }, this));
+            var hist = _.render.compile("qorpent_wiki-standalone-hist", { history: history }, events);
             this.historyform.empty();
             this.historyform.append(hist);
         },
@@ -232,22 +246,39 @@ _.qorpent = _.qorpent || {};
             this.history.reverse();
             this.history.push(page);
             this.history.reverse();
-            localStorage.setItem("qorpent__wikieditor-history", JSON.stringify(this.history));
-            this.historyinit();
+            this.historySave();
         },
 
         historyRemove: function(code) {
             this.history = $.grep(this.history, function(v) {
                 return v.Code != code;
             });
+            this.historySave();
+        },
+
+        historySave: function() {
             localStorage.setItem("qorpent__wikieditor-history", JSON.stringify(this.history));
             this.historyinit();
         },
 
-        historyClear: function() {
-            this.history = [];
-            localStorage.setItem("qorpent__wikieditor-history", "[]");
+        historyFav: function(code, fav) {
+            if (fav) {
+                this.fav.push(code);
+            } else {
+                // $.inArray(h.Code, this.fav) != -1
+                this.fav = $.grep(this.fav, function(f) {
+                    return f != code;
+                });
+            }
+            localStorage.setItem("qorpent__wikieditor-fav", JSON.stringify(this.fav));
             this.historyinit();
+        },
+
+        historyClear: function() {
+            this.history = $.grep(this.history, function(v) {
+                return v.Fav;
+            });
+            this.historySave();
         },
 
         save: function() {

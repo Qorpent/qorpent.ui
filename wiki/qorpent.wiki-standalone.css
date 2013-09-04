@@ -49,6 +49,7 @@
 	margin-left: 15px;
 }
 
+.wiki-hist-link,
 .wiki-file-link,
 .wiki-page-link {
 	position: relative;
@@ -61,14 +62,27 @@
 	-moz-box-sizing: border-box;
 }
 
+.wiki-hist-link>i,
 .wiki-file-link>i,
 .wiki-page-link>i {
 	position: absolute;
 }
 
-.wiki-file-link>.wiki-delete-btn,
-.wiki-page-link>.wiki-delete-btn {
+.wiki-delete-btn {
 	right: 0;
+}
+
+.wiki-fav-btn {
+	right: 18px;
+}
+
+.wiki-fav-btn.fav-true {
+	background-position: -120px 0;
+}
+
+.wiki-fav-btn.fav-,
+.wiki-fav-btn.fav-false {
+	background-position: -144px 0;
 }
 
 .wiki-page-link>.wiki-edit-btn {
