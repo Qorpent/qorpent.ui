@@ -17,6 +17,9 @@
      -moz-flex-basis: 100%;
     flex-basis: 100%;
     position: relative;
+    overflow-y: auto;
+	overflow-x: hidden;
+	padding-right: 10px;
 }
 
 .fluid-part.fluid-part-hidden {

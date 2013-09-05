@@ -63,6 +63,7 @@ _.qorpent = _.qorpent || {};
             $(window).resize($.proxy(function() {
                 var h = $(window).height() - _.layout.header().height();
                 this.previewhtml.height(h - 100);
+                _.layout.left().height(h - 50);
                 editor.find("#wikiEditSource").height(h - 100);
             }, this));
             $(window).trigger("resize");
@@ -113,6 +114,11 @@ _.qorpent = _.qorpent || {};
             var hist = _.render.compile("qorpent_wiki-standalone-hist", { history: history }, events);
             this.historyform.empty();
             this.historyform.append(hist);
+            $(window).resize($.proxy(function() {
+                var h = $(window).height() - _.layout.header().height();
+                _.layout.left().height(h - 47);
+            }, this));
+            $(window).trigger("resize");
         },
 
         attachinit: function() {
@@ -243,9 +249,7 @@ _.qorpent = _.qorpent || {};
             if (this.history.length == 100) {
                 this.historyRemove(this.history[100].Code);    
             }
-            this.history.reverse();
-            this.history.push(page);
-            this.history.reverse();
+            this.history.unshift(page);
             this.historySave();
         },
 
