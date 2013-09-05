@@ -25,3 +25,8 @@
     right: 0;
     bottom: 0;
 }
+
+
+input.fill-modal {
+	width : 100%;
+}
