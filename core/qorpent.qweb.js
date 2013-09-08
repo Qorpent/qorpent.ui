@@ -162,7 +162,7 @@
                 this["triggerOnSuccess"](this.returnResult(sessionStorage.getItem(this.ajax.url+"?"+JSON.stringify(this.ajax.data))));
             }
             else if (200 == r.status) {
-                if (!r.responseText.match(/^\s*<!DOCTYPE/)) {
+                if (!r.responseText.match(/^\s*</) ) {
                     if ((this.ajax.type=="GET" && r.getResponseHeader("Last-Modified")) || this.cache)   {
                         sessionStorage.setItem(this.ajax.url+"?"+JSON.stringify(this.ajax.data), r.responseText);
                     }
