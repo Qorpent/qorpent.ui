@@ -46,6 +46,7 @@ _.qorpent = _.qorpent || {};
             this.source = editor.find('.wiki-source');
             this.text = editor.find("#wikiEditText");
             if (!!wikisource) {
+                // Не ну это лажа конечно. Если считать количество rows у textarea, то явно не так :D
                 this.text.attr("rows", this.wikisource.Text.split(/\r*\n/).length);
             }
             this.code = editor.find("#wikiEditCode");
@@ -158,6 +159,7 @@ _.qorpent = _.qorpent || {};
             this.attachcode = attach.find(".wiki-attach-code");
             this.attachselect = attach.find(".wiki-attach-select");
             this.attachsubmit = attach.find(".wiki-attach-submit");
+            this.attachform.empty();
             this.attachform.append(attach);
         },
 
@@ -182,7 +184,7 @@ _.qorpent = _.qorpent || {};
                 event: "click",
                 selector: ".wiki-create",
                 handler: function(e) { 
-                    _.qorpent.wiki.editor.open();
+                    _.qorpent.wiki.editor.openpage();
                 }
             }, {
                 event: "change",
@@ -334,12 +336,27 @@ _.qorpent = _.qorpent || {};
             this.attachinit();
             this.historyinit();
             this.search();
+
             $(document).undelegate(".wiki-link", "click");
+            if (!$.isEmptyObject(_.router.params) && !!_.router.params["code"]) {
+                this.openpage(_.router.params.code);
+            }
         }
     });
 
     _.qorpent.wiki = _.qorpent.wiki || {};
     $.extend(_.qorpent.wiki, {
         editor: new WikiEditor()
+    });
+
+    var wikieditor = _.widget.register({
+        name : "wikieditor",
+        position : "header:left",
+        title :"Редактор вики",
+        type: "button",
+        icon: "icon-pencil",
+        onclick: function() {
+            _.router.to("wiki", {}, true);
+        }
     });
 })();

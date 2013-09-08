@@ -14,4 +14,7 @@ _.widget.register({
 	//интеграция с _.api
 	codeparam : "code",
 	command : _.api.wiki.get,
+	onsubmit: function(e, result) {
+		_.qorpent.wiki.showinmodal(result);
+	}
 });

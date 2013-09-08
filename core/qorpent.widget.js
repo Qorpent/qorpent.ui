@@ -85,14 +85,19 @@ window._ = window._ || {};
 				}
 				if (!!w.command && !!w.type) {
 					if (w.type == "form") {
-						w.el.on("submit", "form", $.proxy(function(e) {
+						var command = w.command;
+						if (!!w.onsubmit) {
+							command = w.command.safeClone();
+							command.onSuccess(w.onsubmit);
+						}
+						w.el.on("submit", "form", function(e) {
 							e.preventDefault();
 							var params = $(e.target).serializeArray();
 							if(!!this.getData){
 								this.getData(params,e);
 							}
-							this.command.execute(params);
-						}, w));
+							command.execute(params);
+						});
 					}
 					else if (w.type == "button") {
 						w.el.on("click", "button, .widget-button", $.proxy(function(e) {
