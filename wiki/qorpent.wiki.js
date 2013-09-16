@@ -41,7 +41,7 @@ qwiki.preprocess = function(processor){
 	preprocessedText = preprocessedText.replace(/\n\n+/g,"\n\n[BR]\n\n");
 	preprocessedText = preprocessedText.replace(/\n([\=\%\!\-\|№])([^\n]+)/g,'\n\n$1$2\n\n');
 	// then we must split lines for block elements
-	preprocessedText = preprocessedText.replace(/(\[\[\/?\w+\]\])/g,"\n\n\n\n$1\n\n\n\n");
+	preprocessedText = preprocessedText.replace(/(\[\[\/?\w+([^\]]*)\]\])/g,"\n\n\n\n$1\n\n\n\n");
 	// and finally remove ambigous lines
 	preprocessedText = preprocessedText.replace(/\n\n+/g,"__LINER__");
 	preprocessedText = preprocessedText.replace(/\n/g,"&nbsp;");
@@ -145,7 +145,8 @@ qwiki.processCode =function(processor,curline ) {
 	curline = curline.replace(/\&nbsp;/g,' __BR__ ');
 	curline = curline.replace(/\[BR\]/g,' __BR__ ');
 	curline = curline.replace(/\s{4}/g,' __TAB__ ');
-	curline = curline.replace(/\t/g,' __TAB__ ');
+	curline = curline.replace(/\t/g, ' __TAB__ ');
+	curline = curline.replace(/</g, '__LT__');
 	//CODE BLOCKS
 	curline = curline.replace(
 		/([!=+\-*\.\\\/;<>%\&\^\:\|]+)/g,
@@ -177,6 +178,7 @@ qwiki.processCode =function(processor,curline ) {
 	curline = curline.replace(/_CLASS_ATTR_/g,'class=');
 	curline = curline.replace(/__TAB__/g,'&nbsp;&nbsp;&nbsp;&nbsp;');
 	curline = curline.replace(/__BR__/g, '<br/>');
+	curline = curline.replace(/__LT__/g, '&lt;');
 	curline = curline + '<br/>';
 	if(this.afterCode){
 		curline = this.afterCode(processor,curline);
@@ -299,6 +301,37 @@ qwiki.create = function(text, logwriter){
 					this.processed.push(curline);
 					continue;
 				}
+
+			    //WIKI IGNORANCE SUPPORT WITH BLOCK AND INLINE
+				if (curline == "[[/script]]") {
+				    this.scriptblock = false;
+				    var defaultScript = true;
+				    if (qwiki.scriptHandler) {
+				        var customscript = qwiki.scriptHandler(this,this.scripttype, this.script);
+				        if (customscript) {
+				            defaultScript = false;
+				            this.processed.push(customscript);
+				        }
+				    }
+				    if (defaultScript) {
+				        this.processed.push("<script type='" + this.scripttype + "'>");
+				        this.processed.push(this.script);
+				        this.processed.push("</script>");
+				    }
+				    continue;
+				}
+				if (curline.match(/\[\[script\s+type=([\w/]+)\]\]/)) {
+				    this.scriptblock = true;
+				    this.scripttype = curline.match(/type=([\w/]+)/)[1];
+				    this.script = "";
+				    continue;
+				}
+				if (this.scriptblock)
+				{
+				    this.script += curline.replace(/(&nbsp;)|(\[BR\])/g, "\n");
+				    continue;
+				}
+
 			
 				if (curline.match(/^\|/)) {
 					if (!this.table) {

@@ -1,4 +1,4 @@
-(function($) {
+﻿(function($) {
     qwiki.getCustomReference = function(processor,addr,name,tail){
         // reference to another wiki page
         if(addr.match(/^\//)){
@@ -23,6 +23,37 @@
         // not custom
         return null;
     };
+    var script_counter = 0;
+    qwiki.updateScriptResult = function (id, content,cnt) {
+        var e = $('#' + id);
+        cnt = cnt||0;
+        if (!e) {
+            if (cnt == 3) return;
+            window.timeout(function () { qwiki.updateScriptResult(id, content,cnt+1); }, 200);
+            return;
+        }
+        e.html(content);
+    };
+    qwiki.scriptHandler = function (processor, type, script) {
+        if (type == "dot") {
+            var command = _.api._sys.renderdot.safeClone({
+                datatype : "xml",
+            });
+            command.errorautodebug = false;
+            script_counter++;
+            code = "_script_" + script_counter;
+            command.onError(function (e,r) {
+                qwiki.updateScriptResult(code, r);
+            });
+            command.onSuccess(function (e, r) {
+                qwiki.updateScriptResult(code, r);
+            });
+            command.execute({ script: script });
+            return "<div id='" + code + "'>Ждите загрузки</div>";
+        }
+
+    };
+
     $(document).delegate(".wiki-link", "click", function(e) {
         e.stopPropagation();
         _.api.wiki.getsync.execute({code: $(this).attr("code")});

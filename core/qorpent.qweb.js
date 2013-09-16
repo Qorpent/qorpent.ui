@@ -71,8 +71,12 @@
         onProgress: function(f) { $(this).on(this.eventName + ":Progress", f) },
 */
 
-        safeClone : function() {
+        safeClone : function(overrider) {
             var clone = $.extend({}, this);
+            clone.url = "";
+            if (overrider) {
+                $.extend(clone, overrider);
+            }
             $.extend(clone, {eventName: this.domain + "-" + this.name + "-" + new Date().getTime()});
             clone.__isclone = true;
             return new qweb.C(clone);

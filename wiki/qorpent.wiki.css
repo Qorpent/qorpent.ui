@@ -8,6 +8,14 @@
 		visibility : visible !important;
 	}
 }
+error {
+    display:block;
+    border:solid 1px red;
+}
+error:before {
+    content : attr(text);
+}
+
 .wiki {
 	counter-reset : wiki-head-1 0 wiki-list-1 0 wiki-ref 0 wiki-img 0 wiki-file 0 wiki-sample 0 wiki-code 0 wiki-table 0;
 }
