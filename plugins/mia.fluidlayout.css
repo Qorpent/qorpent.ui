@@ -20,6 +20,8 @@
     overflow-y: auto;
 	overflow-x: hidden;
 	padding-right: 10px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .fluid-part.fluid-part-hidden {

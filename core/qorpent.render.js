@@ -11,6 +11,7 @@ window._ = window._ || {};
                 var ctemplates = render.compiledTemplates;
                 $.each(templates, function(i,t){
                     name = i.replace(/\./g,'_');
+                    t = t.replace(/>\s+/g, ">");
                     try {
                         if (name.indexOf('_partial') == -1) {
                             ctemplates[name] = window.Mustache.compile(t);

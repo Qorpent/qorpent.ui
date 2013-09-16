@@ -166,8 +166,8 @@
                     if ((this.ajax.type=="GET" && r.getResponseHeader("Last-Modified")) || this.cache)   {
                         sessionStorage.setItem(this.ajax.url+"?"+JSON.stringify(this.ajax.data), r.responseText);
                     }
-                    this["triggerOnSuccess"](this.returnResult(r.responseText));
                 }
+                this["triggerOnSuccess"](this.returnResult(r.responseText));
             }
             else {
                 if (!r.responseText.match(/^\s*<!DOCTYPE/)) {

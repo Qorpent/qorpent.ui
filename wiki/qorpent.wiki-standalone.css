@@ -27,6 +27,10 @@
 	overflow-y: auto;
 }
 
+#wikiSaveBtn {
+	margin-left: 
+}
+
 #wikiEditSource textarea {
 	width: 100%;
 	box-sizing: border-box;

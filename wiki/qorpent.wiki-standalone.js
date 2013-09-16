@@ -45,10 +45,6 @@ _.qorpent = _.qorpent || {};
             this.preview = editor.find('.wiki-preview');
             this.source = editor.find('.wiki-source');
             this.text = editor.find("#wikiEditText");
-            if (!!wikisource) {
-                // Не ну это лажа конечно. Если считать количество rows у textarea, то явно не так :D
-                this.text.attr("rows", this.wikisource.Text.split(/\r*\n/).length);
-            }
             this.code = editor.find("#wikiEditCode");
             this.title = editor.find("#wikiEditTitle");
             this.previewhtml = editor.find("#wikiEditPreview");
@@ -175,7 +171,7 @@ _.qorpent = _.qorpent || {};
                         link.parent().attr("wikicode") :
                         link.attr("wikicode");
                     if (link.attr("type") == "Page") {
-                        _.qorpent.wiki.editor.openpage(id);
+                        _.router.to("wiki", {code: id}, false);
                     } else {
                         _.qorpent.wiki.editor.openfile(id);
                     }

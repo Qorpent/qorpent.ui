@@ -6,6 +6,11 @@ a>i {
     margin-top: 0;
 }
 
+.control-group {
+    margin-top: 3px;
+    margin-bottom: 5px;
+}
+
 .navbar .btn-group {
     margin: 0;
     padding: 0;   
@@ -13,6 +18,10 @@ a>i {
 
 .tab-content {
     overflow: visible;
+}
+
+button>i {
+    margin: 0 3px 0 3px;
 }
 
 .nav-list>li>a,
