@@ -143,7 +143,7 @@ qwiki.processCode =function(processor,curline ) {
 		curline = this.beforeCode(processor,curline);
 	}
 	curline = curline.replace(/\&nbsp;/g,' __BR__ ');
-	curline = curline.replace(/\[BR\]/g,'');
+	curline = curline.replace(/\[BR\]/g,' __BR__ ');
 	curline = curline.replace(/\s{4}/g,' __TAB__ ');
 	curline = curline.replace(/\t/g,' __TAB__ ');
 	//CODE BLOCKS
@@ -166,7 +166,7 @@ qwiki.processCode =function(processor,curline ) {
 	
 	curline = curline.replace(/\\"/g,'_EQ_');
 	curline = curline.replace(/""/g,'_DQ_');
-	curline = curline.replace(/"([\s\S]+?)"/g,"<span _CLASS_ATTR_'string'>$1</span>");
+	curline = curline.replace(/"([\s\S]+?)"/g, "<span _CLASS_ATTR_'string'>\"$1\"</span>");
 	curline = curline.replace(/_EQ_/g,'\\"');
 	curline = curline.replace(/_DQ_/g,'""');
 	
@@ -176,7 +176,8 @@ qwiki.processCode =function(processor,curline ) {
 	//curline+="<br/>";
 	curline = curline.replace(/_CLASS_ATTR_/g,'class=');
 	curline = curline.replace(/__TAB__/g,'&nbsp;&nbsp;&nbsp;&nbsp;');
-	curline = curline.replace(/__BR__/g,'');
+	curline = curline.replace(/__BR__/g, '<br/>');
+	curline = curline + '<br/>';
 	if(this.afterCode){
 		curline = this.afterCode(processor,curline);
 	}
