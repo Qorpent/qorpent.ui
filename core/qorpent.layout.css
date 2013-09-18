@@ -6,16 +6,17 @@
 }
 
 #appLeft {
-    min-width: 20%;
     margin-right: 20px;
     margin-left: 20px;
-    -webkit-flex-basis: 250px;
-    -moz-flex-basis: 250px;
-    flex-basis: 250px;
+    -webkit-flex-basis: 20%;
+    -moz-flex-basis: 20%;
+    flex-basis: 20%;
 }
 
 #appBody {
-    -webkit-flex-basis: 100%;
+    -webkit-flex-basis: 80%;
+    -moz-flex-basis: 80%;
+    flex-basis: 80%;
 }
 
 

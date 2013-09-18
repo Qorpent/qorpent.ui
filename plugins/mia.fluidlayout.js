@@ -5,15 +5,16 @@
             layout.addClass("fluid-layout");
         };
         options = $.extend({
-            splited: true
+            splited: true,
+            width: []
         }, options);
         if (options.splited) {
             layout.addClass("splited-layout");
-            setupsplitter(layout);
+            setupsplitter(layout, options);
         }
     };
 
-    var setupsplitter = function(layout) {
+    var setupsplitter = function(layout, options) {
         var splitter = $('<div class="fluid-splitter"/>');
         var ch = layout.children();
         layout.on('click', 'legend', function(e) {
@@ -53,6 +54,11 @@
             		localStorage.setItem("fluidlayout__" + elid, false);
             	}
             }
+            el.css({
+                "-webkit-flex-basis": options.width[i] || "100%",
+                "-moz-flex-basis": options.width[i] || "100%",
+                "flex-basis": options.width[i] || "100%"
+            });
         });
     };
     $.extend($.fn, { fluidlayout : fluidlayout });

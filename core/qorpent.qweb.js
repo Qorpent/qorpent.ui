@@ -181,6 +181,9 @@
         returnResult: function(r) {
             var result;
             if (this.datatype == "json") {
+                // ну так, на всякий случай, обходка нашего штатного сериализатора
+                r = r.replace(/,\s+?}/, "}").replace(/,\s+?]/, "]");
+
                 result = JSON.parse(r);
                 var wrapperName = this.domain + "_" + this.name + "Wrap";
                 if (_.wrapper[wrapperName] != null) {
