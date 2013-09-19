@@ -48,7 +48,7 @@ _.qorpent = _.qorpent || {};
             this.code = editor.find("#wikiEditCode");
             this.title = editor.find("#wikiEditTitle");
             this.previewhtml = editor.find("#wikiEditPreview");
-            editor.fluidlayout();
+            editor.fluidlayout({ width: ["60%", "40%"] });
             _.layout.update("body", editor);
             if (!!this.wikisource) {
                 this.previewhtml.html(qwiki.toHTML(this.wikisource.Text));
@@ -77,7 +77,7 @@ _.qorpent = _.qorpent || {};
                 handler: function(e) {
                     if (e.target.tagName == "I") return;
                     var id = $(e.target).attr("wikicode");
-                    _.qorpent.wiki.editor.openpage(id);
+                    _.router.to("wiki", {code: id}, e.ctrlKey);
                 }
             }, {
                 event: "click",
@@ -171,7 +171,7 @@ _.qorpent = _.qorpent || {};
                         link.parent().attr("wikicode") :
                         link.attr("wikicode");
                     if (link.attr("type") == "Page") {
-                        _.router.to("wiki", {code: id}, false);
+                        _.router.to("wiki", {code: id}, e.ctrlKey);
                     } else {
                         _.qorpent.wiki.editor.openfile(id);
                     }
@@ -306,15 +306,19 @@ _.qorpent = _.qorpent || {};
             }
         },
 
-        openpage: function(code) {
+        openpage: function(code, openblank) {
             if (!!code) {
-                var wikiget = _.api.wiki.get.safeClone();
-                wikiget.onSuccess($.proxy(function(i, result) {
-                    var article = result.articles.length > 0 ? result.articles[0] : null;
-                    this.editorinit(article);
-                    this.historyAdd({Code: article.Code, Title: article.Title});
-                }, this));
-                wikiget.execute({code: code});   
+                if (!openblank) {
+                    var wikiget = _.api.wiki.get.safeClone();
+                    wikiget.onSuccess($.proxy(function(i, result) {
+                        var article = result.articles.length > 0 ? result.articles[0] : null;
+                        this.editorinit(article);
+                        this.historyAdd({Code: article.Code, Title: article.Title});
+                    }, this));
+                    wikiget.execute({code: code});   
+                } else {
+                    _.router.to("wiki", {code: code}, true);
+                }
             } else {
                 this.editorinit(null);
             }
@@ -329,6 +333,7 @@ _.qorpent = _.qorpent || {};
             _.layout.left().append(this.attachform);
             _.layout.left().append(this.list);
             _.layout.left().append(this.historyform);
+            _.layout.left().css({ "min-width": 250, "max-width": 250 });
             this.attachinit();
             this.historyinit();
             this.search();
