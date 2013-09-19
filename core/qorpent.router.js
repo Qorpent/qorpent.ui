@@ -48,8 +48,8 @@ window._ = window._ || {};
             this.to(this.default, this.params);
         },
 
-        toStart: function() {
-            this.to(this.current != "" ? this.current : this.default, this.params);
+        toStart: function(params) {
+            this.to(this.current != "" ? this.current : this.default, params || this.params);
         }
     });
 })(_.router = _.router || {});

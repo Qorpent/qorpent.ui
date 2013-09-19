@@ -7,7 +7,7 @@ _.qorpent = _.qorpent || {};
         editor: null,
         list: $('<div id="wiki-list"/>'),
         attachform: $('<div id="wiki-attach"/>'),
-        historyform: $('<div id="wiki-history"/>'),
+        historyform: null,
         history: [],
         fav: [],
         wikisource: null,
@@ -53,6 +53,7 @@ _.qorpent = _.qorpent || {};
             if (!!this.wikisource) {
                 this.previewhtml.html(qwiki.toHTML(this.wikisource.Text));
             }
+            this.text.miatextarea();
             _.layout.body().on("mouseup", "*", $.proxy(function(e) {
                 e.stopPropagation();
                 this.text.css('width', '100%');
@@ -111,11 +112,6 @@ _.qorpent = _.qorpent || {};
             var hist = _.render.compile("qorpent_wiki-standalone-hist", { history: history }, events);
             this.historyform.empty();
             this.historyform.append(hist);
-            $(window).resize($.proxy(function() {
-                var h = $(window).height() - _.layout.header().height();
-                _.layout.left().height(h - 47);
-            }, this));
-            $(window).trigger("resize");
         },
 
         attachinit: function() {
@@ -215,6 +211,14 @@ _.qorpent = _.qorpent || {};
             this.wikisearch = list.find("#wikiListSearch");
             this.list.empty();
             this.list.append(list);
+            this.historyform = $('<div id="wiki-history"/>'); 
+            list.find("#tab_hist").append(this.historyform);
+            this.historyinit();
+            $(window).resize($.proxy(function() {
+                var h = $(window).height() - _.layout.header().height();
+                _.layout.left().height(h - 47);
+            }, this));
+            $(window).trigger("resize");
         },
 
         search: function(query) {
@@ -303,17 +307,22 @@ _.qorpent = _.qorpent || {};
                     title: this.title.val(),
                     text: this.text.val()
                 });
+
+                // для задачи Q-149. Так проще, чем переоткрывать страницу с новым кодом
+                location.hash = location.hash.replace(/code=\/\w+/, 'code=' + this.code.val());
             }
         },
 
         openpage: function(code, openblank) {
-            if (!!code) {
+            if (!!code || code == "new") {
                 if (!openblank) {
                     var wikiget = _.api.wiki.get.safeClone();
                     wikiget.onSuccess($.proxy(function(i, result) {
                         var article = result.articles.length > 0 ? result.articles[0] : null;
                         this.editorinit(article);
-                        this.historyAdd({Code: article.Code, Title: article.Title});
+                        if (null != this.historyform) {
+                            this.historyAdd({Code: article.Code, Title: article.Title});
+                        }
                     }, this));
                     wikiget.execute({code: code});   
                 } else {
@@ -321,6 +330,7 @@ _.qorpent = _.qorpent || {};
                 }
             } else {
                 this.editorinit(null);
+                location.hash = location.hash.replace(/code=\/\w+/, 'code=new');
             }
         },
 
@@ -332,10 +342,8 @@ _.qorpent = _.qorpent || {};
             _.layout.left().empty();
             _.layout.left().append(this.attachform);
             _.layout.left().append(this.list);
-            _.layout.left().append(this.historyform);
-            _.layout.left().css({ "min-width": 250, "max-width": 250 });
+            _.layout.left().css({ "min-width": 300, "max-width": 300 });
             this.attachinit();
-            this.historyinit();
             this.search();
 
             $(document).undelegate(".wiki-link", "click");

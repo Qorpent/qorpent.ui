@@ -3,6 +3,7 @@
 	<input placeholder="Поиск статьи" type="text" class="small-input" id="wikiListSearch" value="{{Search}}" />
 	<li class="active"><a href="#tab_pages" data-toggle="tab">Статьи</a></li>
 	<li><a href="#tab_files" data-toggle="tab">Файлы</a></li>
+	<li><a href="#tab_hist" data-toggle="tab">История</a></li>
 	<button class="btn btn-mini btn-success pull-right wiki-create" data-original-title="Новая статья"><i class="icon-plus icon-white"/></button>
 </ul>
 <div class="tab-content">
@@ -10,7 +11,7 @@
 		<ul class="nav nav-list">
 			{{#pages}}
 			<li class="nav-item">
-				<a class="wiki-page-link" wikicode="{{Code}}" type="{{Type}}">{{Name}} [{{Code}}]<i class="icon-trash pull-right wiki-delete-btn"></i></a>
+				<a class="wiki-page-link" wikicode="{{Code}}" type="{{Type}}" title="{{Name}} [{{Code}}]">{{Name}} [{{Code}}]<i class="icon-trash pull-right wiki-delete-btn"></i></a>
 			</li>
 			{{/pages}}
 		</ul>
@@ -19,9 +20,12 @@
 		<ul class="nav nav-list">
 			{{#files}}
 			<li class="nav-item">
-				<a class="wiki-file-link" wikicode="{{Code}}" type="{{Type}}">{{Name}} [{{Code}}]<i class="icon-trash pull-right wiki-delete-btn"></i></a>
+				<a class="wiki-file-link" wikicode="{{Code}}" type="{{Type}}" title="{{Name}} [{{Code}}]">{{Name}} [{{Code}}]<i class="icon-trash pull-right wiki-delete-btn"></i></a>
 			</li>
 			{{/files}}
 		</ul>
+	</div>
+	<div class="tab-pane" id="tab_hist">
+		
 	</div>
 </div>
