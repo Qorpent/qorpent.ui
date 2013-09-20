@@ -18,7 +18,7 @@ _.qorpent = _.qorpent || {};
         text: null,
         code: null,
         title: null,
-        
+
         editorinit: function(wikisource) {
             this.wikisource = wikisource;
             var events = [{
@@ -48,7 +48,7 @@ _.qorpent = _.qorpent || {};
             this.code = editor.find("#wikiEditCode");
             this.title = editor.find("#wikiEditTitle");
             this.previewhtml = editor.find("#wikiEditPreview");
-            editor.fluidlayout({ width: ["60%", "40%"] });
+            editor.fluidlayout();
             _.layout.update("body", editor);
             if (!!this.wikisource) {
                 this.previewhtml.html(qwiki.toHTML(this.wikisource.Text));
@@ -62,6 +62,7 @@ _.qorpent = _.qorpent || {};
                 var h = $(window).height() - _.layout.header().height();
                 this.previewhtml.height(h - 100);
                 _.layout.left().height(h - 50);
+                this.text.height(h - 300);
                 editor.find("#wikiEditSource").height(h - 100);
             }, this));
             $(window).trigger("resize");
@@ -167,7 +168,11 @@ _.qorpent = _.qorpent || {};
                         link.parent().attr("wikicode") :
                         link.attr("wikicode");
                     if (link.attr("type") == "Page") {
-                        _.router.to("wiki", {code: id}, e.ctrlKey);
+                        if (e.ctrlKey) {
+                            _.router.to("wiki", {code: id}, true);
+                        } else {
+                            _.qorpent.wiki.editor.openpage(id);
+                        }
                     } else {
                         _.qorpent.wiki.editor.openfile(id);
                     }
@@ -180,7 +185,7 @@ _.qorpent = _.qorpent || {};
                 }
             }, {
                 event: "change",
-                selector: "#wikiListSearch",
+                selector: "#wikiSearch",
                 handler: $.proxy(function(e) { 
                     this.search($(e.target).val());
                 }, this)
@@ -208,7 +213,7 @@ _.qorpent = _.qorpent || {};
                 }
             }];
             var list = _.render.compile("qorpent_wiki-standalone-list", wikilist, events);
-            this.wikisearch = list.find("#wikiListSearch");
+            this.wikisearch = list.find("#wikiSearch");
             this.list.empty();
             this.list.append(list);
             this.historyform = $('<div id="wiki-history"/>'); 
@@ -223,9 +228,10 @@ _.qorpent = _.qorpent || {};
 
         search: function(query) {
             if (query == "" || !query) query = "/";
+            this.Search = query == "/" ? "" : query;
             var wikifind = _.api.wiki.find.safeClone()
             wikifind.onSuccess($.proxy(function(e, result) {
-                result.Search = query != "/" ? query : "";
+                result.Search = this.Search;
                 this.listinit(result);
             }, this));
             wikifind.execute({search: query});
@@ -309,7 +315,7 @@ _.qorpent = _.qorpent || {};
                 });
 
                 // для задачи Q-149. Так проще, чем переоткрывать страницу с новым кодом
-                location.hash = location.hash.replace(/code=\/\w+/, 'code=' + this.code.val());
+                location.hash = location.hash.replace(/code=\/[^&]+/, 'code=' + this.code.val());
             }
         },
 
@@ -319,6 +325,7 @@ _.qorpent = _.qorpent || {};
                     var wikiget = _.api.wiki.get.safeClone();
                     wikiget.onSuccess($.proxy(function(i, result) {
                         var article = result.articles.length > 0 ? result.articles[0] : null;
+                        article.Search = this.Search || "";
                         this.editorinit(article);
                         if (null != this.historyform) {
                             this.historyAdd({Code: article.Code, Title: article.Title});
@@ -330,7 +337,7 @@ _.qorpent = _.qorpent || {};
                 }
             } else {
                 this.editorinit(null);
-                location.hash = location.hash.replace(/code=\/\w+/, 'code=new');
+                location.hash = location.hash.replace(/code=\/[^&]+/, 'code=new');
             }
         },
 

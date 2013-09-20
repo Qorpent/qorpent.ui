@@ -3,6 +3,9 @@
 #wiki-attach {
 	padding-left: 15px;
 }
+#wikiEditCode {
+	margin-left: 3px;
+}
 
 #wiki-history>.nav-list:empty:after {
     display: block;
@@ -38,7 +41,7 @@
 	-moz-box-sizing: border-box;
 }
 
-#wikiListSearch {
+#wikiSearch {
 	position: absolute;
 	bottom: -50px;
 	left: 9px;

@@ -7,10 +7,6 @@ button+button {
     margin-right: 3px;
 }
 
-input[type="text"]+input[type="text"] {
-    margin-left: 3px;
-}
-
 .navbar widget>.btn {
     margin-top: 0;
 }
