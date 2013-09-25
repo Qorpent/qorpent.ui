@@ -2,11 +2,6 @@ a>i {
     margin-right: 3px;
 }
 
-button+button {
-    margin-left: 3px;
-    margin-right: 3px;
-}
-
 .navbar widget>.btn {
     margin-top: 0;
 }

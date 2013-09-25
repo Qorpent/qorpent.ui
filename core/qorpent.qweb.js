@@ -227,11 +227,26 @@
     $.extend(qweb, {
         showErrorMessage : function(error, context) {
             if (!!$.fn.miamodal) {
-                var message = $('<p/>').text(error.message);
-                var text = $('<p/>');
-                if (!!error.text) text.text(error.text);
-                $('<div/>').append(message, text).miamodal({
-                    title: error.type || "Во время работы приложения произошла ошибка", resizable: false, id: context.eventName + "-error"
+                var message,
+                    text,
+                    title;
+                message = text = title = "";
+                if (context.datatype == "json") {
+                    if (typeof error == "string") {
+                        error = JSON.parse(error);
+                    }
+                    message = error.message;
+                    if (!!error.text) text = error.text;
+                    title = error.type || "Во время работы приложения произошла ошибка";
+                } 
+                else if (context.datatype == "html" || error.trim().indexOf("<") == 0) {
+                    var e = error.match(/type="([^"]+)"\s+message="([^"]+)"\s+text="([^"]+)"/);
+                    if (e.length > 0) type = e[1]; 
+                    if (e.length > 1) message = e[2]; 
+                    if (e.length > 2) text = e[3]; 
+                }
+                $('<div/>').append($('<p/>').text(message), $('<p/>').text(text)).miamodal({
+                    title: title, resizable: false, id: context.eventName + "-error"
                 });
             }
         }
