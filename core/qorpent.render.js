@@ -6,7 +6,7 @@ window._ = window._ || {};
         },
         prepareTemplates : function (templates) {
             render.compiledTemplates = render.compiledTemplates || {};
-            if(window.Mustache){
+            if(window.Handlebars){
                 this.templatesSupported = true;
                 var ctemplates = render.compiledTemplates;
                 $.each(templates, function(i,t){
@@ -14,11 +14,11 @@ window._ = window._ || {};
                     t = t.replace(/>\s+/g, ">");
                     try {
                         if (name.indexOf('_partial') == -1) {
-                            ctemplates[name] = window.Mustache.compile(t);
+                            ctemplates[name] = window.Handlebars.compile(t);
                         } else {
                             name = name.replace('_partial', '');
-                            window.Mustache.compilePartial(name, t);
-                            ctemplates[name] = window.Mustache.compile(t);
+                            window.Handlebars.registerPartial(name, t);
+                            ctemplates[name] = window.Handlebars.compile(t);
                         }
                     } catch(e) {
                         console.log("view error: "+name+"  " + e);
@@ -42,7 +42,7 @@ window._ = window._ || {};
                 view = view || {};
                 events = events || [];
             }
-            if (!window.Mustache || !window.templates || !templatecode) return;
+            if (!window.Handlebars || !window.templates || !templatecode) return;
             var compiledTemplate = this.compiledTemplates[templatecode];
             var template = $(compiledTemplate(view));
             if (events) {

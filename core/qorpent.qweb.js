@@ -237,7 +237,7 @@
                     }
                     message = error.message;
                     if (!!error.text) text = error.text;
-                    title = error.type || "Во время работы приложения произошла ошибка";
+                    title = error.type;
                 } 
                 else if (context.datatype == "html" || error.trim().indexOf("<") == 0) {
                     var e = error.match(/type="([^"]+)"\s+message="([^"]+)"\s+text="([^"]+)"/);
@@ -246,7 +246,7 @@
                     if (e.length > 2) text = e[3]; 
                 }
                 $('<div/>').append($('<p/>').text(message), $('<p/>').text(text)).miamodal({
-                    title: title, resizable: false, id: context.eventName + "-error"
+                    title: title || "Во время работы приложения произошла ошибка", resizable: false, id: context.eventName + "-error"
                 });
             }
         }

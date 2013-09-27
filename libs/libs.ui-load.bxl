@@ -4,7 +4,7 @@ pkg libs
     load bootstrap-responsive.min.css
     load mia.bootstrap.css
     load jquery-ui.min.js
-    load mustache.min.js            			# Библиотека для работы с шаблонами
+    load handlebars.js            			# Библиотека для работы с шаблонами
     load jquery.md5.min.js level=auth  			# для создания md5 хэшей
     load jquery.jsformatter.js level=auth     	# Библиотека для конвертирования json --> html
     load jquery.jsformatter.css level=auth

@@ -9,7 +9,7 @@ window._ = window._ || {};
                     _.router.asDefault(_.router.current);
                     _.router.to("login", _.router.params);
                 } else {
-                    _.router.toStart(_.router.params);
+                    _.router.toDefault(_.router.params);
                 }
             }});
         },
