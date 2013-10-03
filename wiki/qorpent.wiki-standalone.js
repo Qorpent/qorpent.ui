@@ -330,6 +330,7 @@ _.qorpent = _.qorpent || {};
                         if (null != this.historyform) {
                             this.historyAdd({Code: article.Code, Title: article.Title});
                         }
+                        _.router.setParams({code: article.Code})
                     }, this));
                     wikiget.execute({code: code});   
                 } else {
@@ -337,7 +338,7 @@ _.qorpent = _.qorpent || {};
                 }
             } else {
                 this.editorinit(null);
-                location.hash = location.hash.replace(/code=\/[^&]+/, 'code=new');
+                _.router.setParams({code: "new"});
             }
         },
 

@@ -6,10 +6,10 @@ window._ = window._ || {};
                 _.qorpent.user = _.qorpent.user || {};
                 _.qorpent.user = result;
                 if (!result.isAuthorized()) {
-                    _.router.asDefault(_.router.current);
+                    _.router.params["redirect"] = _.router.current;
                     _.router.to("login", _.router.params);
                 } else {
-                    _.router.toDefault(_.router.params);
+                    _.router.toStart(_.router.params);
                 }
             }});
         },
@@ -20,12 +20,18 @@ window._ = window._ || {};
 
         startLogin : function() {
             qorpent.start();
-            _.api._sys.login.onSuccess(function(result) {
-                if (!result.authenticated) _.router.to("login");
+            if (!!_.router.params.redirect) {
+                _.router.current = _.router.params.redirect;
+            }
+            _.api._sys.login.onSuccess(function(e, result) {
+                if (!result.authenticated) _.router.to("login", _.router.params);
                 _.api._sys.whoami.execute(null, { triggerOnSuccess: function(result) {
                     _.qorpent.user = _.qorpent.user || {};
                     _.qorpent.user = result;
-                    _.router.toDefault();
+                    if (!!_.router.params.redirect) {
+                        delete _.router.params.redirect;
+                    }
+                    _.router.toStart(_.router.params);
                     location.reload();
                 }});
             });

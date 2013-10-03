@@ -10,17 +10,10 @@
         e.preventDefault();
         authorize();
     });
+    
     var authorize = function() {
         _.api._sys.login.execute({_l_o_g_i_n_: l.val(), _p_a_s_s_: p.val()});
     };
-
-    _.api._sys.login.onSuccess(function(e, result) {
-        if (result.authenticated) {
-            authorizer.el.hide();
-            _.router.toDefault();
-			location.reload();
-        }
-    });
 
     var authorizer = new _.widget.W({
         authonly : false,

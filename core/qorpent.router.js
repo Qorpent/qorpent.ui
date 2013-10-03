@@ -38,7 +38,7 @@ window._ = window._ || {};
             } else {
                 location.hash = hash;
                 this.current = route;
-                this[route]();
+                this[route](params);
             }
         },
 
@@ -46,6 +46,30 @@ window._ = window._ || {};
 
         toDefault : function() {
             this.to(this.default, this.params);
+        },
+
+        applyParams: function(params) {
+            if (!params || $.isEmptyObject(params)) {
+                this.clearParams();
+            } else {
+                var m = hash.match(/^#(\w+)/);
+                var hash = m != null ? m[0] : this.default;
+                hash += "?" + $.map(params, function(v, k) { return k + "=" + v }).join("|");
+                this.params = params;
+            }
+        },
+
+        clearParams: function() {
+            this.params = {};
+            location.hash = this.current;
+        },
+
+        getParams: function() {
+            return this.params;
+        },
+
+        setParams: function(params) {
+            this.applyParams($.extend(this.params, params));
         },
 
         toStart: function(params) {
