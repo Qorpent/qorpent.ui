@@ -38,6 +38,7 @@
         if (type == "dot") {
             var command = _.api._sys.renderdot.safeClone({
                 datatype : "xml",
+				method:"POST",
             });
             command.errorautodebug = false;
             script_counter++;
