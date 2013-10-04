@@ -52,9 +52,10 @@ window._ = window._ || {};
             if (!params || $.isEmptyObject(params)) {
                 this.clearParams();
             } else {
-                var m = hash.match(/^#(\w+)/);
+                var m = location.hash.match(/^#(\w+)/);
                 var hash = m != null ? m[0] : this.default;
                 hash += "?" + $.map(params, function(v, k) { return k + "=" + v }).join("|");
+                location.hash = hash;
                 this.params = params;
             }
         },

@@ -79,7 +79,11 @@ _.qorpent = _.qorpent || {};
                 handler: function(e) {
                     if (e.target.tagName == "I") return;
                     var id = $(e.target).attr("wikicode");
-                    _.router.to("wiki", {code: id}, e.ctrlKey);
+                    if (e.ctrlKey) {
+                        _.router.to("wiki", {code: id}, true);
+                    } else {
+                        _.qorpent.wiki.editor.openpage(id);
+                    }
                 }
             }, {
                 event: "click",
