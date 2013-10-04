@@ -40,6 +40,12 @@ _.qorpent = _.qorpent || {};
                 handler: $.proxy(function(e) {
                     this.previewhtml.html(qwiki.toHTML($(e.target).val()));
                 }, this)
+            }, {
+                event: "change",
+                selector: "#wikiEditCode",
+                handler: $.proxy(function(e) {
+                    _.router.setParams({code: $(e.target).val()});
+                }, this)
             }];
             var editor = _.render.compile("qorpent_wiki-standalone-editor", this.wikisource, events);
             this.preview = editor.find('.wiki-preview');
